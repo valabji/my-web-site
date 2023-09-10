@@ -4,7 +4,7 @@ export default function Page() {
       <div className="row" style={{ height: "100%" }}>
         <div className="col-lg-6">
           <div className="error-template">
-            <h2>My name is abdalrahman Valabji</h2>
+            <h2>My name is Abdalrahman Valabji</h2>
             <div>
               <p>
                 Indian🇮🇳-Sudanese🇸🇩 Software Developer with 7 years of professional experience.
