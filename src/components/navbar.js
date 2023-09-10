@@ -14,7 +14,7 @@ export default function Component() {
                     {/* <Link to={`skills`} className="nav-link">Skills</Link> */}
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="https://www.linkedin.com/in/valabji/details/experience/">Experiance</a>
+                    <a className="nav-link" href="https://www.linkedin.com/in/valabji/details/experience/">Experience</a>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="https://www.linkedin.com/in/valabji/details/education/">Education</a>
