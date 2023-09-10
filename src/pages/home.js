@@ -20,7 +20,7 @@ export default function Page() {
                 My Current Tech Stack: <br />
                 ✅ Front-End: JavaScript, React, React-Native, Expo, Redux, NextJS,
                 HTML, CSS, SCSS, and TailwindCSS <br />
-                ✅ Back-End: Node.js, Mongo, MySql, Ruby on Rails <br />
+                ✅ Back-End: Django, Node.js, Mongo, MySql, Ruby on Rails <br />
                 ✅ User Interface Design: Figma / Adobe XD <br />
                 ✅ Tools & Methods: Git, GitHub, GitLab, Heroku, AWS, Vercel,
                 Chrome Dev Tools, Jest, React Testing Library, Jira, GitHub Kanban Board, Trello <br /> <br />
