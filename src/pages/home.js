@@ -63,6 +63,19 @@ export default function Page() {
                 <span STYLE="margin-left:10px">LinkedIn</span>
               </a>
             </div>
+            <div className="Google-ads">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7360541861041855"
+                crossorigin="anonymous"></script>
+              <ins class="adsbygoogle"
+                STYLE="display:block; text-align:center;"
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-7360541861041855"
+                data-ad-slot="4375800295"></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({ });
+              </script>
+            </div>
           </div>
         </div>
         <div className="col-lg-6" style={{ height: "100%" }}>
