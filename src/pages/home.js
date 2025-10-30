@@ -7,7 +7,7 @@ export default function Page() {
             <h2>My name is Abdalrahman Valabji</h2>
             <div>
               <p>
-                Indian🇮🇳-Sudanese🇸🇩 Software Developer with 7 years of professional experience.
+                Indian🇮🇳-Sudanese🇸🇩 Software Developer with 10 years of professional experience.
                 Experienced in mobile application development, web development, system development,
                 and implementation including initial implementation, migrations, solving complex technical problems,
                 and business requirement gatherings. Possess good leadership and communication skills.
