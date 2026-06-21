@@ -1,0 +1,130 @@
+.os-head{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  margin-bottom:clamp(1.75rem,4vw,2.75rem);
+}
+.os-eyebrow{
+  font-family:var(--mono);
+  font-size:.8rem;
+  color:var(--accent);
+  letter-spacing:.02em;
+}
+.os-title{
+  font-size:clamp(1.7rem,3.5vw + .6rem,2.6rem);
+}
+.os-intro{
+  font-family:var(--mono);
+  font-size:.92rem;
+  color:var(--text-dim);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.55rem .85rem;
+  max-width:none;
+}
+.os-intro .os-prompt{color:var(--accent-2)}
+.os-intro b{color:var(--text);font-weight:600}
+.os-profile-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.4em;
+  font-weight:500;
+}
+
+.os-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1rem,2.5vw,1.4rem);
+}
+@media (min-width:560px){
+  .os-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:920px){
+  .os-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+.os-card{
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+  min-height:100%;
+}
+.os-card-top{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+}
+.os-repo-icon{
+  flex:none;
+  width:1.05rem;
+  height:1.05rem;
+  color:var(--text-faint);
+}
+.os-card-name{
+  font-family:var(--mono);
+  font-size:1rem;
+  font-weight:700;
+  color:var(--accent-2);
+  letter-spacing:-0.01em;
+  word-break:break-word;
+}
+.os-card-desc{
+  font-size:.92rem;
+  color:var(--text-dim);
+  line-height:1.55;
+  flex:1 1 auto;
+}
+.os-topics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+}
+.os-topic{
+  font-family:var(--mono);
+  font-size:.68rem;
+  color:var(--accent-3);
+  background:rgba(88,166,255,.08);
+  border:1px solid var(--border-soft);
+  border-radius:999px;
+  padding:.25em .65em;
+  line-height:1;
+}
+
+.os-foot{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+  padding-top:.7rem;
+  margin-top:auto;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--text-dim);
+}
+.os-meta{
+  display:inline-flex;
+  align-items:center;
+  gap:.4em;
+}
+.os-lang-dot{
+  width:.7em;
+  height:.7em;
+  border-radius:50%;
+  flex:none;
+  box-shadow:0 0 6px currentColor;
+}
+.os-foot-links{
+  display:inline-flex;
+  align-items:center;
+  gap:.85rem;
+  margin-left:auto;
+}
+.os-foot-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.35em;
+  font-size:.78rem;
+}
+.os-foot-link svg{width:.95rem;height:.95rem}

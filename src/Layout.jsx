@@ -1,11 +1,14 @@
 import { Outlet } from 'react-router-dom'
-import Navbar from './components/Navbar.jsx'
+import Nav from './components/Nav.jsx'
 
 export default function Layout() {
   return (
-    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <Navbar />
-      <Outlet />
-    </div>
+    <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <Nav />
+      <main id="main-content" tabIndex={-1} aria-label="Main content">
+        <Outlet />
+      </main>
+    </>
   )
 }

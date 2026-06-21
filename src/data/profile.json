@@ -1,0 +1,944 @@
+{
+  "identity": {
+    "name": "Abdalrahman Valabji",
+    "headline": "Lead Software Developer",
+    "tagline": "Lead Software Developer - building mobile, web & systems for 13+ years",
+    "location": "Alexandria, Egypt",
+    "connections": "500+",
+    "about": "Indian-Sudanese Software Developer with 13 years of professional experience. Experienced in mobile application development, web development, system development, and implementation including initial implementation, migrations, solving complex technical problems, and business requirement gatherings. Possess good leadership and communication skills.",
+    "photo": "/assets/imgs/me.jpeg",
+    "email": "valabji@gmail.com",
+    "whatsapp": "+249920166262",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/valabji/",
+      "github": "https://github.com/valabji",
+      "mostaql": "https://mostaql.com/u/valabji",
+      "website": "https://valabji.com"
+    }
+  },
+  "stats": [
+    {
+      "label": "Years experience",
+      "value": "13+"
+    },
+    {
+      "label": "Portfolio projects",
+      "value": "13"
+    },
+    {
+      "label": "GitHub repos",
+      "value": 46
+    },
+    {
+      "label": "Connections",
+      "value": "500+"
+    }
+  ],
+  "softSkills": [
+    "Time management",
+    "Quick learner",
+    "Teamwork",
+    "Problem Solving",
+    "Listening Skills"
+  ],
+  "techStack": {
+    "frontend": [
+      "JavaScript",
+      "React",
+      "React-Native",
+      "Expo",
+      "Redux",
+      "NextJS",
+      "HTML",
+      "CSS",
+      "SCSS",
+      "TailwindCSS"
+    ],
+    "backend": [
+      "Django",
+      "Node.js",
+      "Mongo",
+      "MySql",
+      "Ruby on Rails"
+    ],
+    "design": [
+      "Figma",
+      "Adobe XD"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Heroku",
+      "AWS",
+      "Vercel",
+      "Chrome Dev Tools",
+      "Jest",
+      "React Testing Library",
+      "Jira",
+      "GitHub Kanban Board",
+      "Trello"
+    ]
+  },
+  "languages": [
+    {
+      "name": "Arabic",
+      "level": "Native proficiency"
+    },
+    {
+      "name": "English",
+      "level": "Professional proficiency"
+    }
+  ],
+  "education": [
+    {
+      "school": "University of Science and Technology",
+      "degree": "Three Years Diploma",
+      "field": "Computer Networks Systems Technology",
+      "start": "2015",
+      "end": "2018",
+      "grade": "Excellent · CGPA 3.93"
+    }
+  ],
+  "skills": [
+    {
+      "name": "JavaScript",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "Java",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "Python",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "C#",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "C",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "C++",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "Visual Basic",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "PHP",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "HTML5",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "CSS3",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "XML",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "AngularJS",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Ionic Framework",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": ".NET Framework",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Socket.io",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Apache Cordova",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "Mobile Application Development",
+      "category": "Mobile",
+      "endorsements": 1
+    },
+    {
+      "name": "Android Development",
+      "category": "Mobile",
+      "endorsements": 2
+    },
+    {
+      "name": "Cross-platform Development",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "Linux Server",
+      "category": "Backend & DevOps",
+      "endorsements": 3
+    },
+    {
+      "name": "Linux System Administration",
+      "category": "Backend & DevOps",
+      "endorsements": 0
+    },
+    {
+      "name": "Server Administration",
+      "category": "Backend & DevOps",
+      "endorsements": 0
+    },
+    {
+      "name": "Windows Server",
+      "category": "Backend & DevOps",
+      "endorsements": 0
+    },
+    {
+      "name": "Secure Sockets Layer (SSL)",
+      "category": "Backend & DevOps",
+      "endorsements": 0
+    },
+    {
+      "name": "MySQL",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": "Redis",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": "Database Administration",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": "Software Development",
+      "category": "Professional",
+      "endorsements": 2
+    },
+    {
+      "name": "Web Development",
+      "category": "Professional",
+      "endorsements": 0
+    },
+    {
+      "name": "Project Management",
+      "category": "Professional",
+      "endorsements": 1
+    },
+    {
+      "name": "Team Leadership",
+      "category": "Professional",
+      "endorsements": 0
+    },
+    {
+      "name": "Angular",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "ASP.NET",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "CodeIgniter",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Django",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Docker",
+      "category": "Backend & DevOps",
+      "endorsements": 0
+    },
+    {
+      "name": "Drupal",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Express.js",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Firebase",
+      "category": "Backend & DevOps",
+      "endorsements": 0
+    },
+    {
+      "name": "Git",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "Ionic",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "iOS",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "jQuery",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Laravel",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "MariaDB",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": ".NET",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "MVC",
+      "category": "Professional",
+      "endorsements": 0
+    },
+    {
+      "name": "SQLite",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": "Android",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "Systems Analysis",
+      "category": "Professional",
+      "endorsements": 0
+    },
+    {
+      "name": "Software Architecture",
+      "category": "Professional",
+      "endorsements": 0
+    }
+  ],
+  "experience": [
+    {
+      "title": "Lead Developer",
+      "company": "WhiteBox HR",
+      "type": "Full-time",
+      "start": "Sep 2025",
+      "end": "Present",
+      "duration": "10 mos",
+      "location": "Remote",
+      "current": true,
+      "bullets": [],
+      "tech": []
+    },
+    {
+      "title": "Sr. Full-Stack Developer",
+      "company": "WhiteBox HR",
+      "type": "Full-time",
+      "start": "Nov 2022",
+      "end": "Sep 2025",
+      "duration": "2 yrs 11 mos",
+      "location": "Abu Dhabi Emirate, United Arab Emirates",
+      "current": false,
+      "bullets": [],
+      "tech": []
+    },
+    {
+      "title": "Sr. Full-Stack Developer",
+      "company": "Enab",
+      "type": "Full-time",
+      "start": "Oct 2021",
+      "end": "Nov 2022",
+      "duration": "1 yr 2 mos",
+      "location": "Riyadh, Saudi Arabia",
+      "current": false,
+      "bullets": [
+        "I was responsible for the Next.Js Front End of the project",
+        "I translated PHP Laravel Functionalities into Next.Js",
+        "I then translated the new design from Figma to React Components",
+        "I built and maintained a docker container for easy deployment to GCP",
+        "I built and maintained Bitbucket pipelines to automate the deployment to the development server and the production server",
+        "In the third phase I was responsible for the Magento 2 site",
+        "I built plugins and modified designs as needed with PHP Symfony",
+        "I built and maintained GitHub Actions to automate the deployment to the development server and the production server",
+        "I was responsible for the servers and AWS services",
+        "I built a docker network to emulate the real work environment for testing (Apache Web server, Mysql DB Server, Elastic Search Server ) with an automation bash script to allow other developers to expand instances as needed.",
+        "I started the development servers using AWS Lightsail instances and databases",
+        "I later pivoted to AWS EC2 and RDS for more control and upgradability",
+        "I also changed our DNSs from GCP DNS to AWS Route 53 since we were shutting down the GCP account.",
+        "I configured the API for Magento 2 to handle the mobile application requests",
+        "I also contributed to the backend in the second phase which was Nest.js",
+        "I contributed to the Mobile application in the second and third phases",
+        "I also mentored a junior developer along this journey and assigned him tasks using ClickUp and Jira Platforms",
+        "I was also responsible for troubleshooting, and bug fixing.",
+        "Identified bottlenecks and improved software efficiency."
+      ],
+      "tech": [
+        "ReactJS",
+        "NextJS",
+        "Magento 2 (PHP)",
+        "PHP Symfony",
+        "PHP Laravel",
+        "React-Native",
+        "Nest.js",
+        "AWS",
+        "GCP",
+        "AWS Lightsail",
+        "AWS EC2",
+        "AWS RDS",
+        "AWS Route 53",
+        "Docker",
+        "Apache",
+        "MySQL",
+        "Elastic Search",
+        "GitHub",
+        "Bitbucket",
+        "Figma",
+        "ClickUp",
+        "Jira"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "New Generation Engineering",
+      "type": "Part-time",
+      "start": "May 2018",
+      "end": "Sep 2021",
+      "duration": "3 yrs 5 mos",
+      "location": "Khartoum, Khartoum State, Sudan",
+      "current": false,
+      "bullets": [
+        "We built awesome applications, systems, and websites at New generation engineering, one of them was Maweed Qatar website:",
+        "Developed a web app for booking clinic reservations in Qatar, using Java and Spring.",
+        "Created and implemented the source code of the new product.",
+        "Tested source code and debugged code.",
+        "Evaluated the existing features and performed updates and modifications.",
+        "Developed server environment using GlassFish Server and PostgreSQL.",
+        "Developed technical handbooks to represent the design and code of the product.",
+        "Developed a software solution that met the needs of the customer.",
+        "Created and implemented the necessary code to implement the new product's features.",
+        "Ran tests and updates.",
+        "The web app was deployed in production with all the features requested.",
+        "Another project was the trip tracking system, a mobile application that records the trip made by company cars and sends it to the system when there is a connection.",
+        "Developed a mobile app for tracking GPS changes, using Android Studio, Java, and Kotlin.",
+        "Developed a web portal to track cars and view reports",
+        "Developed server environment using Node.Js Server and MongoDB"
+      ],
+      "tech": [
+        "Java",
+        "Spring",
+        "Google Maps",
+        "GlassFish Server",
+        "PostgreSQL",
+        "Android Studio",
+        "Kotlin",
+        "GPS",
+        "Node.Js",
+        "MongoDB",
+        "PHP Codeigniter"
+      ]
+    },
+    {
+      "title": "React-Native Developer",
+      "company": "Infty",
+      "type": "Full-time",
+      "start": "Jun 2020",
+      "end": "Mar 2021",
+      "duration": "10 mos",
+      "location": "Riyadh, Saudi Arabia",
+      "current": false,
+      "bullets": [
+        "Worked as a Mobile Application React Native Developer.",
+        "Supported the entire application lifecycle.",
+        "Contributed to designing, testing, releasing, and application support.",
+        "Wrote a clean and sustainable code that can be used in the future.",
+        "Gathered specific requirements and suggested solutions.",
+        "Involved in troubleshooting and debugging to optimize performance.",
+        "Talked with users to understand their needs and experiences.",
+        "Designed interfaces to improve user experience.",
+        "Worked with the Product development team.",
+        "Identified and planned for new features.",
+        "Successfully launched the product."
+      ],
+      "tech": [
+        "JavaScript",
+        "Typescript",
+        "Redux",
+        "React Native",
+        "Adobe XD",
+        "React"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Hsoub | Freelance",
+      "type": "Freelance",
+      "start": "Jan 2013",
+      "end": "Jan 2021",
+      "duration": "8 yrs 1 mo",
+      "location": "Remote",
+      "current": false,
+      "bullets": [
+        "Accounts:",
+        "https://khamsat.com/user/abdalrahman-valabji",
+        "https://khamsat.com/user/valabji",
+        "https://mostaql.com/u/valabji",
+        "https://baaeed.com/u/valabji",
+        "Gallery:",
+        "https://mostaql.com/u/valabji/portfolio"
+      ],
+      "tech": []
+    },
+    {
+      "title": "Software Programming Instructor",
+      "company": "Aptech",
+      "type": "Part-time",
+      "start": "Dec 2018",
+      "end": "Nov 2020",
+      "duration": "2 yrs",
+      "location": "khartoum,Sudan",
+      "current": false,
+      "bullets": [
+        "I taught the following courses:",
+        "Computer Introduction",
+        "MS Office",
+        "Advanced Excel",
+        "C# .Net",
+        "ASP .Net"
+      ],
+      "tech": [
+        "C# .Net",
+        "ASP .Net",
+        "MS Office",
+        "Advanced Excel"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Sawa Taxi",
+      "type": "Part-time",
+      "start": "May 2018",
+      "end": "May 2020",
+      "duration": "2 yrs 1 mo",
+      "location": "Khartoum, Khartoum State, Sudan",
+      "current": false,
+      "bullets": [
+        "Built a native mobile application for android using java and kotlin with a backend built with Codeigniter PHP framework but later we pivoted to React Native / Typescript with React / Node.js BackEnd.",
+        "Built a website for the company.",
+        "Contributed to designing, testing, releasing, and application support.",
+        "Wrote a clean and sustainable code that can be used in the future.",
+        "Discussed the requirements and the proposed solution with colleagues.",
+        "Developed application APIs to support mobile functionality.",
+        "Configured and maintained servers and GCP services"
+      ],
+      "tech": [
+        "Android Studio",
+        "Java",
+        "Kotlin",
+        "Firebase",
+        "Google Maps",
+        "Google Distance Matrix",
+        "Local SMS API",
+        "CodeIgniter (PHP) REST API",
+        "React Native",
+        "Typescript",
+        "React",
+        "Node.js",
+        "GCP"
+      ]
+    },
+    {
+      "title": "CTO",
+      "company": "Sawa Taxi",
+      "type": "Full-time",
+      "start": "May 2018",
+      "end": "May 2019",
+      "duration": "1 yr 1 mo",
+      "location": "Sudan , Khartoum",
+      "current": false,
+      "bullets": [
+        "In addition to the software development responsibilities I was also responsible for:",
+        "Network Administration.",
+        "Database Management.",
+        "Technical support.",
+        "Lead daily and weekly team meetings.",
+        "mentor company staff to use the admin panel.",
+        "communicate with other departments about their technical needs.",
+        "discuss ideas with management.",
+        "Interview new team members.",
+        "Mentored junior developers/designers."
+      ],
+      "tech": []
+    },
+    {
+      "title": "Computer Science Instructor",
+      "company": "KYM Technology",
+      "type": "Part-time",
+      "start": "Apr 2019",
+      "end": "Mar 2020",
+      "duration": "1 yr",
+      "location": "Khartoum ,Sudan",
+      "current": false,
+      "bullets": [
+        "I taught the following courses:",
+        "Web Design and Development Course",
+        "WordPress Course",
+        "Linux Essentials Course",
+        "Linux Services Course",
+        "Bash Scripting Course"
+      ],
+      "tech": [
+        "WordPress",
+        "Linux",
+        "Bash"
+      ]
+    },
+    {
+      "title": "Head of Academic Department",
+      "company": "KYM Technology",
+      "type": "Full-time",
+      "start": "Aug 2019",
+      "end": "Jan 2020",
+      "duration": "6 mos",
+      "location": "Sudan",
+      "current": false,
+      "bullets": [],
+      "tech": [
+        "Microsoft SQL Server"
+      ]
+    },
+    {
+      "title": "Teaching Assistant",
+      "company": "University of Science and Technology",
+      "type": "Internship",
+      "start": "Oct 2018",
+      "end": "Dec 2018",
+      "duration": "3 mos",
+      "location": "Omdurman , Sudan",
+      "current": false,
+      "bullets": [
+        "Classes that I taught:",
+        "CCNA",
+        "Internet Applications",
+        "Linux Fundamentals",
+        "Web Essentials"
+      ],
+      "tech": [
+        "CCNA",
+        "Linux"
+      ]
+    },
+    {
+      "title": "Training Manager",
+      "company": "Altayar Defensive-sec.co.ltd",
+      "type": "Internship",
+      "start": "Jun 2017",
+      "end": "Nov 2017",
+      "duration": "6 mos",
+      "location": "Khartoum , Sudan",
+      "current": false,
+      "bullets": [
+        "I was sent here by the college for a training period but Mr. Mohammed El Tayar ( CEO & Founder ) assigned me as Training manager by my third day to be responsible for my colleagues.",
+        "Managing trainees.",
+        "VPN Labs Management.",
+        "Lecturing trainees about information security ( Penetration Testing with Kali Linux \"PWK\" - OSCP Penetration Testing Certification preparation).",
+        "Meanwhile, I played the role of Junior penetration tester."
+      ],
+      "tech": [
+        "Kali Linux",
+        "VPN",
+        "OSCP"
+      ]
+    },
+    {
+      "title": "IT Manager",
+      "company": "Basiri Plaza Hotel",
+      "type": "Full-time",
+      "start": "2013",
+      "end": "2015",
+      "duration": "2 yrs",
+      "location": "Portsudan , Sudan",
+      "current": false,
+      "bullets": [
+        "The experience certificate reflects only my latest role",
+        "I started my career at Basiri Plaza Hotel as a waiter then I proved my technical knowledge in a few months to be promoted to a technician",
+        "This job took place before collage",
+        "The experience certificate seems to have a bad translation",
+        "ensure a stable operation of the networks.",
+        "Install new network nodes.",
+        "Install and configure CCTV Systems.",
+        "Managed Active directory.",
+        "Managed Firewall and ISA Server.",
+        "Managed a Squid Proxy server.",
+        "Manager MS SQL Server Database.",
+        "Created and maintained Hotel Website.",
+        "Respond to different departments' issues.",
+        "Mentored new employees to use the system.",
+        "Mentored IT trainees and new employees."
+      ],
+      "tech": [
+        "Active Directory",
+        "ISA Server",
+        "Squid Proxy",
+        "MS SQL Server",
+        "CCTV"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Get Started with Python",
+      "issuer": "Google",
+      "issued": "Jul 2023",
+      "credentialId": "V8AYJ4JHEN5Y",
+      "url": "https://www.coursera.org/account/accomplishments/verify/V8AYJ4JHEN5Y",
+      "image": ""
+    },
+    {
+      "title": "Foundations of Data Science",
+      "issuer": "Google",
+      "issued": "Jul 2023",
+      "credentialId": "AFWER2MJN9QD",
+      "url": "https://www.coursera.org/account/accomplishments/verify/AFWER2MJN9QD",
+      "image": ""
+    },
+    {
+      "title": "Teaching Arabic language for non-native speakers",
+      "issuer": "Red Sea University",
+      "issued": "",
+      "credentialId": "",
+      "url": "",
+      "image": ""
+    },
+    {
+      "title": "Programming Instructor Experience Certificate",
+      "issuer": "Aptech Computer Education",
+      "issued": "Oct 2022",
+      "credentialId": "",
+      "url": "",
+      "image": "/assets/credentials/aptech-cert.jpeg"
+    },
+    {
+      "title": "Computer Laboratories Trainee Experience Certificate",
+      "issuer": "University of Science and Technology",
+      "issued": "Oct 2019",
+      "credentialId": "",
+      "url": "",
+      "image": "/assets/credentials/ust-cert.jpeg"
+    },
+    {
+      "title": "IT Department Director Experience Certificate",
+      "issuer": "El Basiri Plaza",
+      "issued": "Oct 2015",
+      "credentialId": "",
+      "url": "",
+      "image": "/assets/credentials/basiri-cert.jpeg"
+    },
+    {
+      "title": "Applications Developer Experience Certificate",
+      "issuer": "TIK Information Technology",
+      "issued": "Mar 2021",
+      "credentialId": "",
+      "url": "",
+      "image": "/assets/credentials/infty-cert.jpeg"
+    },
+    {
+      "title": "Three Years Diploma — Computer Networks Systems Technology",
+      "issuer": "University of Science & Technology, Sudan",
+      "issued": "October 2018",
+      "credentialId": "340261",
+      "url": "",
+      "image": "/assets/credentials/ust-diploma.jpeg"
+    },
+    {
+      "title": "Academic Transcript — CGPA 3.93 (Excellent)",
+      "issuer": "University of Science & Technology, Sudan",
+      "issued": "2018",
+      "credentialId": "",
+      "url": "",
+      "image": "/assets/credentials/ust-transcript.jpeg"
+    }
+  ],
+  "recommendations": [
+    {
+      "name": "Mustafa Yousif",
+      "title": "Operating System Analyst @ DUBAI COURTS",
+      "relationship": "Mustafa worked with Abdalrahman on the same team",
+      "date": "February 24, 2024",
+      "text": "We've worked together on several projects and Abdalrahman is one of the best people to have as a partner. I highly recommend him, as he is very talented. His ability to solve problems and programming helped us during hard times and we were able to innovate."
+    },
+    {
+      "name": "Muhammad Uzair Ahmed Khan",
+      "title": "Senior Software Engineer",
+      "relationship": "Muhammad Uzair managed Abdalrahman directly",
+      "date": "October 16, 2022",
+      "text": "Abdalrahman is an experienced and very skilled Full Stack developer. He has been a key player in our team and showed quality skills in PHP (Laravel), JavaScript (React, React Native) and DevOps as well. His skills, dedication and ownership of work are quite impressive and he played a vital role throughout the progress of various projects we have worked on. I definitely recommend him as a key team player"
+    },
+    {
+      "name": "Majid Abdelaal",
+      "title": "Empowering a New Era of Engineering Excellence | Co-founder & CTO at NGE",
+      "relationship": "Majid managed Abdalrahman directly",
+      "date": "April 29, 2021",
+      "text": "I have worked with Valabji, and wish we never stop working together. He is smart, active and trustworthy. The first time we met was when interviewed him with the need for someone to fix our app in very short notice. He adopted the problem and acted as team member with no hesitation, from the first week we were working over 18h and finally he managed to fix all the problems gradually. Valabji is an independent, self-motivated, enthusiastic youngman with pure honest sprit whom you can surely relay on."
+    },
+    {
+      "name": "Abdeen Mohamed",
+      "title": "Full Stack Engineer | Software Developer | Entrepreneur",
+      "relationship": "Abdeen worked with Abdalrahman on the same team",
+      "date": "December 10, 2018",
+      "text": "Abdelrahman is an extremely talented developer who is hungry to learn more and loves a challenge. I have worked personally with him and seen him deliver outstanding results on both server side and client side development. I wish him nothing but the best on his bright future ventures."
+    },
+    {
+      "name": "Haitham Dahab",
+      "title": "Info. Analytics Manager at DAL Food",
+      "relationship": "Haitham managed Abdalrahman directly",
+      "date": "December 9, 2018",
+      "text": "Abdalrahman is a talented employee, has a self motivation, fast learner. good in desktop support, network administration and troubleshooting. Active team member."
+    }
+  ],
+  "github": {
+    "username": "valabji",
+    "profileUrl": "https://github.com/valabji",
+    "publicRepos": 46,
+    "followers": 17,
+    "repos": [
+      {
+        "name": "val-scanner",
+        "description": "Recursive file scanner with thumbnails, metadata, full-text search, and similar-folder detection, CLI, Qt GUI, and Web UI",
+        "language": "Python",
+        "stars": 3,
+        "url": "https://github.com/valabji/val-scanner",
+        "homepage": "https://pypi.org/project/valscanner",
+        "topics": [
+          "cli",
+          "fastapi",
+          "file-scanner",
+          "full-text-search",
+          "metadata",
+          "pyside6",
+          "python",
+          "sqlite"
+        ]
+      },
+      {
+        "name": "ReKit",
+        "description": "A Standard React Native Expo Application for a Quick Start",
+        "language": "JavaScript",
+        "stars": 1,
+        "url": "https://github.com/valabji/ReKit",
+        "homepage": "",
+        "topics": []
+      },
+      {
+        "name": "Zikr",
+        "description": "Muslim Zikr App, made on top of my ReKit Project",
+        "language": "JavaScript",
+        "stars": 0,
+        "url": "https://github.com/valabji/Zikr",
+        "homepage": "https://zikr.valabji.com",
+        "topics": []
+      },
+      {
+        "name": "forex",
+        "description": "Fully functional Mobile Application Built with React-Native for iOS and Android",
+        "language": "JavaScript",
+        "stars": 0,
+        "url": "https://github.com/valabji/forex",
+        "homepage": "",
+        "topics": []
+      },
+      {
+        "name": "simple_php_api",
+        "description": "PHP Api to connect your android , ios or .net project to mysql DB / Maria DB",
+        "language": "PHP",
+        "stars": 0,
+        "url": "https://github.com/valabji/simple_php_api",
+        "homepage": null,
+        "topics": []
+      },
+      {
+        "name": "Brandshop",
+        "description": "Abandoned marketplace project made on top of my ReKit Project",
+        "language": "JavaScript",
+        "stars": 0,
+        "url": "https://github.com/valabji/Brandshop",
+        "homepage": "",
+        "topics": []
+      },
+      {
+        "name": "Money-Flow",
+        "description": "Money Flow",
+        "language": "TypeScript",
+        "stars": 0,
+        "url": "https://github.com/valabji/Money-Flow",
+        "homepage": null,
+        "topics": []
+      },
+      {
+        "name": "zawaj",
+        "description": "Incomplete Zawaj Website May be agood milestone for a lot of developers",
+        "language": "JavaScript",
+        "stars": 0,
+        "url": "https://github.com/valabji/zawaj",
+        "homepage": "",
+        "topics": []
+      },
+      {
+        "name": "my-web-site",
+        "description": "my personal website",
+        "language": "CSS",
+        "stars": 0,
+        "url": "https://github.com/valabji/my-web-site",
+        "homepage": "https://valabji.com",
+        "topics": []
+      }
+    ]
+  },
+  "playStore": {
+    "apps": []
+  }
+}
