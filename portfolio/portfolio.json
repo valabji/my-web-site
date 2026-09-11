@@ -1,0 +1,1151 @@
+{
+  "owner": "Abdalrahman V.",
+  "project_count": 13,
+  "projects": [
+    {
+      "id": "676403",
+      "slug": "zikr-app",
+      "url": "https://mostaql.com/portfolio/676403-تطبيق-ذكر",
+      "title": "Zikr — Islamic Remembrance App",
+      "description": "Zikr is a mobile app that offers a curated collection of Islamic remembrances (adhkar) and supplications for daily use. Built with React Native, it features smooth animated transitions and offline access to its content.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-14 09:08:49",
+      "date_completed": null,
+      "images": [
+        {
+          "file": "portfolio/zikr-app/cover.png",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/609e3e2141df4/Muslim-icon.png",
+          "bytes": 4407,
+          "role": "cover",
+          "md5": "66240c45cb36fb1c8aa2ba4800e43f22"
+        },
+        {
+          "file": "portfolio/zikr-app/image-01.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56f38767/301.jpg",
+          "bytes": 272821,
+          "role": "gallery",
+          "md5": "5f3b9727f0835f69a9486c73ec4c858f"
+        },
+        {
+          "file": "portfolio/zikr-app/image-02.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56f11910/302.jpg",
+          "bytes": 272836,
+          "role": "gallery",
+          "md5": "fdfb6ae0afe10fa6ad77eeb686870e57"
+        },
+        {
+          "file": "portfolio/zikr-app/image-03.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56ed5ad6/304.jpg",
+          "bytes": 137058,
+          "role": "gallery",
+          "md5": "96d5e6dab238e624b40289dcbb08ac3e"
+        },
+        {
+          "file": "portfolio/zikr-app/image-04.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56ea46d6/303.jpg",
+          "bytes": 239377,
+          "role": "gallery",
+          "md5": "326ee55daa7a044909b282dcac909c64"
+        },
+        {
+          "file": "portfolio/zikr-app/image-05.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56e716bb/305.jpg",
+          "bytes": 206830,
+          "role": "gallery",
+          "md5": "0602d3d8844df07bbf2331620441c6d8"
+        },
+        {
+          "file": "portfolio/zikr-app/image-06.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56e46fad/306.jpg",
+          "bytes": 208091,
+          "role": "gallery",
+          "md5": "f6fb4234be500f0769db7daa26d0ac45"
+        },
+        {
+          "file": "portfolio/zikr-app/image-07.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56e13c7b/308.jpg",
+          "bytes": 230583,
+          "role": "gallery",
+          "md5": "1d4f7dced00cfceceb26d8c9d06f20f1"
+        },
+        {
+          "file": "portfolio/zikr-app/image-08.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56dda74a/307.jpg",
+          "bytes": 298556,
+          "role": "gallery",
+          "md5": "0414082aaf2392db60f2db34cf1b0203"
+        }
+      ],
+      "image_count": 9,
+      "cover": "portfolio/zikr-app/cover.png",
+      "title_ar": "تطبيق ذِكْر",
+      "tagline": "Daily Islamic remembrances on mobile",
+      "description_ar": "تطبيق ذِكْر هو تطبيق للهواتف المحمولة يقدّم مجموعة منسّقة من الأذكار والأدعية الإسلامية للاستخدام اليومي. مبني باستخدام React Native، ويتميّز بانتقالات حركية سلسة وإتاحة المحتوى دون اتصال بالإنترنت.",
+      "work_type": "Individual",
+      "data_source": "JSON",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Reanimated",
+        "React Native Elements",
+        "Redux",
+        "AsyncStorage",
+        "React Navigation"
+      ],
+      "links": [
+        {
+          "label": "Live",
+          "url": "https://zikr.valabji.com"
+        }
+      ]
+    },
+    {
+      "id": "676397",
+      "slug": "construction-portal-app",
+      "url": "https://mostaql.com/portfolio/676397-تطبيق-بوابة-البناء",
+      "title": "Construction Portal App",
+      "description": "A cross-platform mobile app serving as a construction industry portal, delivering its content and listings from a WordPress backend. Built with React Native, it features smooth animated interactions, centralized state management, and persistent local storage for a responsive native experience.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-14 08:53:46",
+      "date_completed": "2021-04-14 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/construction-portal-app/cover.jpeg",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/609e3a9a74164/logobenaa.jpeg",
+          "bytes": 23036,
+          "role": "cover",
+          "md5": "776f8dfdd1ab065e117fcf5523b39914"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-01.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d573c5b0f/1.jpg",
+          "bytes": 316860,
+          "role": "gallery",
+          "md5": "2325bdd729444ca9ba831e5b331b6aa2"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-02.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d57396594/2.jpg",
+          "bytes": 312027,
+          "role": "gallery",
+          "md5": "2b6f2408719766dbdee6f9d1913833fb"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-03.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d57359c35/3.jpg",
+          "bytes": 164659,
+          "role": "gallery",
+          "md5": "c71775aab6195ec85dc7596737c7680b"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-04.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d57320255/4.jpg",
+          "bytes": 298950,
+          "role": "gallery",
+          "md5": "39f08b86acd395eaa7ec9e3710e6ba52"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-05.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d572caeef/5.jpg",
+          "bytes": 304676,
+          "role": "gallery",
+          "md5": "7b973e444c04848ddbdb78affc801008"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-06.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d572993d4/6.jpg",
+          "bytes": 232838,
+          "role": "gallery",
+          "md5": "14dcf7e9b7310f2fc2f250bec670eae5"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-07.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5726744d/7.jpg",
+          "bytes": 132777,
+          "role": "gallery",
+          "md5": "df26b291542ba0fecfa397c40928efc6"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-08.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5723247c/8.jpg",
+          "bytes": 121018,
+          "role": "gallery",
+          "md5": "5b33a2a9084e35d9eb352cbe576a1bbe"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-09.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d571f2f06/9.jpg",
+          "bytes": 191381,
+          "role": "gallery",
+          "md5": "3219ec73ed727ed6c68621285395dd94"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-10.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d571c9fb0/10.jpg",
+          "bytes": 95644,
+          "role": "gallery",
+          "md5": "81159b1606622086584c87b87091a499"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-11.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5718aca6/11.jpg",
+          "bytes": 100814,
+          "role": "gallery",
+          "md5": "848635079c5c38c42644d75b80221825"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-12.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5714ffb8/12.jpg",
+          "bytes": 107952,
+          "role": "gallery",
+          "md5": "42177f736ccb5ea4c0edd29873aec2e7"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-13.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d57128638/13.jpg",
+          "bytes": 106159,
+          "role": "gallery",
+          "md5": "6317512034026f449ae0bbb92a03bdac"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-14.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d570ec87a/14.jpg",
+          "bytes": 96247,
+          "role": "gallery",
+          "md5": "875d2f8c2d6d15e0a2529a6c3f5a8b63"
+        },
+        {
+          "file": "portfolio/construction-portal-app/image-15.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d570bcbb1/15.jpg",
+          "bytes": 81244,
+          "role": "gallery",
+          "md5": "72c0082eb185b4edce2252d7d32daf3d"
+        }
+      ],
+      "image_count": 16,
+      "cover": "portfolio/construction-portal-app/cover.jpeg",
+      "title_ar": "تطبيق بوابة البناء",
+      "tagline": "Mobile portal for the construction industry",
+      "description_ar": "تطبيق جوال متعدد المنصات يعمل كبوابة لقطاع البناء، حيث يجلب محتواه وقوائمه من خلفية ووردبريس. بُني باستخدام React Native ويتميز بتفاعلات حركية سلسة وإدارة مركزية للحالة وتخزين محلي دائم لتجربة أصلية سريعة الاستجابة.",
+      "work_type": "Individual",
+      "duration": "1 month",
+      "data_source": "WordPress",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Reanimated",
+        "React Native Elements",
+        "Redux",
+        "AsyncStorage",
+        "React Navigation",
+        "Argon"
+      ],
+      "links": []
+    },
+    {
+      "id": "676394",
+      "slug": "gold-currency-prices-app",
+      "url": "https://mostaql.com/portfolio/676394-تطبيق-اسعار-الذهب-و-العملات",
+      "title": "Gold & Currency Prices App",
+      "description": "A React Native mobile app that displays live gold and currency exchange rates. It pulls real-time pricing data from a REST API and presents it through a smooth, animated interface with persistent local storage.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-14 08:44:30",
+      "date_completed": "2020-05-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/gold-currency-prices-app/cover.png",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/609e386e1cc0d/111-1111058free-currency-icon-png-vector-money-icon-vector1.png",
+          "bytes": 5947,
+          "role": "cover",
+          "md5": "b23f9f07418da7d6d8b1a76858ba3b81"
+        },
+        {
+          "file": "portfolio/gold-currency-prices-app/image-01.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5750977d/2.PNG",
+          "bytes": 16543,
+          "role": "gallery",
+          "md5": "fe190239cabb5a24a863f9cb13b4ef43"
+        },
+        {
+          "file": "portfolio/gold-currency-prices-app/image-02.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d574de573/1.PNG",
+          "bytes": 16743,
+          "role": "gallery",
+          "md5": "1c13e1607c4c0d5b158a81c043a36063"
+        },
+        {
+          "file": "portfolio/gold-currency-prices-app/image-03.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d574bc635/3.PNG",
+          "bytes": 30395,
+          "role": "gallery",
+          "md5": "87ed31ca71d478e7329357ffddfa26bc"
+        },
+        {
+          "file": "portfolio/gold-currency-prices-app/image-04.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d574864f1/4.PNG",
+          "bytes": 36015,
+          "role": "gallery",
+          "md5": "a320a2e6231ffbc8724c7012cb7118ec"
+        },
+        {
+          "file": "portfolio/gold-currency-prices-app/image-05.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d57461f0b/5.PNG",
+          "bytes": 15487,
+          "role": "gallery",
+          "md5": "0da7c9f6febe7d777113e22c58203cef"
+        },
+        {
+          "file": "portfolio/gold-currency-prices-app/image-06.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5743bdca/7.PNG",
+          "bytes": 21305,
+          "role": "gallery",
+          "md5": "9e5f53ac152b3edae638b10614c4c71c"
+        },
+        {
+          "file": "portfolio/gold-currency-prices-app/image-07.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d573f41cd/6.PNG",
+          "bytes": 19235,
+          "role": "gallery",
+          "md5": "31ca72068699b094e11ff974caa6cb06"
+        }
+      ],
+      "image_count": 8,
+      "cover": "portfolio/gold-currency-prices-app/cover.png",
+      "title_ar": "تطبيق اسعار الذهب و العملات",
+      "tagline": "Live gold and currency rates",
+      "description_ar": "تطبيق جوال مبني بتقنية React Native يعرض أسعار الذهب والعملات بشكل لحظي. يجلب التطبيق بيانات التسعير الحية من واجهة REST API ويعرضها عبر واجهة سلسة ومتحركة مع تخزين محلي دائم للبيانات.",
+      "work_type": "Individual",
+      "duration": "7 days",
+      "data_source": "REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Reanimated",
+        "React Native Elements",
+        "Redux",
+        "AsyncStorage",
+        "React Navigation"
+      ],
+      "links": []
+    },
+    {
+      "id": "675289",
+      "slug": "rtoosh-provider-app",
+      "url": "https://mostaql.com/portfolio/675289-تطبيق-رتوش-لمقدمي-الخدمة",
+      "title": "Rtoosh Service Provider App",
+      "description": "Rtoosh is a React Native mobile app for service providers, enabling them to manage on-demand bookings and reach customers through location-aware features. It integrates live geolocation and mapping, push notifications, and in-app payments to streamline the provider's workflow.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-11 16:17:33",
+      "date_completed": "2020-11-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/rtoosh-provider-app/cover.png",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/609ab3933f613/unnamed-4.png",
+          "bytes": 8966,
+          "role": "cover",
+          "md5": "bf69048111d290873f9b316a77fb75ec"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-01.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90ba9470/Screenshot20210511174748com.rtoosh.provider.jpg",
+          "bytes": 77018,
+          "role": "gallery",
+          "md5": "8d697d1e62db46433bf6ac8d80dd89cb"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-02.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90b7ace1/Screenshot20210511174739com.rtoosh.provider.jpg",
+          "bytes": 268318,
+          "role": "gallery",
+          "md5": "4ea4740d0b57d5b49e677c58ca7d1110"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-03.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90b48c6f/Screenshot20210511174801com.rtoosh.provider.jpg",
+          "bytes": 112642,
+          "role": "gallery",
+          "md5": "b6b478483bed86cda800004ccd25a701"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-04.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90b196c3/Screenshot20210511174902com.rtoosh.provider.jpg",
+          "bytes": 81221,
+          "role": "gallery",
+          "md5": "83803c0b436ab884afef34d7d129776e"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-05.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90adc24f/Screenshot20210511174911com.rtoosh.provider.jpg",
+          "bytes": 134252,
+          "role": "gallery",
+          "md5": "ccd14c9dd6e851b5f62491eafdfe30f5"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-06.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90a9d6d0/Screenshot20210511174917com.rtoosh.provider.jpg",
+          "bytes": 80719,
+          "role": "gallery",
+          "md5": "b9607d1e85220133a7ef6875fb5b1b3d"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-07.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90a74783/Screenshot20210511174919com.rtoosh.provider.jpg",
+          "bytes": 115692,
+          "role": "gallery",
+          "md5": "724daa078b6036cdc15964a1ba28eb5c"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-08.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90a48303/Screenshot20210511174929com.rtoosh.provider.jpg",
+          "bytes": 76209,
+          "role": "gallery",
+          "md5": "6f044955a7b5fc03566cd856e7dae58f"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-09.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90a1aa86/Screenshot20210511174931com.rtoosh.provider.jpg",
+          "bytes": 113320,
+          "role": "gallery",
+          "md5": "a3429dff45db83943517370c487c6cc4"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-10.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d909e748a/Screenshot20210511174942com.rtoosh.provider.jpg",
+          "bytes": 74712,
+          "role": "gallery",
+          "md5": "14dd609efcba83102ee166ef358a289a"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-11.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d909b8aaa/Screenshot20210511174946com.rtoosh.provider.jpg",
+          "bytes": 121198,
+          "role": "gallery",
+          "md5": "e68131872feb4e9b053d0439538194b8"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-12.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90990dcc/Screenshot20210511174950com.rtoosh.provider.jpg",
+          "bytes": 58737,
+          "role": "gallery",
+          "md5": "3d9d6018e9346eb2fcdb00c4e368c2f2"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-13.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90961848/Screenshot20210511175006com.rtoosh.provider.jpg",
+          "bytes": 120016,
+          "role": "gallery",
+          "md5": "e00b981fc1ddec5fde352045a7a38874"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-14.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90936d95/Screenshot20210511175016com.rtoosh.provider.jpg",
+          "bytes": 103440,
+          "role": "gallery",
+          "md5": "3d9b95e652c1034d498666acfe705517"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-15.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90903be2/Screenshot20210511175028com.rtoosh.provider.jpg",
+          "bytes": 135480,
+          "role": "gallery",
+          "md5": "c0aa43a02245e040983a1f862332446d"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-16.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d908cae99/Screenshot20210511175111com.rtoosh.provider.jpg",
+          "bytes": 150249,
+          "role": "gallery",
+          "md5": "d9074f541b75c1cf5c34d672e6c06214"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-17.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d9089a71a/Screenshot20210511175114com.rtoosh.provider.jpg",
+          "bytes": 89048,
+          "role": "gallery",
+          "md5": "239bb611b160dc4eb3b7994fe93f95fb"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-18.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90863963/Screenshot20210511175116com.rtoosh.provider.jpg",
+          "bytes": 79096,
+          "role": "gallery",
+          "md5": "9a424834e95aafc82052de196861ba41"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-19.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d9083889b/Screenshot20210511175119com.rtoosh.provider.jpg",
+          "bytes": 99030,
+          "role": "gallery",
+          "md5": "c658387f9eec78fb69042b6ce9d23102"
+        },
+        {
+          "file": "portfolio/rtoosh-provider-app/image-20.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90800e1b/unnamed-6.png",
+          "bytes": 43227,
+          "role": "gallery",
+          "md5": "c2cb6498325ab3a64c366ff8dfc3c2da"
+        }
+      ],
+      "image_count": 21,
+      "cover": "portfolio/rtoosh-provider-app/cover.png",
+      "title_ar": "تطبيق رتوش لمقدمي الخدمة",
+      "tagline": "On-demand services for providers",
+      "description_ar": "رتوش هو تطبيق جوال مبني بتقنية React Native موجّه لمقدمي الخدمة، يتيح لهم إدارة الحجوزات عند الطلب والوصول إلى العملاء عبر ميزات تعتمد على تحديد الموقع. يدمج التطبيق خدمات تحديد المواقع والخرائط الحية والإشعارات والدفع داخل التطبيق لتسهيل سير عمل مقدّم الخدمة.",
+      "work_type": "Team · Employment",
+      "duration": "6 months",
+      "data_source": "REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Redux",
+        "React Navigation",
+        "AsyncStorage",
+        "Reanimated",
+        "React Native Elements",
+        "Geolocation",
+        "Geocoding",
+        "Google Maps",
+        "Apple Maps",
+        "OneSignal",
+        "PayTabs",
+        "Adobe XD",
+        "Supernova Studio"
+      ],
+      "links": []
+    },
+    {
+      "id": "675286",
+      "slug": "rtoosh-app",
+      "url": "https://mostaql.com/portfolio/675286-تطبيق-رتوش",
+      "title": "Rtoosh App",
+      "description": "Rtoosh is a cross-platform mobile application built with React Native, featuring location-aware services powered by Google Maps and Apple Maps with geolocation and geocoding. The app integrates PayTabs for in-app payments and OneSignal for push notifications, with state handled through Redux and smooth interactions driven by Reanimated.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-11 16:16:07",
+      "date_completed": "2020-11-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/rtoosh-app/cover.png",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/609ab3af14d8b/unnamed-3.png",
+          "bytes": 13155,
+          "role": "cover",
+          "md5": "df6cc5bdd40bf657d6294ab482dd3976"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-01.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d911b31db/Screenshot20210511174403app.rtooshbebeautiful.jpg",
+          "bytes": 81289,
+          "role": "gallery",
+          "md5": "820c690e01ad413d98d1f7036f3d007b"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-02.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d9118dbc1/Screenshot20210511174416app.rtooshbebeautiful.jpg",
+          "bytes": 160476,
+          "role": "gallery",
+          "md5": "0966eaa572c50d0357b47a662de1f208"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-03.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d9115c491/Screenshot20210511174428app.rtooshbebeautiful.jpg",
+          "bytes": 127111,
+          "role": "gallery",
+          "md5": "bd3f2458457574aaa5ea3d8e038d4525"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-04.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d9112483f/Screenshot20210511174508app.rtooshbebeautiful.jpg",
+          "bytes": 154256,
+          "role": "gallery",
+          "md5": "3154c56468b2eed4fcb5b953f73cd2d9"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-05.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d910ebb06/Screenshot20210511174523app.rtooshbebeautiful.jpg",
+          "bytes": 55779,
+          "role": "gallery",
+          "md5": "197e389a0a23b182ee497fec798fc12e"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-06.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d910b4dea/Screenshot20210511174529app.rtooshbebeautiful.jpg",
+          "bytes": 82274,
+          "role": "gallery",
+          "md5": "2264f574e78dda22555f5423ba192935"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-07.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d910845af/Screenshot20210511174531app.rtooshbebeautiful.jpg",
+          "bytes": 100292,
+          "role": "gallery",
+          "md5": "b0da35af81245e022458cddb24f6508a"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-08.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d91055375/Screenshot20210511174546app.rtooshbebeautiful.jpg",
+          "bytes": 153224,
+          "role": "gallery",
+          "md5": "22b85298da2f555364a3932b3bd833af"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-09.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d91006e14/Screenshot20210511174548app.rtooshbebeautiful.jpg",
+          "bytes": 101401,
+          "role": "gallery",
+          "md5": "3cbc9a77da0da920d2daa7d3bea6d363"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-10.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90fcb434/Screenshot20210511174551app.rtooshbebeautiful.jpg",
+          "bytes": 115081,
+          "role": "gallery",
+          "md5": "ce42221c124e5b857673e2c6457583f4"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-11.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90f9011b/Screenshot20210511174553app.rtooshbebeautiful.jpg",
+          "bytes": 110665,
+          "role": "gallery",
+          "md5": "2e73e9521b633f4ea7c134872c11e2f9"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-12.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90f4fe30/Screenshot20210511174627app.rtooshbebeautiful.jpg",
+          "bytes": 154017,
+          "role": "gallery",
+          "md5": "baea5b38258060d3bac9e781044e7a42"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-13.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90f28aca/Screenshot20210511174631app.rtooshbebeautiful.jpg",
+          "bytes": 117498,
+          "role": "gallery",
+          "md5": "15a72e2d6711ffb28935eb4890209d39"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-14.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90eea0d4/Screenshot20210511174633app.rtooshbebeautiful.jpg",
+          "bytes": 109172,
+          "role": "gallery",
+          "md5": "a1013e7629a286795c55316276829afb"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-15.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90ec4538/Screenshot20210511174646app.rtooshbebeautiful.jpg",
+          "bytes": 62699,
+          "role": "gallery",
+          "md5": "4c8981fa25ba39b30be3d432aaa4ea41"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-16.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90e81265/Screenshot20210511174707app.rtooshbebeautiful.jpg",
+          "bytes": 126372,
+          "role": "gallery",
+          "md5": "64d50f35f29d864113fe2572100446dd"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-17.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90e50e5c/unnamed-9.png",
+          "bytes": 35782,
+          "role": "gallery",
+          "md5": "fc25938919ada78b1c8256f269728a35"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-18.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90e19ad9/unnamed-2.png",
+          "bytes": 69234,
+          "role": "gallery",
+          "md5": "45752ca99573fa46534f87e49a29c607"
+        },
+        {
+          "file": "portfolio/rtoosh-app/image-19.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d90dd7fc7/unnamed-10.png",
+          "bytes": 41855,
+          "role": "gallery",
+          "md5": "49b685da532d0247debd89525d58b3fa"
+        }
+      ],
+      "image_count": 20,
+      "cover": "portfolio/rtoosh-app/cover.png",
+      "title_ar": "تطبيق رتوش",
+      "tagline": "Location-based mobile app with integrated payments",
+      "description_ar": "رتوش تطبيق جوال متعدد المنصات مبني باستخدام React Native، يقدم خدمات معتمدة على الموقع الجغرافي عبر خرائط Google وApple مع تحديد المواقع والترميز الجغرافي. يدمج التطبيق بوابة PayTabs للدفع داخل التطبيق وOneSignal للإشعارات الفورية، مع إدارة الحالة عبر Redux وتفاعلات سلسة باستخدام Reanimated.",
+      "work_type": "Team · Employment",
+      "duration": "6 months",
+      "data_source": "REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Redux",
+        "React Navigation",
+        "AsyncStorage",
+        "Reanimated",
+        "React Native Elements",
+        "Geolocation",
+        "Geocoding",
+        "Google Maps",
+        "Apple Maps",
+        "OneSignal",
+        "PayTabs",
+        "Adobe XD",
+        "Supernova Studio"
+      ],
+      "links": []
+    },
+    {
+      "id": "674617",
+      "slug": "home-store-app",
+      "url": "https://mostaql.com/portfolio/674617-تطبيق-متجر-البيت",
+      "title": "Home Store App",
+      "description": "A cross-platform mobile shopping app for a home goods store, built with Ionic and TypeScript. It pulls its product catalog and content directly from a WordPress backend, giving customers a native-feeling storefront to browse and shop on the go.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-10 09:54:53",
+      "date_completed": "2020-05-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/home-store-app/cover.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/609e3b7e8fd58/200.jpg",
+          "bytes": 111127,
+          "role": "cover",
+          "md5": "ef5ae60b0aae0db80442d2e882afc98a"
+        },
+        {
+          "file": "portfolio/home-store-app/image-01.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5708ddc9/l-4.jpg",
+          "bytes": 235485,
+          "role": "gallery",
+          "md5": "580dd4328eb3f789a6fd0e8f8bf389b2"
+        },
+        {
+          "file": "portfolio/home-store-app/image-02.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d5705f224/201.jpg",
+          "bytes": 312646,
+          "role": "gallery",
+          "md5": "36a3404b6695f5fc44e99da2d3988c21"
+        },
+        {
+          "file": "portfolio/home-store-app/image-03.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d57029cec/202.jpg",
+          "bytes": 293743,
+          "role": "gallery",
+          "md5": "c9756a0ca46767d6ff55bf4468118655"
+        },
+        {
+          "file": "portfolio/home-store-app/image-04.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56feef94/203.jpg",
+          "bytes": 145955,
+          "role": "gallery",
+          "md5": "875ee5997888f1004c6b4525fc77a863"
+        },
+        {
+          "file": "portfolio/home-store-app/image-05.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3d56fbca6f/204.jpg",
+          "bytes": 128936,
+          "role": "gallery",
+          "md5": "9b7c95da22ef5fc8635feea962297f43"
+        }
+      ],
+      "image_count": 6,
+      "cover": "portfolio/home-store-app/cover.jpg",
+      "title_ar": "تطبيق متجر البيت",
+      "tagline": "Mobile storefront for home goods",
+      "description_ar": "تطبيق تسوّق متعدد المنصات لمتجر يبيع مستلزمات المنزل، مبني باستخدام Ionic وTypeScript. يجلب التطبيق كتالوج المنتجات والمحتوى مباشرةً من واجهة WordPress، ليوفّر للعملاء واجهة متجر سلسة للتصفح والشراء عبر الهاتف.",
+      "work_type": "Individual",
+      "duration": "7 days",
+      "data_source": "WordPress REST API",
+      "based_on_prior_design": true,
+      "tech": [
+        "Ionic 5",
+        "TypeScript"
+      ],
+      "links": []
+    },
+    {
+      "id": "674616",
+      "slug": "inventory-search-app",
+      "url": "https://mostaql.com/portfolio/674616-تطبيق-للبحث-في-المخزون",
+      "title": "Inventory Search App",
+      "description": "A React Native mobile app for searching and looking up inventory items, paired with a companion admin dashboard for managing them. It retrieves stock data from a PHP REST API, giving users fast access to inventory records on the go.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-10 09:52:08",
+      "date_completed": "2020-04-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/inventory-search-app/image-01.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db2241fb0/l-9.png",
+          "bytes": 4854,
+          "role": "gallery",
+          "md5": "b8c8858309d9d8f41557c8ea3e3dfeac"
+        },
+        {
+          "file": "portfolio/inventory-search-app/image-02.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db221b261/l-8.png",
+          "bytes": 3553,
+          "role": "gallery",
+          "md5": "9ba700fd4f21781c158c73fffb25b02c"
+        },
+        {
+          "file": "portfolio/inventory-search-app/image-03.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db21f02f9/l-2.jpg",
+          "bytes": 48680,
+          "role": "gallery",
+          "md5": "30144cf5eeeb18a3a668b8796943702b"
+        },
+        {
+          "file": "portfolio/inventory-search-app/image-04.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db21c80a6/l-3.jpg",
+          "bytes": 225709,
+          "role": "gallery",
+          "md5": "473cfa56b99fa5ba6394bd7f046528f4"
+        }
+      ],
+      "image_count": 4,
+      "cover": "portfolio/inventory-search-app/image-04.jpg",
+      "title_ar": "تطبيق للبحث في المخزون",
+      "tagline": "Mobile inventory lookup with admin panel",
+      "description_ar": "تطبيق جوال مبني بتقنية React Native للبحث في المخزون والاطلاع على عناصره، مع لوحة تحكم مرافقة لإدارته. يجلب التطبيق بيانات المخزون من واجهة برمجية PHP REST API، مما يتيح الوصول السريع إلى سجلات المخزون.",
+      "work_type": "Individual",
+      "duration": "3 hours",
+      "data_source": "PHP REST API",
+      "based_on_prior_design": true,
+      "tech": [
+        "React Native",
+        "Material UI",
+        "Expo",
+        "Expo Vector Icons"
+      ],
+      "links": []
+    },
+    {
+      "id": "674614",
+      "slug": "caller-dashboard",
+      "url": "https://mostaql.com/portfolio/674614-لوحة-تحكم-تطبيق-المتصل",
+      "title": "Caller App Control Panel",
+      "description": "A web-based administration dashboard for a caller application, built to manage and monitor the app's data and operations. It delivers a responsive interface with dynamic, asynchronous data loading for a smooth management experience.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-10 09:49:42",
+      "date_completed": "2020-04-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/caller-dashboard/image-01.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db26ae62a/l-7.png",
+          "bytes": 20679,
+          "role": "gallery",
+          "md5": "5e62b75d9af276aa7a81b7cc3befe350"
+        },
+        {
+          "file": "portfolio/caller-dashboard/image-02.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db26959e3/l-6.png",
+          "bytes": 17642,
+          "role": "gallery",
+          "md5": "1e36aa2ce6100d6f53a8fd3bbca79f8b"
+        },
+        {
+          "file": "portfolio/caller-dashboard/image-03.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db2672563/l-5.png",
+          "bytes": 13982,
+          "role": "gallery",
+          "md5": "1e0247aca8244431c84da0a42c3745f3"
+        }
+      ],
+      "image_count": 3,
+      "cover": "portfolio/caller-dashboard/image-02.png",
+      "title_ar": "لوحة تحكم تطبيق المتصل",
+      "tagline": "Admin dashboard for a caller app",
+      "description_ar": "لوحة تحكم إدارية على الويب لتطبيق المتصل، صُممت لإدارة بيانات التطبيق ومتابعة عملياته. توفّر واجهة متجاوبة مع تحميل ديناميكي وغير متزامن للبيانات لتجربة إدارة سلسة.",
+      "work_type": "Individual",
+      "duration": "2 days",
+      "based_on_prior_design": true,
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "Ajax",
+        "Font Awesome"
+      ],
+      "links": []
+    },
+    {
+      "id": "674613",
+      "slug": "caller-name-search-app",
+      "url": "https://mostaql.com/portfolio/674613-تطبيق-للبحث-عن-إسم-المتصل",
+      "title": "Caller Name Lookup App",
+      "description": "A React Native mobile app that identifies the name behind an incoming or unknown phone number. It looks up caller identities through a PHP REST API and enriches results using the device's call log, contacts, and SIM data.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-10 09:47:09",
+      "date_completed": "2020-04-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/caller-name-search-app/image-01.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db2754145/l.jpg",
+          "bytes": 50339,
+          "role": "gallery",
+          "md5": "8b41cb08f37885704db23e2ac8fe1b4f"
+        },
+        {
+          "file": "portfolio/caller-name-search-app/image-02.jpg",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db272ec3f/l-1.jpg",
+          "bytes": 73935,
+          "role": "gallery",
+          "md5": "9af2eaf03da4bd35ffa6f2db680f3d68"
+        }
+      ],
+      "image_count": 2,
+      "cover": "portfolio/caller-name-search-app/image-02.jpg",
+      "title_ar": "تطبيق للبحث عن إسم المتصل",
+      "tagline": "Identify unknown callers instantly",
+      "description_ar": "تطبيق جوّال مبني بـ React Native للتعرّف على اسم المتصل خلف الأرقام المجهولة أو الواردة. يبحث عن هوية المتصل عبر واجهة REST API بلغة PHP ويعزّز النتائج باستخدام سجل المكالمات وجهات الاتصال وبيانات شريحة SIM على الجهاز.",
+      "work_type": "Individual",
+      "duration": "5 days",
+      "data_source": "PHP REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Material UI",
+        "Expo Vector Icons",
+        "Expo Linear Gradient",
+        "AsyncStorage",
+        "React Navigation",
+        "Gesture Handler"
+      ],
+      "links": []
+    },
+    {
+      "id": "674611",
+      "slug": "university-student-services-app",
+      "url": "https://mostaql.com/portfolio/674611-تطبيق-خدمات-الطالب-الجامعي-مشروع-تخرجي",
+      "title": "University Student Services App",
+      "description": "An Android application that gives university students convenient access to their academic services from their phones. Built as a graduation project, it connects to a PHP backend to deliver student-focused features in a single mobile app.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2021-05-10 09:39:42",
+      "date_completed": "2017-01-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/university-student-services-app/image-01.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db289d1ec/l-4.png",
+          "bytes": 36202,
+          "role": "gallery",
+          "md5": "6076ae6d1a6b49b43d456ec4190c3d0f"
+        },
+        {
+          "file": "portfolio/university-student-services-app/image-02.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db2877b97/l-3.png",
+          "bytes": 98171,
+          "role": "gallery",
+          "md5": "6d76c804dfb301b1cdc9fb4a23d0e0da"
+        },
+        {
+          "file": "portfolio/university-student-services-app/image-03.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db2854d22/l-2.png",
+          "bytes": 28298,
+          "role": "gallery",
+          "md5": "b0a08157a54c62f669679134cb35c934"
+        },
+        {
+          "file": "portfolio/university-student-services-app/image-04.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db2835582/l-1.png",
+          "bytes": 147498,
+          "role": "gallery",
+          "md5": "d8eca1a1cf67ef2c2eb2ac03545d277d"
+        },
+        {
+          "file": "portfolio/university-student-services-app/image-05.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a3db280b5ed/l.png",
+          "bytes": 171685,
+          "role": "gallery",
+          "md5": "9ce33fe1de51a4ce2d3921fb61acc8de"
+        }
+      ],
+      "image_count": 5,
+      "cover": "portfolio/university-student-services-app/image-05.png",
+      "title_ar": "تطبيق خدمات الطالب الجامعي ( مشروع تخرجي )",
+      "tagline": "Mobile services hub for university students",
+      "description_ar": "تطبيق أندرويد يتيح لطلاب الجامعة الوصول إلى خدماتهم الأكاديمية بسهولة من هواتفهم. أُنجز كمشروع تخرج، ويتصل بخادم PHP لتقديم مزايا موجهة للطلاب ضمن تطبيق واحد على الجوال.",
+      "work_type": "Team",
+      "duration": "6 months",
+      "data_source": "PHP API",
+      "based_on_prior_design": false,
+      "tech": [
+        "Android Studio",
+        "Java"
+      ],
+      "links": []
+    },
+    {
+      "id": "421927",
+      "slug": "employee-management-system",
+      "url": "https://mostaql.com/portfolio/421927-نظام-إدارة-شؤون-الموظفين",
+      "title": "Employee Management System",
+      "description": "A desktop HR system built for ZAS Company in South Sudan to manage employee affairs end to end. It handles employee records, payroll with bonuses and deductions, absence and leave permissions, inquiries and warnings, and system user administration. Originally delivered in 2017, it was later translated into English and resold in 2019.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2020-04-23 11:08:11",
+      "date_completed": "2020-01-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/employee-management-system/cover.png",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/421927/4ff50316-b82b-4f3c-85a5-c560ecad248d.png",
+          "bytes": 32486,
+          "role": "cover",
+          "md5": "fd5d2534f532f200260c26c18c094589"
+        }
+      ],
+      "image_count": 1,
+      "cover": "portfolio/employee-management-system/cover.png",
+      "title_ar": "نظام إدارة شؤون الموظفين",
+      "tagline": "HR and payroll management platform",
+      "description_ar": "نظام مكتبي لإدارة شؤون الموظفين تم تطويره لشركة ZAS في جنوب السودان. يغطي النظام إدارة الموظفين، والمرتبات مع الحوافز والخصومات، وأذونات التغيب والإجازات، والاستيضاحات والإنذارات، وإدارة مستخدمي النظام. تم تنفيذه عام 2017 ثم تُرجم إلى الإنجليزية وأُعيد بيعه عام 2019.",
+      "work_type": "Team",
+      "duration": "7 days",
+      "data_source": "Direct MySQL",
+      "based_on_prior_design": true,
+      "tech": [
+        "VB.NET",
+        "Crystal Reports"
+      ],
+      "links": []
+    },
+    {
+      "id": "421925",
+      "slug": "maweed-website",
+      "url": "https://mostaql.com/portfolio/421925-موقع-موعد",
+      "title": "Maweed",
+      "description": "Maweed is a Qatar-based web platform for browsing hospitals and clinics across the country and booking appointments with them. It provides a searchable directory of healthcare providers alongside an integrated appointment reservation system.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2020-04-23 10:57:31",
+      "date_completed": "2019-04-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/maweed-website/cover.png",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/421925/1a66acd2-3ef2-4e10-a349-40657f48bb5b.png",
+          "bytes": 152918,
+          "role": "cover",
+          "md5": "eb2141a19a8b9c8f118f92eecbc0da17"
+        },
+        {
+          "file": "portfolio/maweed-website/image-01.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a0b8c85a1fa/418625-Y5bFy-1590895908-5ed32524e2b2b.png",
+          "bytes": 252524,
+          "role": "gallery",
+          "md5": "1de70b8154d553aee5e999ce72b9b22d"
+        },
+        {
+          "file": "portfolio/maweed-website/image-02.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a0b8c890506/418625-ye4tz-1590895909-5ed3252535e86.png",
+          "bytes": 272500,
+          "role": "gallery",
+          "md5": "d45a6265c6ed37c5bb33142b0cbd3a1f"
+        },
+        {
+          "file": "portfolio/maweed-website/image-03.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a0b8c8c3d0a/418625-C4NZi-1590895909-5ed325256c78e.png",
+          "bytes": 16572,
+          "role": "gallery",
+          "md5": "6c5b1cb8d527c5bcbbb4ee2ed977d164"
+        }
+      ],
+      "image_count": 4,
+      "cover": "portfolio/maweed-website/cover.png",
+      "title_ar": "موقع موعد",
+      "tagline": "Qatar hospital and clinic booking",
+      "description_ar": "موعد هو موقع قطري لتصفح المستشفيات والعيادات في دولة قطر مع إمكانية حجز المواعيد لديها. يوفر دليلاً قابلاً للبحث لمزودي الرعاية الصحية إلى جانب نظام متكامل لحجز المواعيد.",
+      "work_type": "Team",
+      "duration": "1 month",
+      "data_source": "Direct PostgreSQL",
+      "based_on_prior_design": false,
+      "tech": [
+        "Java",
+        "XHTML",
+        "Bootstrap",
+        "jQuery UI",
+        "JSF",
+        "Java Servlets"
+      ],
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://maweed-qa.com"
+        }
+      ]
+    },
+    {
+      "id": "421916",
+      "slug": "sawa-taxi-app",
+      "url": "https://mostaql.com/portfolio/421916-تطبيق-سوا-تاكسي",
+      "title": "Sawa Taxi App",
+      "description": "Sawa Taxi is a ride-hailing platform built for Sawa Taxi in Sudan, comprising two native Android apps — one for riders and one for drivers — backed by a web admin dashboard for operations management. It handles live trip booking, driver-rider matching, and route and fare calculation using Google Maps and Distance Matrix, with local SMS-based verification.",
+      "freelancer": "Abdalrahman V.",
+      "likes": "0",
+      "date_added": "2020-04-23 10:26:33",
+      "date_completed": "2018-10-01 00:00:00",
+      "images": [
+        {
+          "file": "portfolio/sawa-taxi-app/cover.jpeg",
+          "source": "https://ms.hsoubcdn.com/uploads/thumbnails/418625/421916/f2334b58-e9ad-406b-be39-d7119bfa592a.jpeg",
+          "bytes": 9482,
+          "role": "cover",
+          "md5": "4ee7c9604db0de1e61b0e3e3dc22260a"
+        },
+        {
+          "file": "portfolio/sawa-taxi-app/image-01.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a0b8c982856/418625-vw3wq-1590896569-5ed327b9398d3.PNG",
+          "bytes": 57734,
+          "role": "gallery",
+          "md5": "e5d30c2e9e41bd06a3a2d5d3535cb62f"
+        },
+        {
+          "file": "portfolio/sawa-taxi-app/image-02.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a0b8c9c7750/418625-jXSW4-1590896569-5ed327b97dfe5.PNG",
+          "bytes": 75811,
+          "role": "gallery",
+          "md5": "b02a3b261fe738bfa4cfc9d444fc5ff7"
+        },
+        {
+          "file": "portfolio/sawa-taxi-app/image-03.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a0b8ca137b1/418625-5z9CR-1590896569-5ed327b9ad5f9.PNG",
+          "bytes": 63334,
+          "role": "gallery",
+          "md5": "7857ca45188df03e2dd5812e6214c615"
+        },
+        {
+          "file": "portfolio/sawa-taxi-app/image-04.png",
+          "source": "https://ms.hsoubcdn.com/uploads/portfolios/418625/61a0b8ca3d46c/418625-QgKq7-1590896569-5ed327b9e72a3.PNG",
+          "bytes": 56104,
+          "role": "gallery",
+          "md5": "9f8df086a012366d9192946be1e2f891"
+        }
+      ],
+      "image_count": 5,
+      "cover": "portfolio/sawa-taxi-app/cover.jpeg",
+      "title_ar": "تطبيق سوا تاكسي",
+      "tagline": "Ride-hailing platform for Sudan",
+      "description_ar": "سوا تاكسي منصة لطلب سيارات الأجرة طُورت لشركة سوا تاكسي في السودان، وتتكوّن من تطبيقَي أندرويد أصليين، أحدهما للزبون والآخر للسائق، إضافةً إلى لوحة تحكم ويب لإدارة العمليات. يتيح النظام حجز الرحلات مباشرةً والمطابقة بين السائق والزبون وحساب المسارات والأجرة عبر خرائط جوجل ومصفوفة المسافات، مع التحقق عبر رسائل SMS محلية.",
+      "work_type": "Team",
+      "duration": "1+ year",
+      "data_source": "PHP REST API",
+      "based_on_prior_design": true,
+      "tech": [
+        "Android Studio",
+        "Java",
+        "Kotlin",
+        "Firebase",
+        "Google Maps",
+        "Google Distance Matrix",
+        "Local SMS API"
+      ],
+      "links": []
+    }
+  ],
+  "generated_from": "https://mostaql.com/u/valabji/portfolio"
+}
