@@ -1,0 +1,256 @@
+/* ============================================================
+   Certifications
+   ============================================================ */
+.certs-head{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  margin-bottom:clamp(2rem,5vw,3rem);
+}
+.certs-eyebrow{
+  font-family:var(--mono);
+  font-size:.82rem;
+  color:var(--text-faint);
+  letter-spacing:.02em;
+}
+.certs-eyebrow .certs-prompt{color:var(--accent)}
+.certs-title{
+  font-family:var(--mono);
+  font-size:clamp(1.6rem,3.5vw + .6rem,2.4rem);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  display:inline-flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+}
+.certs-slashes{color:var(--accent);margin-right:.5ch;font-weight:500}
+.certs-sub{
+  font-family:var(--mono);
+  font-size:.82rem;
+  color:var(--text-dim);
+}
+.certs-sub .certs-count{color:var(--accent-2)}
+
+/* Grid */
+.certs-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1rem,2.5vw,1.5rem);
+}
+@media (min-width:560px){
+  .certs-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:960px){
+  .certs-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Card */
+.cert-card{
+  display:flex;
+  flex-direction:column;
+  padding:0;
+}
+.cert-card .cert-body{
+  display:flex;
+  flex-direction:column;
+  gap:.65rem;
+  padding:clamp(1.1rem,2.5vw,1.5rem);
+}
+
+/* Thumbnail */
+.cert-thumb{
+  position:relative;
+  display:block;
+  width:100%;
+  border:none;
+  padding:0;
+  background:var(--bg-card-2);
+  border-bottom:1px solid var(--border);
+  border-radius:var(--radius) var(--radius) 0 0;
+  overflow:hidden;
+  cursor:zoom-in;
+  aspect-ratio:16 / 11;
+}
+.cert-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .4s cubic-bezier(.16,.84,.44,1),filter .3s ease;
+  filter:saturate(.9) contrast(1.02);
+}
+.cert-thumb::after{
+  content:"⤢ view";
+  position:absolute;
+  bottom:.6rem;
+  right:.6rem;
+  font-family:var(--mono);
+  font-size:.7rem;
+  color:var(--accent);
+  background:rgba(10,14,20,.78);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.35em .7em;
+  opacity:0;
+  transform:translateY(4px);
+  transition:opacity .25s ease,transform .25s ease;
+  pointer-events:none;
+}
+.cert-card:hover .cert-thumb img{transform:scale(1.05);filter:saturate(1) contrast(1.05)}
+.cert-card:hover .cert-thumb::after,
+.cert-thumb:focus-visible::after{opacity:1;transform:translateY(0)}
+
+/* No-image placeholder strip */
+.cert-noimg{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  font-family:var(--mono);
+  font-size:.72rem;
+  color:var(--text-faint);
+  padding:.65rem clamp(1.1rem,2.5vw,1.5rem);
+  border-bottom:1px solid var(--border-soft);
+  background:
+    repeating-linear-gradient(135deg,transparent 0 10px,rgba(31,38,48,.25) 10px 11px);
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.cert-noimg .cert-dollar{color:var(--accent-2)}
+
+/* Text */
+.cert-issuer{
+  display:inline-flex;
+  align-items:center;
+  gap:.5ch;
+  font-family:var(--mono);
+  font-size:.74rem;
+  color:var(--accent-2);
+  letter-spacing:.01em;
+}
+.cert-issuer .cert-const{color:var(--text-faint)}
+.cert-name{
+  font-size:1.02rem;
+  font-weight:600;
+  line-height:1.3;
+  color:var(--text);
+  letter-spacing:-0.01em;
+}
+.cert-meta{
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+  margin-top:.15rem;
+}
+.cert-row{
+  display:flex;
+  align-items:center;
+  gap:.6ch;
+  font-family:var(--mono);
+  font-size:.74rem;
+  color:var(--text-dim);
+}
+.cert-row .cert-key{color:var(--text-faint)}
+.cert-id{
+  color:var(--accent);
+  word-break:break-all;
+}
+
+.cert-foot{
+  margin-top:auto;
+  padding-top:.85rem;
+}
+.cert-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.5ch;
+  font-family:var(--mono);
+  font-size:.78rem;
+  font-weight:500;
+  color:var(--accent);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:.5em .85em;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease,color .2s ease;
+}
+.cert-link:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-1px);
+  box-shadow:0 0 0 1px var(--accent-glow),0 0 14px var(--accent-glow);
+  text-shadow:none;
+}
+.cert-link .lni{font-size:.9em}
+
+/* ============================================================
+   Lightbox modal
+   ============================================================ */
+.cert-modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(1rem,4vw,2.5rem);
+  background:rgba(4,7,11,.86);
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+  animation:certFade .25s ease forwards;
+}
+.cert-modal-inner{
+  position:relative;
+  max-width:min(960px,100%);
+  max-height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.cert-modal img{
+  max-width:100%;
+  max-height:calc(100vh - 8rem);
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow),0 0 0 1px var(--accent-glow),0 0 50px rgba(57,211,83,.12);
+  background:var(--bg-card);
+}
+.cert-modal-cap{
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--text-dim);
+  text-align:center;
+  margin-top:.85rem;
+}
+.cert-modal-cap .cert-prompt{color:var(--accent)}
+.cert-modal-close{
+  position:absolute;
+  top:-.75rem;
+  right:-.75rem;
+  width:2.75rem;
+  height:2.75rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--mono);
+  font-size:1.2rem;
+  line-height:1;
+  color:var(--text);
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:50%;
+  transition:border-color .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.cert-modal-close:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  transform:rotate(90deg);
+  box-shadow:0 0 0 1px var(--accent-glow),0 0 16px var(--accent-glow);
+}
+
+@keyframes certFade{from{opacity:0}to{opacity:1}}
+
+@media (prefers-reduced-motion:reduce){
+  .cert-thumb img,.cert-card:hover .cert-thumb img{transform:none}
+  .cert-modal{animation:none}
+  .cert-modal-close:hover{transform:none}
+}

@@ -1,0 +1,142 @@
+/* ============================================================
+   Skills component — terminal-glow
+   ============================================================ */
+.skills-head{
+  display:flex;
+  align-items:baseline;
+  gap:.6rem;
+  flex-wrap:wrap;
+  margin-bottom:.6rem;
+}
+.skills-head h2{
+  font-family:var(--mono);
+  font-size:clamp(1.5rem,3vw + .6rem,2.4rem);
+  letter-spacing:-0.02em;
+}
+.skills-head .skills-slash{
+  color:var(--accent);
+  text-shadow:0 0 14px var(--accent-glow);
+}
+.skills-sub{
+  font-family:var(--mono);
+  font-size:.82rem;
+  color:var(--text-faint);
+  margin-bottom:clamp(1.8rem,4vw,2.6rem);
+  max-width:none;
+}
+.skills-sub .skills-prompt{ color:var(--accent-2); }
+
+/* Category groups */
+.skills-groups{
+  display:grid;
+  gap:clamp(1rem,2.5vw,1.5rem);
+  grid-template-columns:1fr;
+}
+@media (min-width:640px){
+  .skills-groups{ grid-template-columns:repeat(2,1fr); }
+}
+@media (min-width:980px){
+  .skills-groups{ grid-template-columns:repeat(3,1fr); }
+}
+
+.skills-group{ padding:clamp(1.1rem,2.4vw,1.5rem); }
+
+.skills-group-head{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  margin-bottom:1rem;
+  padding-bottom:.75rem;
+  border-bottom:1px dashed var(--border);
+}
+.skills-group-kw{
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--accent-3);
+}
+.skills-group-name{
+  font-family:var(--mono);
+  font-size:.95rem;
+  font-weight:700;
+  color:var(--text);
+  letter-spacing:-0.01em;
+}
+.skills-group-count{
+  margin-left:auto;
+  font-family:var(--mono);
+  font-size:.72rem;
+  color:var(--text-faint);
+}
+
+/* Pills */
+.skills-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem;
+}
+.skills-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-family:var(--mono);
+  font-size:.8rem;
+  font-weight:500;
+  line-height:1;
+  color:var(--text-dim);
+  background:var(--bg-card-2);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.52em .8em;
+  transition:color .2s ease,border-color .2s ease,box-shadow .25s ease,transform .2s ease,background .2s ease;
+}
+.skills-pill:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:rgba(57,211,83,.05);
+  box-shadow:0 0 0 1px var(--accent-glow),0 0 16px var(--accent-glow);
+  transform:translateY(-2px);
+}
+.skills-pill-name{ white-space:nowrap; }
+
+/* Endorsement badge */
+.skills-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.32em;
+  font-family:var(--mono);
+  font-size:.68rem;
+  font-weight:700;
+  color:var(--accent-2);
+  background:rgba(45,212,191,.08);
+  border:1px solid rgba(45,212,191,.30);
+  border-radius:999px;
+  padding:.18em .42em;
+  line-height:1;
+}
+.skills-pill:hover .skills-badge{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:rgba(57,211,83,.10);
+}
+
+/* Endorsement meter (tiny dots) */
+.skills-meter{
+  display:inline-flex;
+  align-items:center;
+  gap:2px;
+}
+.skills-meter-dot{
+  width:4px;
+  height:4px;
+  border-radius:999px;
+  background:var(--accent-2);
+  box-shadow:0 0 5px var(--cyan-glow);
+}
+.skills-pill:hover .skills-meter-dot{
+  background:var(--accent);
+  box-shadow:0 0 6px var(--accent-glow);
+}
+
+@media (prefers-reduced-motion:reduce){
+  .skills-pill:hover{ transform:none; }
+}
