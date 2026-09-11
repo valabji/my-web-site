@@ -6,8 +6,8 @@
       "id": "676403",
       "slug": "zikr-app",
       "url": "https://mostaql.com/portfolio/676403-تطبيق-ذكر",
-      "title": "تطبيق ذِكْر",
-      "description": "نوع العمل : فردي.\nتاريخ التنفيذ : مايو 2021.\nأبرز اللغات والتقنيات المستخدمة :\nReact Native\nreanimated\nelements\nRedux\nASync-Storage\nReact-Navigation\nمصدر البيانات:\nJSON\nمبني على تصميم سابق : لا.",
+      "title": "Zikr — Islamic Remembrance App",
+      "description": "Zikr is a mobile app that offers a curated collection of Islamic remembrances (adhkar) and supplications for daily use. Built with React Native, it features smooth animated transitions and offline access to its content.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-14 09:08:49",
@@ -78,14 +78,34 @@
         }
       ],
       "image_count": 9,
-      "cover": "portfolio/zikr-app/cover.png"
+      "cover": "portfolio/zikr-app/cover.png",
+      "title_ar": "تطبيق ذِكْر",
+      "tagline": "Daily Islamic remembrances on mobile",
+      "description_ar": "تطبيق ذِكْر هو تطبيق للهواتف المحمولة يقدّم مجموعة منسّقة من الأذكار والأدعية الإسلامية للاستخدام اليومي. مبني باستخدام React Native، ويتميّز بانتقالات حركية سلسة وإتاحة المحتوى دون اتصال بالإنترنت.",
+      "work_type": "Individual",
+      "data_source": "JSON",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Reanimated",
+        "React Native Elements",
+        "Redux",
+        "AsyncStorage",
+        "React Navigation"
+      ],
+      "links": [
+        {
+          "label": "Live",
+          "url": "https://zikr.valabji.com"
+        }
+      ]
     },
     {
       "id": "676397",
       "slug": "construction-portal-app",
       "url": "https://mostaql.com/portfolio/676397-تطبيق-بوابة-البناء",
-      "title": "تطبيق بوابة البناء",
-      "description": "نوع العمل : فردي.\nمدة التنفيذ : شهر.\nتاريخ التنفيذ : ابريل 2021.\nأبرز اللغات والتقنيات المستخدمة :\nReact Native\nreanimated\nelements\nRedux\nASync-Storage\nReact-Navigation\nArgon\nمصدر البيانات:\nWordpress\nمبني على تصميم سابق : لا.",
+      "title": "Construction Portal App",
+      "description": "A cross-platform mobile app serving as a construction industry portal, delivering its content and listings from a WordPress backend. Built with React Native, it features smooth animated interactions, centralized state management, and persistent local storage for a responsive native experience.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-14 08:53:46",
@@ -205,14 +225,31 @@
         }
       ],
       "image_count": 16,
-      "cover": "portfolio/construction-portal-app/cover.jpeg"
+      "cover": "portfolio/construction-portal-app/cover.jpeg",
+      "title_ar": "تطبيق بوابة البناء",
+      "tagline": "Mobile portal for the construction industry",
+      "description_ar": "تطبيق جوال متعدد المنصات يعمل كبوابة لقطاع البناء، حيث يجلب محتواه وقوائمه من خلفية ووردبريس. بُني باستخدام React Native ويتميز بتفاعلات حركية سلسة وإدارة مركزية للحالة وتخزين محلي دائم لتجربة أصلية سريعة الاستجابة.",
+      "work_type": "Individual",
+      "duration": "1 month",
+      "data_source": "WordPress",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Reanimated",
+        "React Native Elements",
+        "Redux",
+        "AsyncStorage",
+        "React Navigation",
+        "Argon"
+      ],
+      "links": []
     },
     {
       "id": "676394",
       "slug": "gold-currency-prices-app",
       "url": "https://mostaql.com/portfolio/676394-تطبيق-اسعار-الذهب-و-العملات",
-      "title": "تطبيق اسعار الذهب و العملات",
-      "description": "نوع العمل : فردي.\nمدة التنفيذ : 7 ايام.\nتاريخ التنفيذ : مايو 2021.\nأبرز اللغات والتقنيات المستخدمة :\nReact Native\nreanimated\nelements\nRedux\nASync-Storage\nReact-Navigation\nمصدر البيانات:\nREST API\nمبني على تصميم سابق : لا.\nمعاينة",
+      "title": "Gold & Currency Prices App",
+      "description": "A React Native mobile app that displays live gold and currency exchange rates. It pulls real-time pricing data from a REST API and presents it through a smooth, animated interface with persistent local storage.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-14 08:44:30",
@@ -276,14 +313,30 @@
         }
       ],
       "image_count": 8,
-      "cover": "portfolio/gold-currency-prices-app/cover.png"
+      "cover": "portfolio/gold-currency-prices-app/cover.png",
+      "title_ar": "تطبيق اسعار الذهب و العملات",
+      "tagline": "Live gold and currency rates",
+      "description_ar": "تطبيق جوال مبني بتقنية React Native يعرض أسعار الذهب والعملات بشكل لحظي. يجلب التطبيق بيانات التسعير الحية من واجهة REST API ويعرضها عبر واجهة سلسة ومتحركة مع تخزين محلي دائم للبيانات.",
+      "work_type": "Individual",
+      "duration": "7 days",
+      "data_source": "REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Reanimated",
+        "React Native Elements",
+        "Redux",
+        "AsyncStorage",
+        "React Navigation"
+      ],
+      "links": []
     },
     {
       "id": "675289",
       "slug": "rtoosh-provider-app",
       "url": "https://mostaql.com/portfolio/675289-تطبيق-رتوش-لمقدمي-الخدمة",
-      "title": "تطبيق رتوش لمقدمي الخدمة",
-      "description": "نوع العمل : جماعي - وظيفي.\nمدة التنفيذ : 6 أشهر.\nتاريخ التنفيذ : نوفمبر 2020.\nأبرز اللغات والتقنيات المستخدمة :\nReact Native\ngeolocation\ngeocoding\ngoogle-maps\napple-maps\nonesignal\npaytabs\nreanimated\nelements\nAdobe XD\nSuperNova Studio\nRedux\nASync-Storage\nReact-Navigation\nمصدر البيانات:\nREST API\nمبني على تصميم سابق : لا.\nاندرويد :\nhttps://play.google.com/s...\n. ايفون :\nhttps://apps.apple.com/us...\nمعاينة",
+      "title": "Rtoosh Service Provider App",
+      "description": "Rtoosh is a React Native mobile app for service providers, enabling them to manage on-demand bookings and reach customers through location-aware features. It integrates live geolocation and mapping, push notifications, and in-app payments to streamline the provider's workflow.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-11 16:17:33",
@@ -438,14 +491,38 @@
         }
       ],
       "image_count": 21,
-      "cover": "portfolio/rtoosh-provider-app/cover.png"
+      "cover": "portfolio/rtoosh-provider-app/cover.png",
+      "title_ar": "تطبيق رتوش لمقدمي الخدمة",
+      "tagline": "On-demand services for providers",
+      "description_ar": "رتوش هو تطبيق جوال مبني بتقنية React Native موجّه لمقدمي الخدمة، يتيح لهم إدارة الحجوزات عند الطلب والوصول إلى العملاء عبر ميزات تعتمد على تحديد الموقع. يدمج التطبيق خدمات تحديد المواقع والخرائط الحية والإشعارات والدفع داخل التطبيق لتسهيل سير عمل مقدّم الخدمة.",
+      "work_type": "Team · Employment",
+      "duration": "6 months",
+      "data_source": "REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Redux",
+        "React Navigation",
+        "AsyncStorage",
+        "Reanimated",
+        "React Native Elements",
+        "Geolocation",
+        "Geocoding",
+        "Google Maps",
+        "Apple Maps",
+        "OneSignal",
+        "PayTabs",
+        "Adobe XD",
+        "Supernova Studio"
+      ],
+      "links": []
     },
     {
       "id": "675286",
       "slug": "rtoosh-app",
       "url": "https://mostaql.com/portfolio/675286-تطبيق-رتوش",
-      "title": "تطبيق رتوش",
-      "description": "نوع العمل : جماعي - وظيفي.\nمدة التنفيذ : 6 أشهر.\nتاريخ التنفيذ : نوفمبر 2020.\nأبرز اللغات والتقنيات المستخدمة :\nReact Native\ngeolocation\ngeocoding\ngoogle-maps\napple-maps\nonesignal\npaytabs\nreanimated\nelements\nAdobe XD\nSuperNova Studio\nRedux\nASync-Storage\nReact-Navigation\nمصدر البيانات:\nREST API\nمبني على تصميم سابق : لا.\nاندرويد :\nhttps://play.google.com/s...\n. ايفون :\nhttps://apps.apple.com/us...\nمعاينة",
+      "title": "Rtoosh App",
+      "description": "Rtoosh is a cross-platform mobile application built with React Native, featuring location-aware services powered by Google Maps and Apple Maps with geolocation and geocoding. The app integrates PayTabs for in-app payments and OneSignal for push notifications, with state handled through Redux and smooth interactions driven by Reanimated.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-11 16:16:07",
@@ -593,14 +670,38 @@
         }
       ],
       "image_count": 20,
-      "cover": "portfolio/rtoosh-app/cover.png"
+      "cover": "portfolio/rtoosh-app/cover.png",
+      "title_ar": "تطبيق رتوش",
+      "tagline": "Location-based mobile app with integrated payments",
+      "description_ar": "رتوش تطبيق جوال متعدد المنصات مبني باستخدام React Native، يقدم خدمات معتمدة على الموقع الجغرافي عبر خرائط Google وApple مع تحديد المواقع والترميز الجغرافي. يدمج التطبيق بوابة PayTabs للدفع داخل التطبيق وOneSignal للإشعارات الفورية، مع إدارة الحالة عبر Redux وتفاعلات سلسة باستخدام Reanimated.",
+      "work_type": "Team · Employment",
+      "duration": "6 months",
+      "data_source": "REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Redux",
+        "React Navigation",
+        "AsyncStorage",
+        "Reanimated",
+        "React Native Elements",
+        "Geolocation",
+        "Geocoding",
+        "Google Maps",
+        "Apple Maps",
+        "OneSignal",
+        "PayTabs",
+        "Adobe XD",
+        "Supernova Studio"
+      ],
+      "links": []
     },
     {
       "id": "674617",
       "slug": "home-store-app",
       "url": "https://mostaql.com/portfolio/674617-تطبيق-متجر-البيت",
-      "title": "تطبيق متجر البيت",
-      "description": "نوع العمل : فردي.\nمدة التنفيذ : 7 أيام.\nتاريخ التنفيذ : مايو 2020.\nأبرز اللغات والتقنيات المستخدمة :\n- Ionic 5\n- Type Script.\nمصدر البيانات:\nWordPress REST API.\nمبني على تصميم سابق : نعم. ( تعديلات على تطبيق جاهز )\nمعاينة",
+      "title": "Home Store App",
+      "description": "A cross-platform mobile shopping app for a home goods store, built with Ionic and TypeScript. It pulls its product catalog and content directly from a WordPress backend, giving customers a native-feeling storefront to browse and shop on the go.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-10 09:54:53",
@@ -650,14 +751,26 @@
         }
       ],
       "image_count": 6,
-      "cover": "portfolio/home-store-app/cover.jpg"
+      "cover": "portfolio/home-store-app/cover.jpg",
+      "title_ar": "تطبيق متجر البيت",
+      "tagline": "Mobile storefront for home goods",
+      "description_ar": "تطبيق تسوّق متعدد المنصات لمتجر يبيع مستلزمات المنزل، مبني باستخدام Ionic وTypeScript. يجلب التطبيق كتالوج المنتجات والمحتوى مباشرةً من واجهة WordPress، ليوفّر للعملاء واجهة متجر سلسة للتصفح والشراء عبر الهاتف.",
+      "work_type": "Individual",
+      "duration": "7 days",
+      "data_source": "WordPress REST API",
+      "based_on_prior_design": true,
+      "tech": [
+        "Ionic 5",
+        "TypeScript"
+      ],
+      "links": []
     },
     {
       "id": "674616",
       "slug": "inventory-search-app",
       "url": "https://mostaql.com/portfolio/674616-تطبيق-للبحث-في-المخزون",
-      "title": "تطبيق للبحث في المخزون",
-      "description": "نوع العمل : فردي.\nمدة التنفيذ : 3 ساعات ( التطبيق + لوحة التحكم ).\nتاريخ التنفيذ : أبريل 2020.\nأبرز اللغات والتقنيات المستخدمة :\nReact Native\nMaterial-UI\nExpo\nExpo Vector-Icons.\nمصدر البيانات:\nPHP REST API.\nمبني على تصميم سابق : نعم.",
+      "title": "Inventory Search App",
+      "description": "A React Native mobile app for searching and looking up inventory items, paired with a companion admin dashboard for managing them. It retrieves stock data from a PHP REST API, giving users fast access to inventory records on the go.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-10 09:52:08",
@@ -693,14 +806,28 @@
         }
       ],
       "image_count": 4,
-      "cover": "portfolio/inventory-search-app/image-04.jpg"
+      "cover": "portfolio/inventory-search-app/image-04.jpg",
+      "title_ar": "تطبيق للبحث في المخزون",
+      "tagline": "Mobile inventory lookup with admin panel",
+      "description_ar": "تطبيق جوال مبني بتقنية React Native للبحث في المخزون والاطلاع على عناصره، مع لوحة تحكم مرافقة لإدارته. يجلب التطبيق بيانات المخزون من واجهة برمجية PHP REST API، مما يتيح الوصول السريع إلى سجلات المخزون.",
+      "work_type": "Individual",
+      "duration": "3 hours",
+      "data_source": "PHP REST API",
+      "based_on_prior_design": true,
+      "tech": [
+        "React Native",
+        "Material UI",
+        "Expo",
+        "Expo Vector Icons"
+      ],
+      "links": []
     },
     {
       "id": "674614",
       "slug": "caller-dashboard",
       "url": "https://mostaql.com/portfolio/674614-لوحة-تحكم-تطبيق-المتصل",
-      "title": "لوحة تحكم تطبيق المتصل",
-      "description": "نوع العمل : فردي.\nمدة التنفيذ : يومين.\nتاريخ التنفيذ : أبريل 2020.\nأبرز اللغات والتقنيات المستخدمة :\n- HTML\n- CSS\n- JavaScript\n- Bootstrap\n- Ajax\n- Font Awesome.\nمبني على تصميم سابق : نعم.",
+      "title": "Caller App Control Panel",
+      "description": "A web-based administration dashboard for a caller application, built to manage and monitor the app's data and operations. It delivers a responsive interface with dynamic, asynchronous data loading for a smooth management experience.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-10 09:49:42",
@@ -729,14 +856,29 @@
         }
       ],
       "image_count": 3,
-      "cover": "portfolio/caller-dashboard/image-02.png"
+      "cover": "portfolio/caller-dashboard/image-02.png",
+      "title_ar": "لوحة تحكم تطبيق المتصل",
+      "tagline": "Admin dashboard for a caller app",
+      "description_ar": "لوحة تحكم إدارية على الويب لتطبيق المتصل، صُممت لإدارة بيانات التطبيق ومتابعة عملياته. توفّر واجهة متجاوبة مع تحميل ديناميكي وغير متزامن للبيانات لتجربة إدارة سلسة.",
+      "work_type": "Individual",
+      "duration": "2 days",
+      "based_on_prior_design": true,
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "Ajax",
+        "Font Awesome"
+      ],
+      "links": []
     },
     {
       "id": "674613",
       "slug": "caller-name-search-app",
       "url": "https://mostaql.com/portfolio/674613-تطبيق-للبحث-عن-إسم-المتصل",
-      "title": "تطبيق للبحث عن إسم المتصل",
-      "description": "نوع العمل : فردي.\nمدة التنفيذ : 5 أيام.\nتاريخ التنفيذ : أبريل 2020.\nأبرز اللغات والتقنيات المستخدمة :\nReact Native\nMaterial-UI\nExpo Vector-Icons\nExpo Linear-Gradient\nSync-Storage\nASync-Storage\nReact-Navigation\nGesture Handler\nمصدر البيانات:\nPHP REST API\nCall log\nContacts\nSIM Data.\nمبني على تصميم سابق : لا.",
+      "title": "Caller Name Lookup App",
+      "description": "A React Native mobile app that identifies the name behind an incoming or unknown phone number. It looks up caller identities through a PHP REST API and enriches results using the device's call log, contacts, and SIM data.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-10 09:47:09",
@@ -758,14 +900,31 @@
         }
       ],
       "image_count": 2,
-      "cover": "portfolio/caller-name-search-app/image-02.jpg"
+      "cover": "portfolio/caller-name-search-app/image-02.jpg",
+      "title_ar": "تطبيق للبحث عن إسم المتصل",
+      "tagline": "Identify unknown callers instantly",
+      "description_ar": "تطبيق جوّال مبني بـ React Native للتعرّف على اسم المتصل خلف الأرقام المجهولة أو الواردة. يبحث عن هوية المتصل عبر واجهة REST API بلغة PHP ويعزّز النتائج باستخدام سجل المكالمات وجهات الاتصال وبيانات شريحة SIM على الجهاز.",
+      "work_type": "Individual",
+      "duration": "5 days",
+      "data_source": "PHP REST API",
+      "based_on_prior_design": false,
+      "tech": [
+        "React Native",
+        "Material UI",
+        "Expo Vector Icons",
+        "Expo Linear Gradient",
+        "AsyncStorage",
+        "React Navigation",
+        "Gesture Handler"
+      ],
+      "links": []
     },
     {
       "id": "674611",
       "slug": "university-student-services-app",
       "url": "https://mostaql.com/portfolio/674611-تطبيق-خدمات-الطالب-الجامعي-مشروع-تخرجي",
-      "title": "تطبيق خدمات الطالب الجامعي ( مشروع تخرجي )",
-      "description": "نوع العمل : جماعي.\nمدة التنفيذ : 6 أشهر.\nتاريخ التنفيذ : 2017.\nأبرز اللغات والتقنيات المستخدمة :\n- Android Studio\n- Java.\nمصدر البيانات:\nPHP Simple API.\nمبني على تصميم سابق : لا.",
+      "title": "University Student Services App",
+      "description": "An Android application that gives university students convenient access to their academic services from their phones. Built as a graduation project, it connects to a PHP backend to deliver student-focused features in a single mobile app.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-10 09:39:42",
@@ -808,14 +967,26 @@
         }
       ],
       "image_count": 5,
-      "cover": "portfolio/university-student-services-app/image-05.png"
+      "cover": "portfolio/university-student-services-app/image-05.png",
+      "title_ar": "تطبيق خدمات الطالب الجامعي ( مشروع تخرجي )",
+      "tagline": "Mobile services hub for university students",
+      "description_ar": "تطبيق أندرويد يتيح لطلاب الجامعة الوصول إلى خدماتهم الأكاديمية بسهولة من هواتفهم. أُنجز كمشروع تخرج، ويتصل بخادم PHP لتقديم مزايا موجهة للطلاب ضمن تطبيق واحد على الجوال.",
+      "work_type": "Team",
+      "duration": "6 months",
+      "data_source": "PHP API",
+      "based_on_prior_design": false,
+      "tech": [
+        "Android Studio",
+        "Java"
+      ],
+      "links": []
     },
     {
       "id": "421927",
       "slug": "employee-management-system",
       "url": "https://mostaql.com/portfolio/421927-نظام-إدارة-شؤون-الموظفين",
-      "title": "نظام إدارة شؤون الموظفين",
-      "description": "نظام لإدارة شؤون الموظفين في شركة ZAS في جنوب السودان يحتوي النظام على :\n- إدارة الموظفين\n- إدارة المرتبات و الحوافز و الخصومات\n- إدارة أذونات التغيب و الإجازات\n- إدارة الإستيضاحات و الإنذارات\n- إدارة مستخدمي النظام\nنوع العمل : جماعي.\nمدة التنفيذ : 7 أيام\nتاريخ التنفيذ : 2017 ( ولكن تمت ترجمته الى اللغة الإنجليزية وبيعه في عام 2019 )\nأبرز اللغات والتقنيات المستخدمة :\n- VB.NET\n- Crystal Reports\nمصدر البيانات:\nDirect Connection to MySQL Database\nمبني على تصميم سابق : نعم.",
+      "title": "Employee Management System",
+      "description": "A desktop HR system built for ZAS Company in South Sudan to manage employee affairs end to end. It handles employee records, payroll with bonuses and deductions, absence and leave permissions, inquiries and warnings, and system user administration. Originally delivered in 2017, it was later translated into English and resold in 2019.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2020-04-23 11:08:11",
@@ -830,14 +1001,26 @@
         }
       ],
       "image_count": 1,
-      "cover": "portfolio/employee-management-system/cover.png"
+      "cover": "portfolio/employee-management-system/cover.png",
+      "title_ar": "نظام إدارة شؤون الموظفين",
+      "tagline": "HR and payroll management platform",
+      "description_ar": "نظام مكتبي لإدارة شؤون الموظفين تم تطويره لشركة ZAS في جنوب السودان. يغطي النظام إدارة الموظفين، والمرتبات مع الحوافز والخصومات، وأذونات التغيب والإجازات، والاستيضاحات والإنذارات، وإدارة مستخدمي النظام. تم تنفيذه عام 2017 ثم تُرجم إلى الإنجليزية وأُعيد بيعه عام 2019.",
+      "work_type": "Team",
+      "duration": "7 days",
+      "data_source": "Direct MySQL",
+      "based_on_prior_design": true,
+      "tech": [
+        "VB.NET",
+        "Crystal Reports"
+      ],
+      "links": []
     },
     {
       "id": "421925",
       "slug": "maweed-website",
       "url": "https://mostaql.com/portfolio/421925-موقع-موعد",
-      "title": "موقع موعد",
-      "description": "موقع قطري لتصفح المستشفيات العيادات في دولة قطر مع الحجز\nنوع العمل : جماعي\nمدة التنفيذ : شهر واحد ( جانبي من العمل )\nتاريخ التنفيذ : مايو 2019\nأبرز اللغات والتقنيات المستخدمة :\n- Java\n- xHTML\n- BootStrap\n- JqueryUI\n- JSF\n- Java Servlets\nمصدر البيانات:\nDirect Connection to PostgreSQL\nمبني على تصميم سابق : لا.\nرابط الموقع :\nhttps://maweed-qa.com\nمعاينة",
+      "title": "Maweed",
+      "description": "Maweed is a Qatar-based web platform for browsing hospitals and clinics across the country and booking appointments with them. It provides a searchable directory of healthcare providers alongside an integrated appointment reservation system.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2020-04-23 10:57:31",
@@ -873,14 +1056,35 @@
         }
       ],
       "image_count": 4,
-      "cover": "portfolio/maweed-website/cover.png"
+      "cover": "portfolio/maweed-website/cover.png",
+      "title_ar": "موقع موعد",
+      "tagline": "Qatar hospital and clinic booking",
+      "description_ar": "موعد هو موقع قطري لتصفح المستشفيات والعيادات في دولة قطر مع إمكانية حجز المواعيد لديها. يوفر دليلاً قابلاً للبحث لمزودي الرعاية الصحية إلى جانب نظام متكامل لحجز المواعيد.",
+      "work_type": "Team",
+      "duration": "1 month",
+      "data_source": "Direct PostgreSQL",
+      "based_on_prior_design": false,
+      "tech": [
+        "Java",
+        "XHTML",
+        "Bootstrap",
+        "jQuery UI",
+        "JSF",
+        "Java Servlets"
+      ],
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://maweed-qa.com"
+        }
+      ]
     },
     {
       "id": "421916",
       "slug": "sawa-taxi-app",
       "url": "https://mostaql.com/portfolio/421916-تطبيق-سوا-تاكسي",
-      "title": "تطبيق سوا تاكسي",
-      "description": "تطبيق أندرويد لشركة سوا تاكسي بالسودان تطبيقين واحد للزبون و الآخر للسائق مع لوحة تحكم ويب للإدارة\nنوع العمل : جماعي\nمدة التنفيذ : أكثر من سنة من التطوير المتواصل أثنآء فترة التشغيل.\nتاريخ التنفيذ : 2018 - 2019\nأبرز اللغات والتقنيات المستخدمة :\n- Android Studio\n- Java\n- Kotlin\n- Firebase\n- Google Maps\n- Google Distance Matrix\n- Local SMS API\nمصدر البيانات:\nCode Igniter (php) REST API\nمبني على تصميم سابق : نعم. ( تعديلات على تطبيق جاهز تم تغيير أغلبه )\nمعاينة",
+      "title": "Sawa Taxi App",
+      "description": "Sawa Taxi is a ride-hailing platform built for Sawa Taxi in Sudan, comprising two native Android apps — one for riders and one for drivers — backed by a web admin dashboard for operations management. It handles live trip booking, driver-rider matching, and route and fare calculation using Google Maps and Distance Matrix, with local SMS-based verification.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2020-04-23 10:26:33",
@@ -923,7 +1127,24 @@
         }
       ],
       "image_count": 5,
-      "cover": "portfolio/sawa-taxi-app/cover.jpeg"
+      "cover": "portfolio/sawa-taxi-app/cover.jpeg",
+      "title_ar": "تطبيق سوا تاكسي",
+      "tagline": "Ride-hailing platform for Sudan",
+      "description_ar": "سوا تاكسي منصة لطلب سيارات الأجرة طُورت لشركة سوا تاكسي في السودان، وتتكوّن من تطبيقَي أندرويد أصليين، أحدهما للزبون والآخر للسائق، إضافةً إلى لوحة تحكم ويب لإدارة العمليات. يتيح النظام حجز الرحلات مباشرةً والمطابقة بين السائق والزبون وحساب المسارات والأجرة عبر خرائط جوجل ومصفوفة المسافات، مع التحقق عبر رسائل SMS محلية.",
+      "work_type": "Team",
+      "duration": "1+ year",
+      "data_source": "PHP REST API",
+      "based_on_prior_design": true,
+      "tech": [
+        "Android Studio",
+        "Java",
+        "Kotlin",
+        "Firebase",
+        "Google Maps",
+        "Google Distance Matrix",
+        "Local SMS API"
+      ],
+      "links": []
     }
   ],
   "generated_from": "https://mostaql.com/u/valabji/portfolio"

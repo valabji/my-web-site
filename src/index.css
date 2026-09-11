@@ -261,6 +261,7 @@ code{
   border-radius:var(--radius);
   padding:clamp(1.25rem,3vw,1.75rem);
   box-shadow:var(--shadow-glow);
+  transform:translateY(var(--lift,0));
   transition:transform .25s ease,border-color .25s ease,box-shadow .3s ease,background .25s ease;
   overflow:hidden;
 }
@@ -280,7 +281,7 @@ code{
   pointer-events:none;
 }
 .card:hover{
-  transform:translateY(-4px);
+  --lift:-4px;
   border-color:transparent;
   background:var(--bg-card-2);
   box-shadow:0 0 0 1px var(--accent-glow),0 18px 50px rgba(0,0,0,.5),0 0 40px rgba(57,211,83,.10);
@@ -288,13 +289,81 @@ code{
 .card:hover::before{opacity:.7}
 
 /* ============================================================
-   Reveal-on-scroll
+   Reveal-on-scroll (IntersectionObserver adds .is-in)
    ============================================================ */
 .reveal{
   opacity:0;
   transform:translateY(22px);
-  animation:fadeInUp .7s cubic-bezier(.16,.84,.44,1) forwards;
+  transition:opacity .7s cubic-bezier(.16,.84,.44,1),
+             transform .7s cubic-bezier(.16,.84,.44,1);
+  transition-delay:var(--rv-delay,0ms);
+  will-change:opacity,transform;
 }
+.reveal.is-in{
+  opacity:1;
+  transform:none;
+  will-change:auto;
+}
+
+/* ============================================================
+   3D depth primitives — pointer tilt, glare, parallax scene
+   ============================================================ */
+.depth-scene{perspective:1100px}
+
+.tilt-3d{
+  --lift:0px; --rx:0deg; --ry:0deg;
+  transform:perspective(var(--tilt-persp,900px)) translateY(var(--lift))
+            rotateX(var(--rx)) rotateY(var(--ry));
+}
+.tilt-3d[data-tilt="on"]{transition:none}
+
+.tilt-3d.glare::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:2;
+  mix-blend-mode:screen;
+  opacity:0;
+  transition:opacity .3s ease;
+  background:radial-gradient(280px circle at var(--gx,50%) var(--gy,50%),
+            rgba(255,255,255,.14), rgba(45,212,191,.05) 35%, transparent 60%);
+}
+.tilt-3d.glare[data-tilt="on"]::after{opacity:1}
+
+/* Fixed parallax background scene (replaces body::before/::after when mounted) */
+.scene-bg{position:fixed; inset:-12%; z-index:-3; pointer-events:none}
+.scene-bg__glow,.scene-bg__grid,.scene-bg__near{
+  position:absolute; inset:0; will-change:transform;
+}
+.scene-bg__glow{
+  background:
+    radial-gradient(900px 600px at 12% -8%, var(--accent-glow), transparent 60%),
+    radial-gradient(800px 560px at 92% 6%, var(--cyan-glow), transparent 62%);
+  opacity:.55;
+  transform:translate3d(calc(var(--ptr-x,0)*-14px),
+            calc(var(--ptr-y,0)*-14px + var(--scroll-p,0)*-44px), 0);
+}
+.scene-bg__grid{
+  opacity:.32;
+  background-image:
+    linear-gradient(to right, rgba(31,38,48,.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31,38,48,.35) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 78%);
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 78%);
+  transform:translate3d(calc(var(--ptr-x,0)*20px),
+            calc(var(--ptr-y,0)*20px + var(--scroll-p,0)*60px), 0);
+}
+.scene-bg__near{
+  background:radial-gradient(1000px 700px at 50% 118%, rgba(88,166,255,.10), transparent 60%);
+  opacity:.55;
+  transform:translate3d(calc(var(--ptr-x,0)*34px), calc(var(--ptr-y,0)*34px), 0);
+}
+/* Once the JS scene mounts, retire the static body background layers */
+body:has(.scene-bg)::before,
+body:has(.scene-bg)::after{display:none}
 
 /* Blinking terminal cursor */
 .cursor{
@@ -343,6 +412,15 @@ code{
     transition-duration:.001ms !important;
     scroll-behavior:auto !important;
   }
-  .reveal{opacity:1;transform:none}
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important}
   .cursor{opacity:1;animation:none}
+  .tilt-3d{transform:none !important}
+  .tilt-3d.glare::after{display:none}
+  .scene-bg__glow,.scene-bg__grid,.scene-bg__near{transform:none !important}
+}
+
+/* Touch / coarse pointers: no tilt, no glare */
+@media (hover:none),(pointer:coarse){
+  .tilt-3d{transform:none}
+  .tilt-3d.glare::after{display:none}
 }

@@ -65,7 +65,7 @@
 }
 .pj-card:hover,
 .pj-card:focus-within {
-  transform: translateY(-5px);
+  --lift: -5px;
   border-color: var(--accent);
   background: var(--bg-card-2);
   box-shadow: 0 0 0 1px var(--accent-glow),
@@ -180,6 +180,27 @@
   overflow: hidden;
   white-space: pre-wrap;
 }
+/* tech chips on card */
+.pj-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  list-style: none;
+  padding: 0;
+  margin: .1rem 0 0;
+}
+.pj-card-chip {
+  font-size: .68rem;
+  line-height: 1;
+  color: var(--text-dim);
+  background: var(--bg-card-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: .35em .6em;
+  letter-spacing: .01em;
+}
+.pj-card-chip--more { color: var(--accent-2); }
+
 .pj-card-foot {
   margin-top: auto;
   display: flex;
@@ -391,7 +412,19 @@
 .pj-info-title {
   font-size: clamp(1.25rem, 3vw, 1.6rem);
   line-height: 1.25;
-  margin-bottom: .65rem;
+  margin-bottom: .2rem;
+}
+.pj-info-sub {
+  font-size: .95rem;
+  line-height: 1.4;
+  color: var(--text-faint);
+  margin-bottom: .55rem;
+}
+.pj-info-tagline {
+  font-size: .92rem;
+  line-height: 1.45;
+  color: var(--accent-2);
+  margin-bottom: .7rem;
 }
 .pj-info-meta {
   display: flex;
@@ -414,6 +447,22 @@
   min-height: 0;
 }
 
+/* tech tags in info panel */
+.pj-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pj-info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: .2rem;
+}
 .pj-info-link {
   align-self: flex-start;
   margin-top: .3rem;

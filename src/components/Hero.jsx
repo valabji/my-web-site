@@ -1,9 +1,27 @@
+import { useState } from 'react';
 import profile from '../data/profile.json';
+import { useCountUp } from '../hooks/useCountUp';
+import Hero3D from './Hero3D';
+import { hasWebGL } from './hero3d/webgl';
 import './Hero.css';
+
+function HeroStat({ value, label }) {
+  const ref = useCountUp(value);
+  return (
+    <div className="hero__stat">
+      <dd className="hero__stat-value gradient-text" ref={ref}>{value}</dd>
+      <dt className="hero__stat-label">{label}</dt>
+    </div>
+  );
+}
 
 export default function Hero() {
   const { identity, stats, techStack } = profile;
   const { name, headline, tagline, location, photo, links } = identity;
+
+  // Decide once, client-side, whether to mount the real 3D scene or fall
+  // back to the static code-editor window.
+  const [webgl] = useState(hasWebGL);
 
   // Split name so part of it gets the gradient treatment.
   const nameParts = name.trim().split(/\s+/);
@@ -63,16 +81,13 @@ export default function Hero() {
 
           <dl className="hero__stats hero__anim hero__d5" aria-label="Key stats">
             {stats.map((s) => (
-              <div className="hero__stat" key={s.label}>
-                <dd className="hero__stat-value gradient-text">{s.value}</dd>
-                <dt className="hero__stat-label">{s.label}</dt>
-              </div>
+              <HeroStat key={s.label} value={s.value} label={s.label} />
             ))}
           </dl>
         </div>
 
-        {/* ---------- Right column: terminal window ---------- */}
-        <div className="hero__right hero__anim">
+        {/* ---------- Right column: 3D scene (or terminal fallback) ---------- */}
+        <div className={`hero__right hero__anim${webgl ? ' hero__right--3d' : ''}`}>
           <img
             className="hero__photo"
             src={photo}
@@ -81,6 +96,12 @@ export default function Hero() {
             width="118"
             height="118"
           />
+
+          {webgl ? (
+            <div className="hero__stage">
+              <Hero3D />
+            </div>
+          ) : (
           <div className="hero__terminal" role="img"
             aria-label="Code editor window describing the developer">
             <div className="hero__titlebar">
@@ -149,6 +170,7 @@ export default function Hero() {
               </code>
             </pre>
           </div>
+          )}
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import profile from '../data/profile.json';
+import Reveal from './Reveal';
+import TiltCard from './TiltCard';
 import './Certifications.css';
 
 const FOCUSABLE =
@@ -59,7 +61,7 @@ export default function Certifications() {
   return (
     <section id="certifications" className="section" aria-labelledby="certs-title">
       <div className="container">
-        <header className="certs-head reveal">
+        <Reveal as="header" className="certs-head">
           <p className="certs-eyebrow mono">
             <span className="certs-prompt">$</span> ls ~/credentials
           </p>
@@ -70,17 +72,21 @@ export default function Certifications() {
           <p className="certs-sub">
             <span className="certs-count">{certs.length}</span> verified credentials &amp; experience certificates
           </p>
-        </header>
+        </Reveal>
 
         <ul className="certs-grid" role="list">
           {certs.map((cert, i) => {
             const hasImage = Boolean(cert.image);
             const key = `${cert.title}-${i}`;
             return (
-              <li
+              <TiltCard
+                as="li"
                 key={key}
-                className="card cert-card reveal"
-                style={{ animationDelay: `${Math.min(i * 0.06, 0.4)}s` }}
+                className="card cert-card"
+                reveal
+                glare
+                max={6}
+                delay={`${Math.min(i * 0.06, 0.4)}s`}
               >
                 {hasImage ? (
                   <button
@@ -132,7 +138,7 @@ export default function Certifications() {
                     </div>
                   ) : null}
                 </div>
-              </li>
+              </TiltCard>
             );
           })}
         </ul>

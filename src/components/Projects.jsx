@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import portfolio from '../data/portfolio.json';
+import Reveal from './Reveal';
+import TiltCard from './TiltCard';
 import './Projects.css';
 
 function yearOf(dateStr) {
@@ -8,11 +10,21 @@ function yearOf(dateStr) {
   return /^\d{4}$/.test(y) ? y : null;
 }
 
+// The gallery shows screenshots; the small cover/logo thumbnail (role "cover")
+// is skipped — it still serves as the card cover. Single source of truth shared
+// by the card badge and the lightbox so their counts always agree. Falls back to
+// all images if filtering would empty the set (projects with only a cover).
+function galleryImagesOf(project) {
+  const all = project.images || [];
+  const gallery = all.filter((im) => im.role !== 'cover');
+  return gallery.length ? gallery : all;
+}
+
 const FOCUSABLE =
   'a[href],button:not([disabled]),textarea,input,select,[tabindex]:not([tabindex="-1"])';
 
 function Lightbox({ project, onClose }) {
-  const images = project.images || [];
+  const images = galleryImagesOf(project);
   const [index, setIndex] = useState(0);
   const total = images.length;
   const dialogRef = useRef(null);
@@ -98,6 +110,8 @@ function Lightbox({ project, onClose }) {
 
   const year = yearOf(project.date_completed);
   const current = images[index];
+  const tech = project.tech || [];
+  const links = project.links || [];
 
   return (
     <div className="pj-overlay" onClick={onClose}>
@@ -174,27 +188,64 @@ function Lightbox({ project, onClose }) {
             <div className="pj-info-head">
               <span className="pj-info-tag mono">// project</span>
               <h3 className="pj-info-title" dir="auto">{project.title}</h3>
+              {project.title_ar && (
+                <p className="pj-info-sub" dir="rtl">{project.title_ar}</p>
+              )}
+              {project.tagline && (
+                <p className="pj-info-tagline">{project.tagline}</p>
+              )}
               <div className="pj-info-meta mono">
                 {year && <span className="pj-meta-item"><span className="pj-meta-key">year</span> {year}</span>}
                 <span className="pj-meta-item">
                   <span className="pj-meta-key">images</span> {total}
                 </span>
+                {project.work_type && (
+                  <span className="pj-meta-item"><span className="pj-meta-key">type</span> {project.work_type}</span>
+                )}
+                {project.duration && (
+                  <span className="pj-meta-item"><span className="pj-meta-key">built in</span> {project.duration}</span>
+                )}
+                {project.data_source && (
+                  <span className="pj-meta-item"><span className="pj-meta-key">data</span> {project.data_source}</span>
+                )}
               </div>
             </div>
 
             <p className="pj-info-desc" dir="auto">{project.description}</p>
 
-            {project.url && (
-              <a
-                className="btn-ghost pj-info-link"
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span aria-hidden="true">$</span> view source
-                <span className="lni lni-link" aria-hidden="true" />
-              </a>
+            {tech.length > 0 && (
+              <ul className="pj-tech" aria-label="Technologies used">
+                {tech.map((t) => (
+                  <li key={t}><span className="tag">{t}</span></li>
+                ))}
+              </ul>
             )}
+
+            <div className="pj-info-links">
+              {links.map((l) => (
+                <a
+                  key={l.url}
+                  className="btn-ghost pj-info-link"
+                  href={l.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span aria-hidden="true">$</span> {(l.label || 'link').toLowerCase()}
+                  <span className="lni lni-link" aria-hidden="true" />
+                </a>
+              ))}
+              {project.url && (
+                <a
+                  className="btn-ghost pj-info-link"
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span aria-hidden="true">$</span> view on mostaql
+                  <span className="lni lni-link" aria-hidden="true" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -213,7 +264,7 @@ export default function Projects() {
   return (
     <section id="projects" className="section pj-section" aria-labelledby="pj-heading">
       <div className="container">
-        <header className="pj-header reveal">
+        <Reveal as="header" className="pj-header">
           <span className="pj-eyebrow mono">// selected work</span>
           <h2 id="pj-heading" className="pj-title">
             <span className="gradient-text">Projects</span>
@@ -226,14 +277,15 @@ export default function Projects() {
             <span className="pj-str">'./work'</span>)
             <span className="cursor" aria-hidden="true" />
           </p>
-        </header>
+        </Reveal>
 
         <ul className="pj-grid" role="list">
           {projects.map((p, i) => {
             const year = yearOf(p.date_completed);
+            const shots = galleryImagesOf(p).length;
             return (
-              <li key={p.id} className="reveal" style={{ animationDelay: `${Math.min(i * 60, 360)}ms` }}>
-                <article className="pj-card">
+              <Reveal as="li" key={p.id} delay={`${Math.min(i * 60, 360)}ms`}>
+                <TiltCard as="article" className="pj-card" glare max={6}>
                   <button
                     type="button"
                     className="pj-cover pj-cover-btn"
@@ -247,7 +299,7 @@ export default function Projects() {
                       className="pj-cover-img"
                     />
                     <span className="pj-badge mono" aria-hidden="true">
-                      <span className="lni lni-image" aria-hidden="true" /> {p.image_count}
+                      <span className="lni lni-image" aria-hidden="true" /> {shots}
                     </span>
                     <span className="pj-open-hint mono" aria-hidden="true">
                       {'>'} open
@@ -256,14 +308,24 @@ export default function Projects() {
 
                   <div className="pj-card-body">
                     <h3 className="pj-card-title" dir="auto">{p.title}</h3>
-                    <p className="pj-card-desc" dir="auto">{p.description}</p>
+                    <p className="pj-card-desc" dir="auto">{p.tagline || p.description}</p>
+                    {p.tech && p.tech.length > 0 && (
+                      <ul className="pj-card-tech" aria-hidden="true">
+                        {p.tech.slice(0, 3).map((t) => (
+                          <li key={t} className="pj-card-chip">{t}</li>
+                        ))}
+                        {p.tech.length > 3 && (
+                          <li className="pj-card-chip pj-card-chip--more">+{p.tech.length - 3}</li>
+                        )}
+                      </ul>
+                    )}
                     <div className="pj-card-foot mono">
                       <span className="pj-year">{year ? year : '—'}</span>
                       <span className="pj-slug">/{p.slug}</span>
                     </div>
                   </div>
-                </article>
-              </li>
+                </TiltCard>
+              </Reveal>
             );
           })}
         </ul>

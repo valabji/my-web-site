@@ -1,4 +1,6 @@
 import profile from '../data/profile.json';
+import Reveal from './Reveal';
+import TiltCard from './TiltCard';
 import './Recommendations.css';
 
 export default function Recommendations() {
@@ -9,19 +11,22 @@ export default function Recommendations() {
   return (
     <section id="recommendations" className="section" aria-labelledby="recommendations-heading">
       <div className="container">
-        <header className="rec-head reveal">
+        <Reveal as="header" className="rec-head">
           <span className="rec-head__mark mono" aria-hidden="true">{'//'}</span>
           <h2 id="recommendations-heading" className="rec-head__title">
             <span className="gradient-text">recommendations</span>
           </h2>
-        </header>
+        </Reveal>
 
         <ul className="rec-grid">
           {recommendations.map((rec, i) => (
-            <li
+            <TiltCard
+              as="li"
               key={`${rec.name}-${rec.date}`}
-              className="card rec-card reveal"
-              style={{ animationDelay: `${Math.min(i * 0.08, 0.4)}s` }}
+              className="card rec-card"
+              reveal
+              max={5}
+              delay={`${Math.min(i * 0.08, 0.4)}s`}
             >
               <figure>
                 <span className="rec-card__quote mono" aria-hidden="true">&ldquo;</span>
@@ -39,7 +44,7 @@ export default function Recommendations() {
                   )}
                 </figcaption>
               </figure>
-            </li>
+            </TiltCard>
           ))}
         </ul>
       </div>

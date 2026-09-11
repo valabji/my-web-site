@@ -1,4 +1,6 @@
 import profile from '../data/profile.json'
+import Reveal from './Reveal'
+import TiltCard from './TiltCard'
 import './Skills.css'
 
 /**
@@ -21,23 +23,26 @@ export default function Skills() {
   return (
     <section id="skills" className="section" aria-labelledby="skills-title">
       <div className="container">
-        <div className="skills-head reveal">
+        <Reveal as="div" className="skills-head">
           <h2 id="skills-title">
             <span className="skills-slash mono" aria-hidden="true">// </span>
             <span className="gradient-text">skills</span>
           </h2>
-        </div>
-        <p className="skills-sub mono reveal">
+        </Reveal>
+        <Reveal as="p" className="skills-sub mono">
           <span className="skills-prompt" aria-hidden="true">$ </span>
           grep -r &ldquo;expertise&rdquo; ./career &mdash; {profile.skills.length} matches across {groups.length} domains
-        </p>
+        </Reveal>
 
         <div className="skills-groups">
           {groups.map((group, gi) => (
-            <article
+            <TiltCard
+              as="article"
               key={group.category}
-              className="card skills-group reveal"
-              style={{ animationDelay: `${gi * 60}ms` }}
+              className="card skills-group"
+              reveal
+              max={5}
+              delay={`${gi * 60}ms`}
               aria-label={`${group.category} skills`}
             >
               <header className="skills-group-head">
@@ -81,7 +86,7 @@ export default function Skills() {
                   )
                 })}
               </ul>
-            </article>
+            </TiltCard>
           ))}
         </div>
       </div>

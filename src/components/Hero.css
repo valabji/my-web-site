@@ -133,7 +133,51 @@
   min-width:0;
   display:flex;
   justify-content:center;
+  perspective:1100px;
+  transform-style:preserve-3d;
 }
+
+/* ---------- Right column: real 3D scene ---------- */
+.hero__stage{
+  position:relative;
+  width:100%;
+  max-width:520px;
+  aspect-ratio:1/1;
+  margin-inline:auto;
+}
+@media (max-width:959px){
+  .hero__stage{max-width:400px}
+}
+.hero3d{
+  position:absolute;
+  inset:0;
+  /* Purely decorative: never trap clicks or scroll. */
+  pointer-events:none;
+}
+.hero3d canvas{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+  outline:none;
+  /* Soft vignette so the canvas melts into the page background. Kept wide
+     enough (88%) that the orbiting shards never clip into the fade. */
+  -webkit-mask-image:radial-gradient(closest-side,#000 88%,transparent 100%);
+  mask-image:radial-gradient(closest-side,#000 88%,transparent 100%);
+}
+.hero3d__loading{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:radial-gradient(closest-side,var(--accent-glow),transparent 70%);
+  opacity:.5;
+  animation:hero3dPulse 1.6s ease-in-out infinite;
+}
+@keyframes hero3dPulse{
+  0%,100%{opacity:.25;transform:scale(.9)}
+  50%{opacity:.55;transform:scale(1)}
+}
+/* When the 3D scene is mounted the photo floats over the canvas. */
+.hero__right--3d .hero__photo{top:.4rem;right:1.4rem}
 
 .hero__photo{
   position:absolute;
@@ -147,6 +191,12 @@
   box-shadow:0 0 0 1px var(--accent-glow),0 0 26px var(--accent-glow),var(--shadow);
   z-index:2;
   animation:heroGlow 4.5s ease-in-out infinite;
+  transform:translate3d(
+    calc(var(--ptr-x,0) * 16px),
+    calc(var(--ptr-y,0) * 12px),
+    60px
+  );
+  transition:transform .35s cubic-bezier(.16,.84,.44,1);
 }
 @media (max-width:519px){.hero__photo{display:none}}
 
@@ -160,6 +210,12 @@
   box-shadow:var(--shadow),0 0 0 1px var(--border-soft),0 0 60px rgba(45,212,191,.07);
   overflow:hidden;
   z-index:1;
+  transform:
+    rotateY(calc(var(--ptr-x,0) * 3.5deg))
+    rotateX(calc(var(--ptr-y,0) * -3deg))
+    translateZ(0);
+  transform-style:preserve-3d;
+  transition:transform .4s cubic-bezier(.16,.84,.44,1);
 }
 
 .hero__titlebar{
@@ -243,5 +299,7 @@
 
 @media (prefers-reduced-motion:reduce){
   .hero__anim,.hero__right.hero__anim{opacity:1;transform:none;animation:none}
-  .hero__photo{animation:none}
+  .hero__photo{animation:none;transform:none;transition:none}
+  .hero__terminal{transform:none;transition:none}
+  .hero3d__loading{animation:none}
 }

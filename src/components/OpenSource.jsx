@@ -1,4 +1,6 @@
 import profile from '../data/profile.json'
+import Reveal from './Reveal'
+import TiltCard from './TiltCard'
 import './OpenSource.css'
 
 // Approximate GitHub language colors
@@ -44,7 +46,7 @@ export default function OpenSource() {
   return (
     <section id="opensource" className="section" aria-labelledby="opensource-title">
       <div className="container">
-        <header className="os-head reveal">
+        <Reveal as="header" className="os-head">
           <span className="os-eyebrow mono">// open source</span>
           <h2 id="opensource-title" className="os-title">
             Building <span className="gradient-text">in the open</span>
@@ -70,14 +72,14 @@ export default function OpenSource() {
               @{github.username}
             </a>
           </p>
-        </header>
+        </Reveal>
 
         <ul className="os-grid">
-          {github.repos.map((repo) => {
+          {github.repos.map((repo, i) => {
             const langColor = repo.language ? LANG_COLORS[repo.language] || 'var(--text-dim)' : null
             return (
               <li key={repo.name}>
-                <article className="card os-card reveal">
+                <TiltCard as="article" className="card os-card" reveal max={5} delay={`${Math.min(i * 60, 360)}ms`}>
                   <div className="os-card-top">
                     <RepoIcon />
                     <h3 className="os-card-name">{repo.name}</h3>
@@ -138,7 +140,7 @@ export default function OpenSource() {
                       </a>
                     </span>
                   </footer>
-                </article>
+                </TiltCard>
               </li>
             )
           })}

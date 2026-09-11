@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import profile from '../data/profile.json';
+import Reveal from './Reveal';
+import { useReveal } from '../hooks/useReveal';
+import { useTilt } from '../hooks/useTilt';
 import './Experience.css';
 
 const BULLET_PREVIEW = 4;
@@ -10,6 +13,8 @@ function isUrl(str) {
 
 function ExperienceItem({ job, index }) {
   const [expanded, setExpanded] = useState(false);
+  const itemRef = useReveal();
+  const cardRef = useTilt({ max: 5 });
 
   const bullets = job.bullets || [];
   const hasOverflow = bullets.length > BULLET_PREVIEW;
@@ -19,10 +24,14 @@ function ExperienceItem({ job, index }) {
   const panelId = `exp-bullets-${index}`;
 
   return (
-    <li className="xp-item reveal" style={{ animationDelay: `${Math.min(index * 60, 360)}ms` }}>
+    <li
+      ref={itemRef}
+      className="xp-item reveal"
+      style={{ '--rv-delay': `${Math.min(index * 60, 360)}ms` }}
+    >
       <span className={`xp-node${job.current ? ' xp-node--current' : ''}`} aria-hidden="true" />
 
-      <article className="xp-card card">
+      <article ref={cardRef} className="xp-card card tilt-3d">
         <header className="xp-head">
           <div className="xp-titleRow">
             <h3 className="xp-title">{job.title}</h3>
@@ -105,11 +114,12 @@ function ExperienceItem({ job, index }) {
 
 export default function Experience() {
   const experience = profile.experience || [];
+  const timelineRef = useReveal();
 
   return (
     <section id="experience" className="section xp" aria-labelledby="xp-heading">
       <div className="container">
-        <header className="xp-section-head reveal">
+        <Reveal as="header" className="xp-section-head">
           <h2 className="xp-eyebrow mono" id="xp-heading">
             <span className="gradient-text">// experience</span>
             <span className="cursor" aria-hidden="true" />
@@ -117,9 +127,9 @@ export default function Experience() {
           <p className="xp-subtitle">
             A timeline of where I&apos;ve shipped, led, and leveled up.
           </p>
-        </header>
+        </Reveal>
 
-        <ol className="xp-timeline" role="list">
+        <ol ref={timelineRef} className="xp-timeline" role="list">
           {experience.map((job, i) => (
             <ExperienceItem key={`${job.company}-${job.title}-${i}`} job={job} index={i} />
           ))}

@@ -1,4 +1,5 @@
 import profile from '../data/profile.json'
+import Reveal from './Reveal'
 import './Contact.css'
 
 export default function Contact() {
@@ -61,7 +62,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section" aria-labelledby="contact-heading">
       <div className="container">
-        <div className="contact-head reveal">
+        <Reveal as="div" className="contact-head">
           <span className="contact-eyebrow mono">
             <b>//</b> contact
           </span>
@@ -72,11 +73,11 @@ export default function Contact() {
           <h2 id="contact-heading" className="contact-cta">
             Let&apos;s build <span className="gradient-text">something</span>.
           </h2>
-        </div>
+        </Reveal>
 
         <ul className="contact-grid">
-          {channels.map((c) => (
-            <li key={c.label} className="reveal">
+          {channels.map((c, i) => (
+            <Reveal as="li" key={c.label} delay={`${i * 60}ms`}>
               <a
                 className="contact-link"
                 href={c.href}
@@ -94,7 +95,7 @@ export default function Contact() {
                   -&gt;
                 </span>
               </a>
-            </li>
+            </Reveal>
           ))}
         </ul>
 

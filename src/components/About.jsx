@@ -1,4 +1,6 @@
 import profile from '../data/profile.json';
+import Reveal from './Reveal';
+import TiltCard from './TiltCard';
 import './About.css';
 
 const TECH_GROUPS = [
@@ -15,7 +17,7 @@ export default function About() {
   return (
     <section id="about" className="section" aria-labelledby="about-heading">
       <div className="container">
-        <header className="about-head reveal">
+        <Reveal as="header" className="about-head">
           <p className="about-kicker mono">
             <span className="about-prompt">$ </span>whoami
           </p>
@@ -23,18 +25,18 @@ export default function About() {
             <span className="gradient-text">About</span>
             <span className="about-comment mono">// the engineer behind the code</span>
           </h2>
-        </header>
+        </Reveal>
 
         <div className="about-grid">
           {/* Prose + soft skills */}
-          <div className="about-block reveal" style={{ animationDelay: '.05s' }}>
+          <Reveal as="div" className="about-block" delay=".05s">
             <p className="about-prose mono">
               <span className="about-prompt">&gt; </span>cat about.md
             </p>
             <p className="about-bio">{about}</p>
-          </div>
+          </Reveal>
 
-          <div className="about-block reveal" style={{ animationDelay: '.12s' }}>
+          <Reveal as="div" className="about-block" delay=".12s">
             <p className="about-label mono">
               <span className="about-sym">const</span>
               <span className="about-key">softSkills</span>
@@ -47,11 +49,11 @@ export default function About() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
 
         {/* Tech stack */}
-        <div className="about-tech reveal" style={{ animationDelay: '.16s' }}>
+        <Reveal as="div" className="about-tech" delay=".16s">
           <p className="about-label mono">
             <span className="about-sym">//</span>
             <span className="about-key">tech stack</span>
@@ -60,7 +62,7 @@ export default function About() {
             {TECH_GROUPS.map(({ key, label }) => {
               const items = techStack[key] || [];
               return (
-                <div key={key} className="card about-techcard">
+                <TiltCard as="div" key={key} className="card about-techcard" max={5}>
                   <h3 className="about-grouphead mono">
                     <span className="about-dot" aria-hidden="true" />
                     {label}
@@ -73,15 +75,15 @@ export default function About() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </TiltCard>
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
         {/* Languages + Education */}
         <div className="about-meta-grid">
-          <div className="card about-minicard reveal" style={{ animationDelay: '.18s' }}>
+          <TiltCard as="div" className="card about-minicard" reveal delay=".18s" max={5}>
             <p className="about-label mono">
               <span className="about-sym">//</span>
               <span className="about-key">languages</span>
@@ -94,9 +96,9 @@ export default function About() {
                 </li>
               ))}
             </ul>
-          </div>
+          </TiltCard>
 
-          <div className="card about-minicard reveal" style={{ animationDelay: '.22s' }}>
+          <TiltCard as="div" className="card about-minicard" reveal delay=".22s" max={5}>
             <p className="about-label mono">
               <span className="about-sym">//</span>
               <span className="about-key">education</span>
@@ -116,7 +118,7 @@ export default function About() {
                 </li>
               ))}
             </ul>
-          </div>
+          </TiltCard>
         </div>
       </div>
     </section>

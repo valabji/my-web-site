@@ -5,7 +5,7 @@
     "tagline": "Lead Software Developer - building mobile, web & systems for 13+ years",
     "location": "Alexandria, Egypt",
     "connections": "500+",
-    "about": "Indian-Sudanese Software Developer with 13 years of professional experience. Experienced in mobile application development, web development, system development, and implementation including initial implementation, migrations, solving complex technical problems, and business requirement gatherings. Possess good leadership and communication skills.",
+    "about": "Indian-Sudanese Software Developer with 13+ years of professional experience. Experienced in mobile application development, web development, system development, and implementation including initial implementation, migrations, solving complex technical problems, and business requirement gatherings. Possess good leadership and communication skills.",
     "photo": "/assets/imgs/me.jpeg",
     "email": "valabji@gmail.com",
     "whatsapp": "+249920166262",
@@ -45,10 +45,10 @@
     "frontend": [
       "JavaScript",
       "React",
-      "React-Native",
+      "React Native",
       "Expo",
       "Redux",
-      "NextJS",
+      "Next.js",
       "HTML",
       "CSS",
       "SCSS",
@@ -58,7 +58,7 @@
       "Django",
       "Node.js",
       "Mongo",
-      "MySql",
+      "MySQL",
       "Ruby on Rails"
     ],
     "design": [
@@ -397,8 +397,8 @@
       "location": "Riyadh, Saudi Arabia",
       "current": false,
       "bullets": [
-        "I was responsible for the Next.Js Front End of the project",
-        "I translated PHP Laravel Functionalities into Next.Js",
+        "I was responsible for the Next.js Front End of the project",
+        "I translated PHP Laravel Functionalities into Next.js",
         "I then translated the new design from Figma to React Components",
         "I built and maintained a docker container for easy deployment to GCP",
         "I built and maintained Bitbucket pipelines to automate the deployment to the development server and the production server",
@@ -406,7 +406,7 @@
         "I built plugins and modified designs as needed with PHP Symfony",
         "I built and maintained GitHub Actions to automate the deployment to the development server and the production server",
         "I was responsible for the servers and AWS services",
-        "I built a docker network to emulate the real work environment for testing (Apache Web server, Mysql DB Server, Elastic Search Server ) with an automation bash script to allow other developers to expand instances as needed.",
+        "I built a docker network to emulate the real work environment for testing (Apache Web server, MySQL DB Server, Elastic Search Server ) with an automation bash script to allow other developers to expand instances as needed.",
         "I started the development servers using AWS Lightsail instances and databases",
         "I later pivoted to AWS EC2 and RDS for more control and upgradability",
         "I also changed our DNSs from GCP DNS to AWS Route 53 since we were shutting down the GCP account.",
@@ -419,11 +419,11 @@
       ],
       "tech": [
         "ReactJS",
-        "NextJS",
+        "Next.js",
         "Magento 2 (PHP)",
         "PHP Symfony",
         "PHP Laravel",
-        "React-Native",
+        "React Native",
         "Nest.js",
         "AWS",
         "GCP",
@@ -452,7 +452,7 @@
       "location": "Khartoum, Khartoum State, Sudan",
       "current": false,
       "bullets": [
-        "We built awesome applications, systems, and websites at New generation engineering, one of them was Maweed Qatar website:",
+        "We built awesome applications, systems, and websites at New Generation Engineering, one of them was Maweed Qatar website:",
         "Developed a web app for booking clinic reservations in Qatar, using Java and Spring.",
         "Created and implemented the source code of the new product.",
         "Tested source code and debugged code.",
@@ -466,7 +466,7 @@
         "Another project was the trip tracking system, a mobile application that records the trip made by company cars and sends it to the system when there is a connection.",
         "Developed a mobile app for tracking GPS changes, using Android Studio, Java, and Kotlin.",
         "Developed a web portal to track cars and view reports",
-        "Developed server environment using Node.Js Server and MongoDB"
+        "Developed server environment using Node.js Server and MongoDB"
       ],
       "tech": [
         "Java",
@@ -477,13 +477,13 @@
         "Android Studio",
         "Kotlin",
         "GPS",
-        "Node.Js",
+        "Node.js",
         "MongoDB",
-        "PHP Codeigniter"
+        "PHP CodeIgniter"
       ]
     },
     {
-      "title": "React-Native Developer",
+      "title": "React Native Developer",
       "company": "Infty",
       "type": "Full-time",
       "start": "Jun 2020",
@@ -506,7 +506,7 @@
       ],
       "tech": [
         "JavaScript",
-        "Typescript",
+        "TypeScript",
         "Redux",
         "React Native",
         "Adobe XD",
@@ -523,15 +523,22 @@
       "location": "Remote",
       "current": false,
       "bullets": [
-        "Accounts:",
-        "https://khamsat.com/user/abdalrahman-valabji",
-        "https://khamsat.com/user/valabji",
+        "Delivered freelance software projects — mobile apps, web platforms, and admin dashboards — for clients across Arabic-market marketplaces over 8 years.",
+        "Freelance profiles:",
         "https://mostaql.com/u/valabji",
+        "https://khamsat.com/user/valabji",
         "https://baaeed.com/u/valabji",
-        "Gallery:",
+        "Portfolio:",
         "https://mostaql.com/u/valabji/portfolio"
       ],
-      "tech": []
+      "tech": [
+        "React Native",
+        "React",
+        "Ionic",
+        "TypeScript",
+        "Java",
+        "VB.NET"
+      ]
     },
     {
       "title": "Software Programming Instructor",
@@ -540,7 +547,7 @@
       "start": "Dec 2018",
       "end": "Nov 2020",
       "duration": "2 yrs",
-      "location": "khartoum,Sudan",
+      "location": "Khartoum, Sudan",
       "current": false,
       "bullets": [
         "I taught the following courses:",
@@ -567,7 +574,7 @@
       "location": "Khartoum, Khartoum State, Sudan",
       "current": false,
       "bullets": [
-        "Built a native mobile application for android using java and kotlin with a backend built with Codeigniter PHP framework but later we pivoted to React Native / Typescript with React / Node.js BackEnd.",
+        "Built a native mobile application for Android using Java and Kotlin with a backend built with the CodeIgniter PHP framework, but later we pivoted to React Native / TypeScript with a React / Node.js backend.",
         "Built a website for the company.",
         "Contributed to designing, testing, releasing, and application support.",
         "Wrote a clean and sustainable code that can be used in the future.",
@@ -585,7 +592,7 @@
         "Local SMS API",
         "CodeIgniter (PHP) REST API",
         "React Native",
-        "Typescript",
+        "TypeScript",
         "React",
         "Node.js",
         "GCP"
@@ -598,7 +605,7 @@
       "start": "May 2018",
       "end": "May 2019",
       "duration": "1 yr 1 mo",
-      "location": "Sudan , Khartoum",
+      "location": "Khartoum, Sudan",
       "current": false,
       "bullets": [
         "In addition to the software development responsibilities I was also responsible for:",
@@ -621,7 +628,7 @@
       "start": "Apr 2019",
       "end": "Mar 2020",
       "duration": "1 yr",
-      "location": "Khartoum ,Sudan",
+      "location": "Khartoum, Sudan",
       "current": false,
       "bullets": [
         "I taught the following courses:",
@@ -658,7 +665,7 @@
       "start": "Oct 2018",
       "end": "Dec 2018",
       "duration": "3 mos",
-      "location": "Omdurman , Sudan",
+      "location": "Omdurman, Sudan",
       "current": false,
       "bullets": [
         "Classes that I taught:",
@@ -679,13 +686,13 @@
       "start": "Jun 2017",
       "end": "Nov 2017",
       "duration": "6 mos",
-      "location": "Khartoum , Sudan",
+      "location": "Khartoum, Sudan",
       "current": false,
       "bullets": [
-        "I was sent here by the college for a training period but Mr. Mohammed El Tayar ( CEO & Founder ) assigned me as Training manager by my third day to be responsible for my colleagues.",
+        "I was sent here by the college for a training period but Mr. Mohammed El Tayar (CEO & Founder) assigned me as Training Manager by my third day to be responsible for my colleagues.",
         "Managing trainees.",
         "VPN Labs Management.",
-        "Lecturing trainees about information security ( Penetration Testing with Kali Linux \"PWK\" - OSCP Penetration Testing Certification preparation).",
+        "Lecturing trainees about information security (Penetration Testing with Kali Linux \"PWK\" — OSCP Penetration Testing Certification preparation).",
         "Meanwhile, I played the role of Junior penetration tester."
       ],
       "tech": [
@@ -701,20 +708,18 @@
       "start": "2013",
       "end": "2015",
       "duration": "2 yrs",
-      "location": "Portsudan , Sudan",
+      "location": "Port Sudan, Sudan",
       "current": false,
       "bullets": [
-        "The experience certificate reflects only my latest role",
-        "I started my career at Basiri Plaza Hotel as a waiter then I proved my technical knowledge in a few months to be promoted to a technician",
-        "This job took place before collage",
-        "The experience certificate seems to have a bad translation",
-        "ensure a stable operation of the networks.",
+        "I started my career at Basiri Plaza Hotel as a waiter, then proved my technical knowledge within a few months to be promoted to a technician.",
+        "This job took place before college.",
+        "Ensured stable operation of the networks.",
         "Install new network nodes.",
         "Install and configure CCTV Systems.",
         "Managed Active directory.",
         "Managed Firewall and ISA Server.",
         "Managed a Squid Proxy server.",
-        "Manager MS SQL Server Database.",
+        "Managed MS SQL Server database.",
         "Created and maintained Hotel Website.",
         "Respond to different departments' issues.",
         "Mentored new employees to use the system.",
@@ -823,7 +828,7 @@
       "title": "Empowering a New Era of Engineering Excellence | Co-founder & CTO at NGE",
       "relationship": "Majid managed Abdalrahman directly",
       "date": "April 29, 2021",
-      "text": "I have worked with Valabji, and wish we never stop working together. He is smart, active and trustworthy. The first time we met was when interviewed him with the need for someone to fix our app in very short notice. He adopted the problem and acted as team member with no hesitation, from the first week we were working over 18h and finally he managed to fix all the problems gradually. Valabji is an independent, self-motivated, enthusiastic youngman with pure honest sprit whom you can surely relay on."
+      "text": "I have worked with Valabji, and wish we never stop working together. He is smart, active and trustworthy. The first time we met was when interviewed him with the need for someone to fix our app in very short notice. He adopted the problem and acted as team member with no hesitation, from the first week we were working over 18h and finally he managed to fix all the problems gradually. Valabji is an independent, self-motivated, enthusiastic young man with a pure, honest spirit whom you can surely rely on."
     },
     {
       "name": "Abdeen Mohamed",
@@ -884,7 +889,7 @@
       },
       {
         "name": "forex",
-        "description": "Fully functional Mobile Application Built with React-Native for iOS and Android",
+        "description": "Fully functional Mobile Application Built with React Native for iOS and Android",
         "language": "JavaScript",
         "stars": 0,
         "url": "https://github.com/valabji/forex",
