@@ -19,7 +19,6 @@ const SITE = 'https://valabji.com'
 const OG_IMAGE = `${SITE}/assets/imgs/me.jpeg`
 
 const routes = [
-  '/',
   '/about',
   '/experience',
   '/projects',
@@ -58,6 +57,20 @@ function injectMeta(html, metaTags) {
   return html.replace(
     /(<head[^>]*>)([\s\S]*?)(<\/head>)/,
     (_, open, _c, close) => `${open}\n${metaTags}${close}`
+  )
+}
+
+function extractAssets(html) {
+  const scripts = html.match(/<script[^>]*type="module"[^>]*>/g) || []
+  const styles = html.match(/<link[^>]*rel="stylesheet"[^>]*>/g) || []
+  const preconnects = html.match(/<link[^>]*rel="preconnect"[^>]*>/g) || []
+  return [...preconnects, ...styles, ...scripts].join('\n')
+}
+
+function injectAssets(html, assets) {
+  return html.replace(
+    /(<head[^>]*>)([\s\S]*?)(<\/head>)/,
+    (_, open, content, close) => `${open}\n${assets}\n${content}${close}`
   )
 }
 
@@ -197,6 +210,7 @@ async function main() {
   
   // Copy the original SPA shell before we overwrite it
   const spaShell = readFileSync(path.join(DIST, 'index.html'), 'utf-8')
+  const criticalAssets = extractAssets(spaShell)
   
   const browser = await puppeteer.launch({
     headless: true,
@@ -208,6 +222,27 @@ async function main() {
   console.log(`Prerendering ${pages.length} pages...`)
 
   const tab = await browser.newPage()
+
+  // Block ad domains to prevent ad injection
+  await tab.setRequestInterception(true)
+  tab.on('request', (req) => {
+    const url = req.url()
+    const adDomains = [
+      'googleads.g.doubleclick.net',
+      'pagead2.googlesyndication.com',
+      'googletagservices.com',
+      'googlesyndication.com',
+      'doubleclick.net',
+      'adservice.google.com',
+      'googleadservices.com'
+    ]
+    if (adDomains.some(d => url.includes(d))) {
+      req.abort()
+    } else {
+      req.continue()
+    }
+  })
+
   tab.on('pageerror', (err) => console.log(`  [error] ${err.message.substring(0, 80)}`))
 
   for (const page of pages) {
@@ -223,6 +258,7 @@ async function main() {
 
       let html = await tab.content()
       html = injectMeta(html, buildMeta(page.meta))
+      html = injectAssets(html, criticalAssets)
 
       const outputPath = page.route === '/'
         ? path.join(DIST, 'index.html')

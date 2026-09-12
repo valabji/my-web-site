@@ -1,24 +1,41 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import profile from '../data/profile.json';
+import { useIsBrowser } from '../hooks/useIsBrowser';
 import './Nav.css';
 
 const LINKS = [
-  { to: '/about', label: 'About' },
-  { to: '/experience', label: 'Experience' },
-  { to: '/projects', label: 'Work' },
-  { to: '/skills', label: 'Skills' },
-  { to: '/opensource', label: 'Open Source' },
-  { to: '/certifications', label: 'Certs' },
-  { to: '/recommendations', label: 'Recs' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/about', anchor: '#about', label: 'About' },
+  { to: '/experience', anchor: '#experience', label: 'Experience' },
+  { to: '/projects', anchor: '#projects', label: 'Work' },
+  { to: '/skills', anchor: '#skills', label: 'Skills' },
+  { to: '/opensource', anchor: '#opensource', label: 'Open Source' },
+  { to: '/certifications', anchor: '#certifications', label: 'Certs' },
+  { to: '/recommendations', anchor: '#recommendations', label: 'Recs' },
+  { to: '/contact', anchor: '#contact', label: 'Contact' },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const { github, linkedin } = profile.identity.links;
+  const location = useLocation();
+  const isBrowser = useIsBrowser();
+  const isHome = location.pathname === '/';
 
   const close = () => setOpen(false);
+
+  const getHref = (link) => {
+    if (isBrowser && isHome) return link.anchor;
+    return link.to;
+  };
+
+  const getLinkProps = (link) => {
+    const href = getHref(link);
+    const isAnchor = href.startsWith('#');
+    return isAnchor
+      ? { to: href, onClick: close }
+      : { to: href, onClick: close };
+  };
 
   return (
     <nav className="nav" aria-label="Primary">
@@ -33,7 +50,7 @@ export default function Nav() {
           <ul className="nav__links">
             {LINKS.map((l) => (
               <li key={l.label}>
-                <Link className="nav__link" to={l.to} onClick={close}>{l.label}</Link>
+                <Link className="nav__link" {...getLinkProps(l)}>{l.label}</Link>
               </li>
             ))}
             <li className="nav__social">
@@ -73,7 +90,7 @@ export default function Nav() {
             <ul className="nav__mobile-list">
               {LINKS.map((l) => (
                 <li key={l.label}>
-                  <Link className="nav__mobile-link" to={l.to} onClick={close}>{l.label}</Link>
+                  <Link className="nav__mobile-link" {...getLinkProps(l)}>{l.label}</Link>
                 </li>
               ))}
             </ul>
