@@ -1,16 +1,17 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import profile from '../data/profile.json';
 import './Nav.css';
 
 const LINKS = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Work' },
-  { href: '#opensource', label: 'Open Source' },
-  { href: '#certifications', label: 'Certs' },
-  { href: '#recommendations', label: 'Recs' },
-  { href: '#contact', label: 'Contact' },
+  { to: '/about', label: 'About' },
+  { to: '/experience', label: 'Experience' },
+  { to: '/projects', label: 'Work' },
+  { to: '/skills', label: 'Skills' },
+  { to: '/opensource', label: 'Open Source' },
+  { to: '/certifications', label: 'Certs' },
+  { to: '/recommendations', label: 'Recs' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Nav() {
@@ -23,16 +24,16 @@ export default function Nav() {
     <nav className="nav" aria-label="Primary">
       <div className="container">
         <div className="nav__inner">
-          <a className="nav__brand mono" href="#home" aria-label="valabji — home" onClick={close}>
+          <Link className="nav__brand mono" to="/" aria-label="valabji — home" onClick={close}>
             <span className="nav__brand-prefix" aria-hidden="true">~/</span>
             <span className="nav__brand-name">valabji</span>
             <span className="cursor" aria-hidden="true" />
-          </a>
+          </Link>
 
           <ul className="nav__links">
             {LINKS.map((l) => (
-              <li key={l.href}>
-                <a className="nav__link" href={l.href}>{l.label}</a>
+              <li key={l.label}>
+                <Link className="nav__link" to={l.to} onClick={close}>{l.label}</Link>
               </li>
             ))}
             <li className="nav__social">
@@ -71,8 +72,8 @@ export default function Nav() {
           <div className="container">
             <ul className="nav__mobile-list">
               {LINKS.map((l) => (
-                <li key={l.href}>
-                  <a className="nav__mobile-link" href={l.href} onClick={close}>{l.label}</a>
+                <li key={l.label}>
+                  <Link className="nav__mobile-link" to={l.to} onClick={close}>{l.label}</Link>
                 </li>
               ))}
             </ul>

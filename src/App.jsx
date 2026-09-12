@@ -1,6 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import Home from './pages/Home.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import ExperiencePage from './pages/ExperiencePage.jsx'
+import ProjectsPage from './pages/ProjectsPage.jsx'
+import ProjectPage from './pages/ProjectPage.jsx'
+import SkillsPage from './pages/SkillsPage.jsx'
+import OpenSourcePage from './pages/OpenSourcePage.jsx'
+import CertificationsPage from './pages/CertificationsPage.jsx'
+import RecommendationsPage from './pages/RecommendationsPage.jsx'
+import ContactPage from './pages/ContactPage.jsx'
 import ErrorPage from './pages/Error.jsx'
 
 const router = createBrowserRouter([
@@ -9,6 +18,15 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'about', element: <AboutPage /> },
+      { path: 'experience', element: <ExperiencePage /> },
+      { path: 'projects', element: <ProjectsPage /> },
+      { path: 'projects/:slug', element: <ProjectPage /> },
+      { path: 'skills', element: <SkillsPage /> },
+      { path: 'opensource', element: <OpenSourcePage /> },
+      { path: 'certifications', element: <CertificationsPage /> },
+      { path: 'recommendations', element: <RecommendationsPage /> },
+      { path: 'contact', element: <ContactPage /> },
       { path: '*', element: <ErrorPage /> },
     ],
   },
