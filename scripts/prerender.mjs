@@ -19,9 +19,15 @@ const SITE = 'https://valabji.com'
 const OG_IMAGE = `${SITE}/assets/imgs/me.jpeg`
 
 const routes = [
+  '/',
   '/about',
   '/experience',
   '/projects',
+  '/skills',
+  '/opensource',
+  '/certifications',
+  '/recommendations',
+  '/contact',
   ...portfolio.projects.map((p) => `/projects/${p.slug}`),
 ]
 
@@ -181,6 +187,90 @@ const pages = [
       },
     },
   })),
+  {
+    route: '/skills',
+    waitFor: '#skills .skills-grid',
+    meta: {
+      title: 'Skills — Abdalrahman Valabji',
+      description: 'Technical skills of Abdalrahman Valabji — React, React Native, Node.js, TypeScript, Python, Django, Next.js, and more.',
+      canonical: '/skills',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        mainEntity: {
+          '@type': 'Person',
+          name: 'Abdalrahman Valabji',
+          knowsAbout: ['React', 'React Native', 'Node.js', 'JavaScript', 'TypeScript', 'Python', 'Django', 'Next.js', 'Redux', 'GraphQL', 'SQL', 'AWS'],
+        },
+      },
+    },
+  },
+  {
+    route: '/opensource',
+    waitFor: '#opensource .oss-grid',
+    meta: {
+      title: 'Open Source — Abdalrahman Valabji',
+      description: 'Open source contributions and projects by Abdalrahman Valabji.',
+      canonical: '/opensource',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Open Source — Abdalrahman Valabji',
+        description: 'Open source contributions and projects.',
+        url: `${SITE}/opensource`,
+      },
+    },
+  },
+  {
+    route: '/certifications',
+    waitFor: '#certifications .cert-grid',
+    meta: {
+      title: 'Certifications — Abdalrahman Valabji',
+      description: 'Professional certifications and credentials of Abdalrahman Valabji.',
+      canonical: '/certifications',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        mainEntity: {
+          '@type': 'Person',
+          name: 'Abdalrahman Valabji',
+          hasCredential: [],
+        },
+      },
+    },
+  },
+  {
+    route: '/recommendations',
+    waitFor: '#recommendations .rec-grid',
+    meta: {
+      title: 'Recommendations — Abdalrahman Valabji',
+      description: 'Professional recommendations and testimonials for Abdalrahman Valabji.',
+      canonical: '/recommendations',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Recommendations — Abdalrahman Valabji',
+        description: 'Professional recommendations and testimonials.',
+        url: `${SITE}/recommendations`,
+      },
+    },
+  },
+  {
+    route: '/contact',
+    waitFor: '#contact .contact-form',
+    meta: {
+      title: 'Contact — Abdalrahman Valabji',
+      description: 'Get in touch with Abdalrahman Valabji for freelance work, collaborations, or inquiries.',
+      canonical: '/contact',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contact Abdalrahman Valabji',
+        description: 'Contact form for Abdalrahman Valabji.',
+        url: `${SITE}/contact`,
+      },
+    },
+  },
 ]
 
 function startServer(spaShell) {
