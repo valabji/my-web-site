@@ -28,6 +28,7 @@ html{
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
   tab-size:2;
+  overflow-x:hidden;
 }
 body{
   min-height:100%;
@@ -333,7 +334,7 @@ code{
 .tilt-3d.glare[data-tilt="on"]::after{opacity:1}
 
 /* Fixed parallax background scene (replaces body::before/::after when mounted) */
-.scene-bg{position:fixed; inset:-12%; z-index:-3; pointer-events:none}
+.scene-bg{position:fixed; inset:0; z-index:-3; pointer-events:none; overflow:hidden}
 .scene-bg__glow,.scene-bg__grid,.scene-bg__near{
   position:absolute; inset:0; will-change:transform;
 }
