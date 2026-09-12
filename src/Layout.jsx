@@ -1,9 +1,24 @@
-import { Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import { usePointerScene } from './hooks/usePointerScene'
 
 export default function Layout() {
   usePointerScene()
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      const timer = setTimeout(() => {
+        const el = document.querySelector(location.hash)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [location.pathname, location.hash])
+
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>

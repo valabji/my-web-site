@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import profile from '../data/profile.json';
 import { useCountUp } from '../hooks/useCountUp';
 import Hero3D from './Hero3D';
@@ -59,10 +60,10 @@ export default function Hero() {
           </p>
 
           <div className="hero__cta hero__anim hero__d4">
-            <a className="btn" href="#projects">
+            <Link className="btn" to="/projects">
               <span className="lni lni-briefcase" aria-hidden="true" />
               View Work
-            </a>
+            </Link>
             <a className="btn-ghost" href={links.github}
               target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
               <span className="lni lni-github" aria-hidden="true" />
@@ -73,7 +74,7 @@ export default function Hero() {
               <span className="lni lni-linkedin" aria-hidden="true" />
               LinkedIn
             </a>
-            <a className="btn-ghost" href="#contact">
+            <a className="btn-ghost" href="/#contact">
               <span className="lni lni-envelope" aria-hidden="true" />
               Contact
             </a>

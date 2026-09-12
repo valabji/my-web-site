@@ -1,0 +1,111 @@
+.pj-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+.pj-detail-back:hover {
+  color: var(--accent);
+  text-shadow: none;
+}
+
+.pj-detail-head {
+  margin-bottom: 2.5rem;
+}
+.pj-detail-eyebrow {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-2);
+  margin-bottom: 0.5rem;
+}
+.pj-detail-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+}
+.pj-detail-title-ar {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+.pj-detail-tagline {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+.pj-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+}
+.pj-detail-meta-item {
+  display: flex;
+  gap: 0.5em;
+}
+.pj-detail-meta-item dt {
+  color: var(--text-faint);
+}
+.pj-detail-meta-item dd {
+  color: var(--accent);
+}
+
+.pj-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.pj-detail-img-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.pj-detail-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.pj-detail-img-wrap:hover img {
+  transform: scale(1.02);
+}
+
+.pj-detail-body {
+  max-width: 72ch;
+}
+.pj-detail-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.pj-detail-desc-ar {
+  font-style: italic;
+}
+.pj-detail-section-head {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.pj-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.pj-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pj-detail-img-wrap:hover img {
+    transform: none;
+  }
+}

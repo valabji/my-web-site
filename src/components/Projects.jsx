@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import portfolio from '../data/portfolio.json';
 import Reveal from './Reveal';
 import TiltCard from './TiltCard';
@@ -286,11 +287,10 @@ export default function Projects() {
             return (
               <Reveal as="li" key={p.id} delay={`${Math.min(i * 60, 360)}ms`}>
                 <TiltCard as="article" className="pj-card" glare max={6}>
-                  <button
-                    type="button"
+                  <Link
+                    to={`/projects/${p.slug}`}
                     className="pj-cover pj-cover-btn"
-                    aria-label={`Open ${p.title}`}
-                    onClick={() => openProject(p)}
+                    aria-label={`View ${p.title}`}
                   >
                     <img
                       src={'/' + p.cover}
@@ -302,9 +302,9 @@ export default function Projects() {
                       <span className="lni lni-image" aria-hidden="true" /> {shots}
                     </span>
                     <span className="pj-open-hint mono" aria-hidden="true">
-                      {'>'} open
+                      {'>'} view
                     </span>
-                  </button>
+                  </Link>
 
                   <div className="pj-card-body">
                     <h3 className="pj-card-title" dir="auto">{p.title}</h3>
