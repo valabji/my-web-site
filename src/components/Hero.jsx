@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import profile from '../data/profile.json';
 import { useCountUp } from '../hooks/useCountUp';
 import Hero3D from './Hero3D';
+import WebGLErrorBoundary from './WebGLErrorBoundary';
 import { hasWebGL } from './hero3d/webgl';
 import './Hero.css';
 
@@ -100,7 +101,9 @@ export default function Hero() {
 
           {webgl ? (
             <div className="hero__stage">
-              <Hero3D />
+              <WebGLErrorBoundary>
+                <Hero3D />
+              </WebGLErrorBoundary>
             </div>
           ) : (
           <div className="hero__terminal" role="img"
