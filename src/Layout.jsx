@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
+import ScrollUp from './components/ScrollUp.jsx'
 import { usePointerScene } from './hooks/usePointerScene'
 
 export default function Layout() {
@@ -17,6 +18,7 @@ export default function Layout() {
       }, 100)
       return () => clearTimeout(timer)
     }
+    window.scrollTo(0, 0)
   }, [location.pathname, location.hash])
 
   return (
@@ -31,6 +33,7 @@ export default function Layout() {
       <main id="main-content" tabIndex={-1} aria-label="Main content">
         <Outlet />
       </main>
+      <ScrollUp />
     </>
   )
 }

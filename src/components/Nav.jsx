@@ -41,7 +41,7 @@ export default function Nav() {
     <nav className="nav" aria-label="Primary">
       <div className="container">
         <div className="nav__inner">
-          <Link className="nav__brand mono" to="/" aria-label="valabji — home" onClick={close}>
+          <Link className="nav__brand mono" to="/" aria-label="valabji — home" onClick={() => { close(); if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <span className="nav__brand-prefix" aria-hidden="true">~/</span>
             <span className="nav__brand-name">valabji</span>
             <span className="cursor" aria-hidden="true" />
