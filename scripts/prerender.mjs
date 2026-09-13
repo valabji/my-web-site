@@ -35,9 +35,10 @@ function buildMeta({ title, description, canonical, image, type = 'website', jso
   const fullTitle = title || 'Abdalrahman Valabji — Lead Software Developer'
   const url = `${SITE}${canonical}`
   const img = image || OG_IMAGE
-  const desc = (description || '').replace(/"/g, '&quot;')
+  const desc = (description || '').replace(/"/g, '"')
 
   let tags = ''
+  tags += `    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />\n`
   tags += `    <title>${fullTitle}</title>\n`
   tags += `    <meta name="description" content="${desc}" />\n`
   tags += `    <link rel="canonical" href="${url}" />\n`
@@ -67,7 +68,7 @@ function injectMeta(html, metaTags) {
 }
 
 function extractAssets(html) {
-  const scripts = html.match(/<script[^>]*type="module"[^>]*>/g) || []
+  const scripts = html.match(/<script[^>]*type="module"[^>]*><\/script>/g) || []
   const styles = html.match(/<link[^>]*rel="stylesheet"[^>]*>/g) || []
   const preconnects = html.match(/<link[^>]*rel="preconnect"[^>]*>/g) || []
   return [...preconnects, ...styles, ...scripts].join('\n')
