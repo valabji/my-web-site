@@ -18,6 +18,7 @@ export default function Layout() {
       }, 100)
       return () => clearTimeout(timer)
     }
+    window.scrollTo(0, 0)
   }, [location.pathname, location.hash])
 
   return (
