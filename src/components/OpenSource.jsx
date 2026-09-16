@@ -2,6 +2,7 @@ import profile from '../data/profile.json'
 import Reveal from './Reveal'
 import TiltCard from './TiltCard'
 import './OpenSource.css'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 // Approximate GitHub language colors
 const LANG_COLORS = {
@@ -41,24 +42,25 @@ const ExternalIcon = () => (
 )
 
 export default function OpenSource() {
+  const { t, tr } = useLanguage()
   const { github } = profile
 
   return (
     <section id="opensource" className="section" aria-labelledby="opensource-title">
       <div className="container">
         <Reveal as="header" className="os-head">
-          <span className="os-eyebrow mono">// open source</span>
+          <span className="os-eyebrow mono">// {t('openSource')}</span>
           <h2 id="opensource-title" className="os-title">
-            Building <span className="gradient-text">in the open</span>
+            <span className="gradient-text">{t('buildingOpen')}</span>
           </h2>
           <p className="os-intro">
             <span className="os-prompt" aria-hidden="true">$</span>
             <span>
-              <b>{github.publicRepos}</b> public repos
+              <b>{github.publicRepos}</b> {t('publicRepos')}
             </span>
             <span aria-hidden="true">·</span>
             <span>
-              <b>{github.followers}</b> followers
+              <b>{github.followers}</b> {t('followers')}
             </span>
             <span aria-hidden="true">·</span>
             <a
@@ -66,7 +68,7 @@ export default function OpenSource() {
               href={github.profileUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Visit @${github.username} on GitHub`}
+              aria-label={t('visitGithub', { name: github.username })}
             >
               <span className="lni lni-github" aria-hidden="true" />
               @{github.username}
@@ -87,12 +89,12 @@ export default function OpenSource() {
 
                   {repo.description && (
                     <p className="os-card-desc" dir="auto">
-                      {repo.description}
+                      {tr(repo.description)}
                     </p>
                   )}
 
                   {repo.topics && repo.topics.length > 0 && (
-                    <div className="os-topics" aria-label="Topics">
+                    <div className="os-topics" aria-label={t('topics')}>
                       {repo.topics.slice(0, 4).map((t) => (
                         <span key={t} className="os-topic">#{t}</span>
                       ))}
@@ -110,7 +112,7 @@ export default function OpenSource() {
                         {repo.language}
                       </span>
                     )}
-                    <span className="os-meta" aria-label={`${repo.stars} stars`}>
+                    <span className="os-meta" aria-label={t('stars', { count: repo.stars })}>
                       <StarIcon />
                       {repo.stars}
                     </span>
@@ -122,10 +124,10 @@ export default function OpenSource() {
                           href={repo.homepage}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`Open ${repo.name} live site`}
+                          aria-label={t('openLive', { name: repo.name })}
                         >
                           <span className="lni lni-link" aria-hidden="true" />
-                          live
+                          {t('live')}
                         </a>
                       )}
                       <a
@@ -133,10 +135,10 @@ export default function OpenSource() {
                         href={repo.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`View ${repo.name} on GitHub`}
+                        aria-label={t('viewGithub', { name: repo.name })}
                       >
                         <ExternalIcon />
-                        code
+                        {t('code')}
                       </a>
                     </span>
                   </footer>

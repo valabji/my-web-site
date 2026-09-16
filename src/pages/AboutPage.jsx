@@ -1,25 +1,27 @@
 import SEO from '../components/SEO';
 import About from '../components/About';
 import Skills from '../components/Skills';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 export default function AboutPage() {
+  const { isArabic, tr } = useLanguage();
   return (
     <>
       <SEO
-        title="About"
-        description="Indian-Sudanese Software Developer with 13+ years of professional experience in mobile, web, and system development. Skilled in React, React Native, Node.js, and more."
+        title={isArabic ? 'نبذة عني' : 'About'}
+        description={isArabic ? 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة، مع خبرة في React وReact Native وNode.js وغيرها.' : 'Indian-Sudanese Software Developer with 13+ years of professional experience in mobile, web, and system development. Skilled in React, React Native, Node.js, and more.'}
         canonical="/about"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ProfilePage',
           mainEntity: {
             '@type': 'Person',
-            name: 'Abdalrahman Valabji',
-            url: 'https://valabji.com',
+            name: isArabic ? 'عبدالرحمن فلبجي' : 'Abdalrahman Valabji',
+            url: `https://valabji.com${isArabic ? '/ar' : ''}`,
             image: 'https://valabji.com/assets/imgs/me.jpeg',
-            jobTitle: 'Lead Software Developer',
+            jobTitle: tr('Lead Software Engineer'),
             description:
-              'Indian-Sudanese Software Developer with 13+ years of professional experience in mobile, web, and system development.',
+              isArabic ? 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة.' : 'Indian-Sudanese Software Developer with 13+ years of professional experience in mobile, web, and system development.',
             knowsAbout: [
               'React',
               'React Native',
@@ -30,7 +32,7 @@ export default function AboutPage() {
               'Next.js',
               'TypeScript',
             ],
-            knowsLanguage: ['Arabic', 'English'],
+            knowsLanguage: ['Arabic', 'English'].map(tr),
             sameAs: [
               'https://www.linkedin.com/in/valabji/',
               'https://github.com/valabji',

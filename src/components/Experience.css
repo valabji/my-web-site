@@ -24,8 +24,8 @@
   display:flex;
   flex-direction:column;
   gap:clamp(1.5rem,3vw,2.25rem);
-  /* node column on the left for mobile */
-  padding-left:2.25rem;
+  /* node column at the logical start edge */
+  padding-inline-start:2.25rem;
 }
 /* The connecting line */
 .xp-timeline::before{
@@ -33,7 +33,7 @@
   position:absolute;
   top:.4rem;
   bottom:.4rem;
-  left:7px;            /* aligns with node center on mobile */
+  inset-inline-start:7px; /* aligns with node center on mobile */
   width:2px;
   background:linear-gradient(
     to bottom,
@@ -61,10 +61,10 @@
 .xp-node{
   position:absolute;
   top:1.6rem;
-  left:-2.25rem;          /* back to the rail */
+  inset-inline-start:-2.25rem; /* back to the rail */
   width:16px;
   height:16px;
-  margin-left:0;
+  margin-inline-start:0;
   transform:translateX(-1px) scale(.35);
   opacity:0;
   border-radius:50%;
@@ -78,6 +78,8 @@
   transform:translateX(-1px) scale(1);
   opacity:1;
 }
+html[dir="rtl"] .xp-node{transform:translateX(1px) scale(.35)}
+html[dir="rtl"] .xp-item.is-in .xp-node{transform:translateX(1px) scale(1)}
 .xp-node::after{
   content:"";
   position:absolute;
@@ -211,6 +213,7 @@
   line-height:1.55;
   user-select:none;
 }
+html[dir="rtl"] .xp-bullet-mark{transform:scaleX(-1)}
 .xp-bullet-link{
   word-break:break-all;
 }
@@ -257,14 +260,14 @@
    ============================================================ */
 @media (min-width:720px){
   .xp-timeline{
-    padding-left:3rem;
+    padding-inline-start:3rem;
   }
   .xp-timeline::before{
-    left:9px;
+    inset-inline-start:9px;
   }
   .xp-node{
     top:1.8rem;
-    left:-3rem;
+    inset-inline-start:-3rem;
     width:18px;
     height:18px;
   }
@@ -279,4 +282,5 @@
     opacity:1!important;
     transition:none!important;
   }
+  html[dir="rtl"] .xp-node{transform:translateX(1px) scale(1)!important}
 }

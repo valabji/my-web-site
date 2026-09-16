@@ -3,10 +3,12 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import ScrollUp from './components/ScrollUp.jsx'
 import { usePointerScene } from './hooks/usePointerScene'
+import { useLanguage } from './i18n/LanguageContext.jsx'
 
 export default function Layout() {
   usePointerScene()
   const location = useLocation()
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (location.hash) {
@@ -23,14 +25,14 @@ export default function Layout() {
 
   return (
     <>
-      <a className="skip-link" href="#main-content">Skip to content</a>
+      <a className="skip-link" href="#main-content">{t('skip')}</a>
       <div className="scene-bg" aria-hidden="true">
         <div className="scene-bg__glow" />
         <div className="scene-bg__grid" />
         <div className="scene-bg__near" />
       </div>
       <Nav />
-      <main id="main-content" tabIndex={-1} aria-label="Main content">
+      <main id="main-content" tabIndex={-1} aria-label={t('main')}>
         <Outlet />
       </main>
       <ScrollUp />

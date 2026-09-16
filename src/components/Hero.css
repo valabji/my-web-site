@@ -59,8 +59,33 @@
   color:var(--text);
   margin-bottom:.65rem;
   letter-spacing:-0.01em;
+  text-align:start;
 }
-.hero__headline::before{content:"> ";color:var(--accent)}
+.hero__headline p{margin:0}
+.hero__headline-english{
+  display:block;
+  margin-top:.3rem;
+  font-size:.72em;
+  font-weight:400;
+  color:var(--text-dim);
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+.hero__headline p::before{
+  content:">";
+  color:var(--accent);
+  margin-right:.45em;
+}
+html[dir="rtl"] .hero__headline{
+  text-align:right;
+}
+html[dir="rtl"] .hero__headline p::before{
+  display:inline-block;
+  direction:ltr;
+  margin-right:0;
+  margin-left:.45em;
+  transform:scaleX(-1);
+}
 
 .hero__tagline{
   font-size:clamp(.98rem,1.4vw,1.08rem);

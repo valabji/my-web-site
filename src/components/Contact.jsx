@@ -1,8 +1,10 @@
 import profile from '../data/profile.json'
 import Reveal from './Reveal'
 import './Contact.css'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function Contact() {
+  const { t, tr } = useLanguage()
   const { identity } = profile
   const { email, whatsapp, location, links } = identity
 
@@ -15,7 +17,7 @@ export default function Contact() {
       value: email,
       href: `mailto:${email}`,
       icon: 'lni lni-envelope',
-      aria: `Email ${identity.name}`,
+      aria: t('emailPerson', { name: tr(identity.name) }),
     },
     waUrl && {
       label: 'whatsapp',
@@ -23,7 +25,7 @@ export default function Contact() {
       href: waUrl,
       icon: 'lni lni-whatsapp',
       external: true,
-      aria: 'Message on WhatsApp',
+      aria: t('messageWhatsapp'),
     },
     links?.linkedin && {
       label: 'linkedin',
@@ -31,7 +33,7 @@ export default function Contact() {
       href: links.linkedin,
       icon: 'lni lni-linkedin',
       external: true,
-      aria: 'LinkedIn profile',
+      aria: t('linkedinProfile'),
     },
     links?.github && {
       label: 'github',
@@ -39,7 +41,7 @@ export default function Contact() {
       href: links.github,
       icon: 'lni lni-github',
       external: true,
-      aria: 'GitHub profile',
+      aria: t('githubProfile'),
     },
     links?.mostaql && {
       label: 'mostaql',
@@ -47,16 +49,16 @@ export default function Contact() {
       href: links.mostaql,
       icon: 'lni lni-link',
       external: true,
-      aria: 'Mostaql profile',
+      aria: t('mostaqlProfile'),
     },
   ].filter(Boolean)
 
   const socials = [
-    links?.linkedin && { href: links.linkedin, icon: 'lni lni-linkedin', aria: 'LinkedIn' },
-    links?.github && { href: links.github, icon: 'lni lni-github', aria: 'GitHub' },
-    waUrl && { href: waUrl, icon: 'lni lni-whatsapp', aria: 'WhatsApp' },
-    { href: `mailto:${email}`, icon: 'lni lni-envelope', aria: 'Email' },
-    links?.mostaql && { href: links.mostaql, icon: 'lni lni-link', aria: 'Mostaql' },
+    links?.linkedin && { href: links.linkedin, icon: 'lni lni-linkedin', aria: t('linkedinProfile') },
+    links?.github && { href: links.github, icon: 'lni lni-github', aria: t('githubProfile') },
+    waUrl && { href: waUrl, icon: 'lni lni-whatsapp', aria: t('messageWhatsapp') },
+    { href: `mailto:${email}`, icon: 'lni lni-envelope', aria: t('email') },
+    links?.mostaql && { href: links.mostaql, icon: 'lni lni-link', aria: t('mostaqlProfile') },
   ].filter(Boolean)
 
   return (
@@ -64,14 +66,16 @@ export default function Contact() {
       <div className="container">
         <Reveal as="div" className="contact-head">
           <span className="contact-eyebrow mono">
-            <b>//</b> contact
+            <b>//</b> {t('contact')}
           </span>
           <span className="contact-prompt mono">
-            <span className="sigil">$</span>./say-hi
-            <span className="cursor" aria-hidden="true" />
+            <span className="contact-prompt-code" dir="ltr">
+              <span className="sigil">$</span>./say-hi
+              <span className="cursor" aria-hidden="true" />
+            </span>
           </span>
           <h2 id="contact-heading" className="contact-cta">
-            Let&apos;s build <span className="gradient-text">something</span>.
+            {t('letsBuild')} <span className="gradient-text">{t('something')}</span>.
           </h2>
         </Reveal>
 
@@ -88,10 +92,10 @@ export default function Contact() {
                   <span className={c.icon} />
                 </span>
                 <span className="contact-link-body">
-                  <span className="contact-link-label mono">{c.label}</span>
-                  <span className="contact-link-value">{c.value}</span>
+                  <span className="contact-link-label mono">{tr(c.label)}</span>
+                  <span className="contact-link-value" dir="ltr">{c.value}</span>
                 </span>
-                <span className="contact-link-arrow mono" aria-hidden="true">
+                <span className="contact-link-arrow mono" dir="ltr" aria-hidden="true">
                   -&gt;
                 </span>
               </a>
@@ -102,16 +106,20 @@ export default function Contact() {
         {location && (
           <p className="contact-location">
             <span className="dot" aria-hidden="true" />
-            <span className="sigil" aria-hidden="true">const</span>
-            <span>location = &quot;{location}&quot;</span>
+            <span className="contact-location-code" dir="ltr">
+              <span className="sigil" aria-hidden="true">const</span>
+              <span>location = &quot;</span>
+              <span dir="auto">{tr(location)}</span>
+              <span>&quot;</span>
+            </span>
           </p>
         )}
 
         <footer className="contact-footer">
           <p className="contact-copy mono">
-            <span className="sigil">//</span> &copy; 2026 {identity.name} &mdash; built with React + Vite
+            <span className="sigil">//</span> &copy; 2026 {tr(identity.name)} &mdash; {t('builtWith')}
           </p>
-          <nav className="contact-socials" aria-label="Social links">
+          <nav className="contact-socials" aria-label={t('socialLinks')}>
             {socials.map((s, i) => (
               <a
                 key={i}

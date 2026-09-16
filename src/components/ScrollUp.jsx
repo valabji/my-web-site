@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './ScrollUp.css';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 export default function ScrollUp() {
+  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -23,7 +25,7 @@ export default function ScrollUp() {
       type="button"
       className={`scroll-up ${visible ? 'is-visible' : ''}`}
       onClick={scrollToTop}
-      aria-label="Scroll to top"
+      aria-label={t('scrollTop')}
     >
       <span className="lni lni-chevron-up" aria-hidden="true" />
     </button>

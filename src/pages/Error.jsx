@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function ErrorPage() {
+  const { t, pathFor } = useLanguage()
   return (
     <section
       className="section"
@@ -30,7 +32,7 @@ export default function ErrorPage() {
             lineHeight: 1.05,
           }}
         >
-          404: route not found
+          {t('notFound')}
         </h1>
         <p
           className="mono"
@@ -43,14 +45,14 @@ export default function ErrorPage() {
           {typeof window !== 'undefined' ? window.location.pathname : '/'}
           <br />
           <span style={{ color: 'var(--warn)' }}>
-            bash: no such file or directory
+            {t('missingPath')}
           </span>
           <br />
-          The page you requested has moved, was removed, or never existed.
+          {t('missingExplain')}
         </p>
-        <Link to="/" className="btn">
+        <Link to={pathFor('/')} className="btn">
           <span className="lni lni-home" aria-hidden="true" />
-          cd ~/home
+          {t('goHome')}
         </Link>
       </div>
     </section>

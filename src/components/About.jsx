@@ -2,6 +2,7 @@ import profile from '../data/profile.json';
 import Reveal from './Reveal';
 import TiltCard from './TiltCard';
 import './About.css';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 const TECH_GROUPS = [
   { key: 'frontend', label: 'Front-End' },
@@ -11,7 +12,8 @@ const TECH_GROUPS = [
 ];
 
 export default function About() {
-  const { about } = profile.identity;
+  const { t, tr } = useLanguage();
+  const { about, alternateGivenNames, alternateFamilyNames } = profile.identity;
   const { softSkills, techStack, languages, education } = profile;
 
   return (
@@ -19,11 +21,11 @@ export default function About() {
       <div className="container">
         <Reveal as="header" className="about-head">
           <p className="about-kicker mono">
-            <span className="about-prompt">$ </span>whoami
+            <span className="about-command" dir="ltr"><span className="about-prompt">$ </span>whoami</span>
           </p>
           <h2 id="about-heading" className="about-title">
-            <span className="gradient-text">About</span>
-            <span className="about-comment mono">// the engineer behind the code</span>
+            <span className="gradient-text">{t('about')}</span>
+            <span className="about-comment mono">// {t('aboutEngineer')}</span>
           </h2>
         </Reveal>
 
@@ -31,21 +33,26 @@ export default function About() {
           {/* Prose + soft skills */}
           <Reveal as="div" className="about-block" delay=".05s">
             <p className="about-prose mono">
-              <span className="about-prompt">&gt; </span>cat about.md
+              <span className="about-command" dir="ltr"><span className="about-prompt">&gt; </span>cat about.md</span>
             </p>
-            <p className="about-bio">{about}</p>
+            <p className="about-bio">{tr(about)}</p>
+            <p className="about-name-variants">
+              {t('nameVariants', { given: alternateGivenNames.join(', '), family: alternateFamilyNames.join(', ') })}
+            </p>
           </Reveal>
 
           <Reveal as="div" className="about-block" delay=".12s">
             <p className="about-label mono">
-              <span className="about-sym">const</span>
-              <span className="about-key">softSkills</span>
-              <span className="about-sym">=</span>
+              <span className="about-code-label" dir="ltr">
+                <span className="about-sym">const</span>
+                <span className="about-key">softSkills</span>
+                <span className="about-sym">=</span>
+              </span>
             </p>
-            <ul className="about-pills" aria-label="Soft skills">
+            <ul className="about-pills" aria-label={t('softSkills')}>
               {softSkills.map((skill) => (
                 <li key={skill}>
-                  <span className="tag">{skill}</span>
+                  <span className="tag">{tr(skill)}</span>
                 </li>
               ))}
             </ul>
@@ -56,7 +63,7 @@ export default function About() {
         <Reveal as="div" className="about-tech" delay=".16s">
           <p className="about-label mono">
             <span className="about-sym">//</span>
-            <span className="about-key">tech stack</span>
+            <span className="about-key">{t('techStack')}</span>
           </p>
           <div className="about-tech-grid">
             {TECH_GROUPS.map(({ key, label }) => {
@@ -65,10 +72,10 @@ export default function About() {
                 <TiltCard as="div" key={key} className="card about-techcard" max={5}>
                   <h3 className="about-grouphead mono">
                     <span className="about-dot" aria-hidden="true" />
-                    {label}
+                    {tr(label)}
                     <span className="about-count">{items.length}</span>
                   </h3>
-                  <ul className="about-pills" aria-label={`${label} technologies`}>
+                  <ul className="about-pills" aria-label={t('technologies', { name: tr(label) })}>
                     {items.map((t) => (
                       <li key={t}>
                         <span className="tag">{t}</span>
@@ -82,17 +89,17 @@ export default function About() {
         </Reveal>
 
         {/* Languages + Education */}
-        <div className="about-meta-grid">
+        <div className="about-meta-grid" id="about-meta">
           <TiltCard as="div" className="card about-minicard" reveal delay=".18s" max={5}>
             <p className="about-label mono">
               <span className="about-sym">//</span>
-              <span className="about-key">languages</span>
+              <span className="about-key">{t('languages')}</span>
             </p>
             <ul className="about-list">
               {languages.map((lang) => (
                 <li key={lang.name} className="about-li">
-                  <span className="about-li-title">{lang.name}</span>
-                  <span className="about-li-sub">{lang.level}</span>
+                  <span className="about-li-title">{tr(lang.name)}</span>
+                  <span className="about-li-sub">{tr(lang.level)}</span>
                 </li>
               ))}
             </ul>
@@ -101,19 +108,19 @@ export default function About() {
           <TiltCard as="div" className="card about-minicard" reveal delay=".22s" max={5}>
             <p className="about-label mono">
               <span className="about-sym">//</span>
-              <span className="about-key">education</span>
+              <span className="about-key">{t('education')}</span>
             </p>
             <ul className="about-list">
               {education.map((edu) => (
                 <li key={`${edu.school}-${edu.start}`} className="about-li">
-                  <span className="about-li-title">{edu.school}</span>
+                  <span className="about-li-title">{tr(edu.school)}</span>
                   <span className="about-li-sub">
-                    {edu.degree}
-                    {edu.field ? ` · ${edu.field}` : ''}
+                    {tr(edu.degree)}
+                    {edu.field ? ` · ${tr(edu.field)}` : ''}
                   </span>
                   <span className="about-li-meta">
                     {edu.start} — {edu.end}
-                    {edu.grade ? ` · ${edu.grade}` : ''}
+                    {edu.grade ? ` · ${tr(edu.grade)}` : ''}
                   </span>
                 </li>
               ))}

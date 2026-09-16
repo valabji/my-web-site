@@ -2,6 +2,8 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import http from 'http'
+import { addPersonAliases } from '../src/utils/identity.js'
+import { dynamicArabic } from '../src/i18n/translations.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
@@ -17,6 +19,7 @@ const profile = JSON.parse(
 
 const SITE = 'https://valabji.com'
 const OG_IMAGE = `${SITE}/assets/imgs/me.jpeg`
+const { identity } = profile
 
 const routes = [
   '/',
@@ -31,7 +34,7 @@ const routes = [
   ...portfolio.projects.map((p) => `/projects/${p.slug}`),
 ]
 
-function buildMeta({ title, description, canonical, image, type = 'website', jsonLd }) {
+function buildMeta({ title, description, canonical, image, type = 'website', jsonLd, lang = 'en', alternatePath = canonical }) {
   const fullTitle = title || 'Abdalrahman Valabji — Lead Software Developer'
   const url = `${SITE}${canonical}`
   const img = image || OG_IMAGE
@@ -42,6 +45,9 @@ function buildMeta({ title, description, canonical, image, type = 'website', jso
   tags += `    <title>${fullTitle}</title>\n`
   tags += `    <meta name="description" content="${desc}" />\n`
   tags += `    <link rel="canonical" href="${url}" />\n`
+  tags += `    <link rel="alternate" hreflang="en" href="${SITE}${alternatePath}" />\n`
+  tags += `    <link rel="alternate" hreflang="ar" href="${SITE}/ar${alternatePath === '/' ? '' : alternatePath}" />\n`
+  tags += `    <link rel="alternate" hreflang="x-default" href="${SITE}${alternatePath}" />\n`
   tags += `    <meta property="og:type" content="${type}" />\n`
   tags += `    <meta property="og:url" content="${url}" />\n`
   tags += `    <meta property="og:site_name" content="Abdalrahman Valabji" />\n`
@@ -49,13 +55,14 @@ function buildMeta({ title, description, canonical, image, type = 'website', jso
   tags += `    <meta property="og:description" content="${desc}" />\n`
   tags += `    <meta property="og:image" content="${img}" />\n`
   tags += `    <meta property="og:image:alt" content="Abdalrahman Valabji" />\n`
-  tags += `    <meta property="og:locale" content="en_US" />\n`
+  tags += `    <meta property="og:locale" content="${lang === 'ar' ? 'ar_AR' : 'en_US'}" />\n`
+  tags += `    <meta property="og:locale:alternate" content="${lang === 'ar' ? 'en_US' : 'ar_AR'}" />\n`
   tags += `    <meta name="twitter:card" content="summary" />\n`
   tags += `    <meta name="twitter:title" content="${fullTitle.replace(/"/g, '&quot;')}" />\n`
   tags += `    <meta name="twitter:description" content="${desc}" />\n`
   tags += `    <meta name="twitter:image" content="${img}" />\n`
   if (jsonLd) {
-    tags += `    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>\n`
+    tags += `    <script type="application/ld+json">${JSON.stringify({ ...addPersonAliases(jsonLd, identity), inLanguage: lang })}</script>\n`
   }
   return tags
 }
@@ -81,7 +88,7 @@ function injectAssets(html, assets) {
   )
 }
 
-const pages = [
+const basePages = [
   {
     route: '/',
     waitFor: '#home',
@@ -190,7 +197,7 @@ const pages = [
   })),
   {
     route: '/skills',
-    waitFor: '#skills .skills-grid',
+    waitFor: '#skills .skills-groups',
     meta: {
       title: 'Skills — Abdalrahman Valabji',
       description: 'Technical skills of Abdalrahman Valabji — React, React Native, Node.js, TypeScript, Python, Django, Next.js, and more.',
@@ -208,7 +215,7 @@ const pages = [
   },
   {
     route: '/opensource',
-    waitFor: '#opensource .oss-grid',
+    waitFor: '#opensource .os-grid',
     meta: {
       title: 'Open Source — Abdalrahman Valabji',
       description: 'Open source contributions and projects by Abdalrahman Valabji.',
@@ -258,7 +265,7 @@ const pages = [
   },
   {
     route: '/contact',
-    waitFor: '#contact .contact-form',
+    waitFor: '#contact .contact-grid',
     meta: {
       title: 'Contact — Abdalrahman Valabji',
       description: 'Get in touch with Abdalrahman Valabji for freelance work, collaborations, or inquiries.',
@@ -272,6 +279,84 @@ const pages = [
       },
     },
   },
+]
+
+const arabicMeta = {
+  '/': {
+    title: `عبدالرحمن فلبجي — ${dynamicArabic['Lead Software Developer']}`,
+    description: `${dynamicArabic['Lead Software Developer']} بخبرة تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة الخلفية باستخدام React وReact Native وNext.js وNode.js وDjango.`,
+  },
+  '/about': { title: 'نبذة عني — عبدالرحمن فلبجي', description: 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة، مع خبرة في React وReact Native وNode.js وغيرها.' },
+  '/experience': { title: 'الخبرة المهنية — عبدالرحمن فلبجي', description: 'الخبرة المهنية لعبدالرحمن فلبجي — أكثر من 13 عامًا في تطوير البرمجيات، شملت قيادة فرق التطوير وتطوير الواجهات الأمامية والخلفية والإدارة التقنية.' },
+  '/projects': { title: 'المشاريع — عبدالرحمن فلبجي', description: 'مشاريع مختارة من أعمال عبدالرحمن فلبجي، تشمل تطبيقات جوال ومنصات ويب وأنظمة طُوّرت باستخدام React Native وReact وIonic وغيرها.' },
+  '/skills': { title: 'المهارات — عبدالرحمن فلبجي', description: 'المهارات التقنية لعبدالرحمن فلبجي، وتشمل React وReact Native وNode.js وTypeScript وPython وDjango وNext.js وغيرها.' },
+  '/opensource': { title: 'المشاريع مفتوحة المصدر — عبدالرحمن فلبجي', description: 'مشاريع عبدالرحمن فلبجي ومساهماته في البرمجيات مفتوحة المصدر.' },
+  '/certifications': { title: 'الشهادات — عبدالرحمن فلبجي', description: 'الشهادات المهنية وشهادات الخبرة لعبدالرحمن فلبجي.' },
+  '/recommendations': { title: 'التوصيات — عبدالرحمن فلبجي', description: 'توصيات وآراء مهنية عن العمل مع عبدالرحمن فلبجي.' },
+  '/contact': { title: 'تواصل معي — عبدالرحمن فلبجي', description: 'تواصل مع عبدالرحمن فلبجي لمناقشة مشاريع العمل الحر وفرص التعاون أو لطرح استفسار.' },
+}
+
+function toArabicPage(page) {
+  const project = page.route.startsWith('/projects/')
+    ? portfolio.projects.find((item) => page.route.endsWith(`/${item.slug}`))
+    : null
+  const copy = project
+    ? {
+        title: `${project.title_ar || project.title} — عبدالرحمن فلبجي`,
+        description: project.description_ar || project.description,
+      }
+    : arabicMeta[page.route]
+
+  const localizedJsonLd = project ? {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: project.title_ar || project.title,
+    description: project.description_ar || project.description,
+    author: { '@type': 'Person', name: 'عبدالرحمن فلبجي', url: `${SITE}/ar` },
+    datePublished: project.date_completed || undefined,
+    applicationCategory: 'MobileApplication',
+  } : JSON.parse(JSON.stringify(page.meta.jsonLd || {}))
+
+  if (!project && localizedJsonLd.mainEntity) {
+    localizedJsonLd.mainEntity.name = 'عبدالرحمن فلبجي'
+    localizedJsonLd.mainEntity.url = `${SITE}/ar`
+    if (localizedJsonLd.mainEntity.jobTitle) localizedJsonLd.mainEntity.jobTitle = dynamicArabic[localizedJsonLd.mainEntity.jobTitle] || localizedJsonLd.mainEntity.jobTitle
+    if (localizedJsonLd.mainEntity.description) localizedJsonLd.mainEntity.description = copy?.description
+    if (localizedJsonLd.mainEntity.address?.addressLocality === 'Alexandria') localizedJsonLd.mainEntity.address.addressLocality = 'الإسكندرية'
+    if (localizedJsonLd.mainEntity.knowsLanguage) localizedJsonLd.mainEntity.knowsLanguage = ['العربية', 'الإنجليزية']
+    if (localizedJsonLd.mainEntity.hasOccupation) {
+      localizedJsonLd.mainEntity.hasOccupation = localizedJsonLd.mainEntity.hasOccupation.map((occupation) => ({
+        ...occupation,
+        name: dynamicArabic[occupation.name] || occupation.name,
+        occupationLocation: occupation.occupationLocation ? {
+          ...occupation.occupationLocation,
+          name: dynamicArabic[occupation.occupationLocation.name] || occupation.occupationLocation.name,
+        } : undefined,
+      }))
+    }
+  } else if (!project) {
+    localizedJsonLd.name = copy?.title
+    localizedJsonLd.description = copy?.description
+    localizedJsonLd.url = `${SITE}/ar${page.route === '/' ? '' : page.route}`
+  }
+
+  return {
+    ...page,
+    route: `/ar${page.route === '/' ? '' : page.route}`,
+    meta: {
+      ...page.meta,
+      ...copy,
+      canonical: `/ar${page.route === '/' ? '' : page.route}`,
+      lang: 'ar',
+      alternatePath: page.route,
+      jsonLd: localizedJsonLd,
+    },
+  }
+}
+
+const pages = [
+  ...basePages.map((page) => ({ ...page, meta: { ...page.meta, lang: 'en', alternatePath: page.route } })),
+  ...basePages.map(toArabicPage),
 ]
 
 function startServer(spaShell) {
@@ -294,6 +379,38 @@ function startServer(spaShell) {
     })
     server.listen(0, () => resolve({ server, port: server.address().port }))
   })
+}
+
+function writeSitemap() {
+  const entries = basePages.map((page) => {
+    const en = `${SITE}${page.route}`
+    const ar = `${SITE}/ar${page.route === '/' ? '' : page.route}`
+    const priority = page.route === '/' ? '1.0' : page.route.includes('/projects/') ? '0.8' : '0.9'
+    return `  <url>
+    <loc>${en}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${en}" />
+    <xhtml:link rel="alternate" hreflang="ar" href="${ar}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${en}" />
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${priority}</priority>
+  </url>
+  <url>
+    <loc>${ar}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${en}" />
+    <xhtml:link rel="alternate" hreflang="ar" href="${ar}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${en}" />
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${priority}</priority>
+  </url>`
+  }).join('\n')
+
+  writeFileSync(
+    path.join(DIST, 'sitemap.xml'),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries}\n</urlset>\n`,
+    'utf-8',
+  )
 }
 
 async function main() {
@@ -350,6 +467,7 @@ async function main() {
       let html = await tab.content()
       html = injectMeta(html, buildMeta(page.meta))
       html = injectAssets(html, criticalAssets)
+      html = html.replace(/<html[^>]*>/, `<html lang="${page.meta.lang}" dir="${page.meta.lang === 'ar' ? 'rtl' : 'ltr'}">`)
 
       const outputPath = page.route === '/'
         ? path.join(DIST, 'index.html')
@@ -367,6 +485,7 @@ async function main() {
   await tab.close()
   await browser.close()
   server.close()
+  writeSitemap()
   console.log('\nPrerendering complete!')
 }
 
