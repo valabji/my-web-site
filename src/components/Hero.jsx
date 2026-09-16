@@ -21,7 +21,7 @@ function HeroStat({ value, label }) {
 export default function Hero() {
   const { t, tr, pathFor, isArabic } = useLanguage();
   const { identity, stats, techStack } = profile;
-  const { photo, links } = identity;
+  const { links } = identity;
   const name = tr(identity.name);
   const headline = tr(identity.headline);
   const tagline = tr(identity.tagline);
@@ -101,9 +101,10 @@ export default function Hero() {
         <div className={`hero__right hero__anim${webgl ? ' hero__right--3d' : ''}`}>
           <img
             className="hero__photo"
-            src={photo}
+            src="/assets/imgs/me-thumb.webp"
             alt={name}
-            loading="eager"
+            loading="lazy"
+            decoding="async"
             width="118"
             height="118"
           />

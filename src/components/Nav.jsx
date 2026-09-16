@@ -56,7 +56,7 @@ export default function Nav() {
               </li>
             ))}
             <li>
-              <button className="nav__language mono" type="button" onClick={() => switchLanguage(language === 'ar' ? 'en' : 'ar')} aria-label={t('language')} lang={language === 'ar' ? 'en' : 'ar'}>
+              <button className="nav__language mono" type="button" onClick={() => switchLanguage(language === 'ar' ? 'en' : 'ar')} lang={language === 'ar' ? 'en' : 'ar'}>
                 <span className="lni lni-world" aria-hidden="true" />
                 {language === 'ar' ? t('switchToEnglish') : t('switchToArabic')}
               </button>
@@ -102,7 +102,7 @@ export default function Nav() {
                 </li>
               ))}
             </ul>
-            <button className="nav__language nav__language--mobile mono" type="button" onClick={() => { close(); switchLanguage(language === 'ar' ? 'en' : 'ar') }} aria-label={t('language')} lang={language === 'ar' ? 'en' : 'ar'}>
+            <button className="nav__language nav__language--mobile mono" type="button" onClick={() => { close(); switchLanguage(language === 'ar' ? 'en' : 'ar') }} lang={language === 'ar' ? 'en' : 'ar'}>
               <span className="lni lni-world" aria-hidden="true" />
               {language === 'ar' ? t('switchToEnglish') : t('switchToArabic')}
             </button>

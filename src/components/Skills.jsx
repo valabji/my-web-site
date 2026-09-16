@@ -73,8 +73,8 @@ export default function Skills() {
                         {hasEnd && (
                           <span
                             className="skills-badge mono"
-                            aria-label={t(n > 1 ? 'endorsements' : 'endorsement', { count: n })}
                           >
+                            <span className="sr-only">{t(n > 1 ? 'endorsements' : 'endorsement', { count: n })}</span>
                             <span className="skills-meter" aria-hidden="true">
                               {Array.from({ length: Math.min(n, 4) }).map((_, i) => (
                                 <span key={i} className="skills-meter-dot" />

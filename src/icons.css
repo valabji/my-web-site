@@ -1,0 +1,32 @@
+/* Only the LineIcons glyphs used by the site are included in this font. */
+@font-face {
+  font-family: 'LineIcons';
+  src: url('/assets/fonts/lineicons-subset.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+.lni {
+  display: inline-block;
+  font: normal normal normal 1em/1 'LineIcons';
+  color: inherit;
+  flex-shrink: 0;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lni-arrow-left::before { content: '\ea1e'; }
+.lni-briefcase::before { content: '\ea42'; }
+.lni-chevron-up::before { content: '\ea64'; }
+.lni-code::before { content: '\ea74'; }
+.lni-envelope::before { content: '\eaae'; }
+.lni-github::before { content: '\ead2'; }
+.lni-home::before { content: '\eaed'; }
+.lni-image::before { content: '\eaf1'; }
+.lni-link::before { content: '\eb1a'; }
+.lni-linkedin::before { content: '\eb1c'; }
+.lni-whatsapp::before { content: '\ec04'; }
+.lni-world::before { content: '\ec0c'; }
