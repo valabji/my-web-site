@@ -2,4 +2,20 @@
 User-agent: *
 Allow: /
 
+# AI discovery and answer engines may index both language versions.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://valabji.com/sitemap.xml
