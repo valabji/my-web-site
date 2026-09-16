@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { messages, dynamicArabic } from './translations.js'
+import { resolveInitialLanguage } from './languageDetection.js'
 
 const LanguageContext = createContext(null)
 const BOT_RE = /bot|crawler|spider|slurp|bingpreview|facebookexternalhit|linkedinbot|twitterbot|whatsapp/i
@@ -24,16 +25,40 @@ export function LanguageProvider({ language, children }) {
 
   useEffect(() => {
     if (language !== 'en' || typeof navigator === 'undefined') return
-    if (window.localStorage.getItem('preferred-language')) return
     if (navigator.webdriver || BOT_RE.test(navigator.userAgent)) return
 
-    const prefersArabic = navigator.languages?.some((item) =>
-      String(item).toLowerCase().startsWith('ar')
-    )
-    if (prefersArabic) {
-      navigate(`${localePath(location.pathname, 'ar')}${location.search}${location.hash}`, {
-        replace: true,
-      })
+    const controller = new AbortController()
+    const timeout = window.setTimeout(() => controller.abort(), 3000)
+    let savedLanguage
+    try {
+      savedLanguage = window.localStorage.getItem('preferred-language')
+    } catch {
+      // Private browsing may make storage unavailable.
+    }
+
+    void resolveInitialLanguage({
+      savedLanguage,
+      systemLanguage: navigator.language || navigator.languages?.[0],
+      fetchCountry: window.fetch.bind(window),
+      signal: controller.signal,
+    }).then((initialLanguage) => {
+      window.clearTimeout(timeout)
+      if (!controller.signal.aborted && initialLanguage === 'ar') {
+        try {
+          // A visitor may have selected English while the IP request was pending.
+          if (window.localStorage.getItem('preferred-language') === 'en') return
+        } catch {
+          // Continue without a stored preference when storage is unavailable.
+        }
+        navigate(`${localePath(location.pathname, 'ar')}${location.search}${location.hash}`, {
+          replace: true,
+        })
+      }
+    })
+
+    return () => {
+      window.clearTimeout(timeout)
+      controller.abort()
     }
   }, [language, location.hash, location.pathname, location.search, navigate])
 
