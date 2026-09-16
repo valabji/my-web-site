@@ -7,7 +7,7 @@
       "slug": "zikr-app",
       "url": "https://mostaql.com/portfolio/676403-تطبيق-ذكر",
       "title": "Zikr — Islamic Remembrance App",
-      "description": "Zikr is a mobile app that offers a curated collection of Islamic remembrances (adhkar) and supplications for daily use. Built with React Native, it features smooth animated transitions and offline access to its content.",
+      "description": "The original Zikr mobile app offered a curated collection of Islamic remembrances (adhkar) and supplications for daily use. Built with React Native, it featured smooth animated transitions and offline access to its content.",
       "freelancer": "Abdalrahman V.",
       "likes": "0",
       "date_added": "2021-05-14 09:08:49",
@@ -79,10 +79,56 @@
       ],
       "image_count": 9,
       "cover": "portfolio/zikr-app/cover.png",
-      "title_ar": "تطبيق ذِكْر",
-      "tagline": "Daily Islamic remembrances on mobile",
-      "tagline_ar": "الأذكار اليومية على الجوال",
-      "description_ar": "ذِكْر تطبيق جوال يقدّم مجموعة مختارة من الأذكار والأدعية الإسلامية للاستخدام اليومي. طُوّر باستخدام React Native، ويتميّز بانتقالات سلسة بين الشاشات وإمكانية الوصول إلى المحتوى دون اتصال بالإنترنت.",
+      "title_ar": "تطبيق ذِكْر — البداية",
+      "tagline": "The 2021 foundation for daily Islamic remembrances",
+      "tagline_ar": "بداية تطبيق الأذكار اليومية عام ٢٠٢١",
+      "stage_label": "2021 — where it began",
+      "stage_label_ar": "٢٠٢١ — البداية",
+      "description_ar": "النسخة الأولى من تطبيق «ذِكْر» قدّمت مجموعة مختارة من الأذكار والأدعية الإسلامية للاستخدام اليومي. طُوّرت باستخدام React Native، وركّزت على الانتقالات السلسة وإتاحة المحتوى دون اتصال بالإنترنت.",
+      "features": [
+        "Curated daily azkar and supplications",
+        "Interactive digital tasbih counter",
+        "Favorites, Arabic and English, and offline reading"
+      ],
+      "features_ar": [
+        "مجموعة مختارة من الأذكار والأدعية اليومية",
+        "مسبحة رقمية تفاعلية",
+        "المفضلة والعربية والإنجليزية والقراءة دون إنترنت"
+      ],
+      "current_release": {
+        "year": "2026",
+        "stage_label": "2026 — five years later",
+        "stage_label_ar": "٢٠٢٦ — بعد خمس سنوات",
+        "title": "Zikr",
+        "title_ar": "ذِكْر",
+        "description": "Five years later, Zikr has grown into a broader daily companion: prayer times and athan notifications, qibla direction, an integrated Quran reader, a multi-tasbih counter, Islamic library tools, and a more customizable experience.",
+        "description_ar": "بعد خمس سنوات، تطوّر «ذِكْر» إلى رفيق يومي أشمل: مواقيت الصلاة وإشعارات الأذان، واتجاه القبلة، وقارئ قرآن متكامل، ومسابح متعددة، وأدوات للمكتبة الإسلامية، وتجربة أكثر قابلية للتخصيص.",
+        "features": [
+          "Prayer times, athan notifications, next-prayer countdown, and prayer log",
+          "Qibla compass, Hijri calendar, and home-screen widget",
+          "Integrated Quran reader with recitations, tafsir, translation, and offline listening",
+          "Multiple tasbih counters with statistics, plus radio, daily wird, hadith, and share cards",
+          "Modern themes, menu personalization, Arabic, and English"
+        ],
+        "features_ar": [
+          "مواقيت الصلاة وإشعارات الأذان وعدّاد للصلاة القادمة وسجل للصلوات",
+          "بوصلة للقبلة وتقويم هجري وودجت للشاشة الرئيسية",
+          "قارئ قرآن متكامل مع تلاوات وتفسير وترجمة وتحميل للاستماع دون إنترنت",
+          "مسابح متعددة مع إحصاءات، وإذاعة وورد يومي وحديث اليوم وبطاقات مشاركة",
+          "ثيمات حديثة وتخصيص للقائمة ودعم العربية والإنجليزية"
+        ],
+        "images": [
+          { "src": "https://play-lh.googleusercontent.com/_Wu8LOhrut-Tjlvf2fOlnQLrzU2mHgoWUJe7-5vhZZUUhgjAREAlIBeOofMhSmJFnoTo_3MzgVPAeBJ8F_7buw%3Dw526-h296", "alt": "Zikr digital tasbih screen" },
+          { "src": "https://play-lh.googleusercontent.com/JUO_-kBipuFgyzqacTXfysAPP8nUO46Qcn4CaoGdArbIhJpQaDp1D3dGaUsqQovaYV0x9QEHv9WJLgGzSK5R_Q%3Dw526-h296", "alt": "Zikr azkar screen" },
+          { "src": "https://play-lh.googleusercontent.com/rAspGu57EjrxsYvMFghGN0A9XIePGhMJ222dr_duBic5garFsE_haKIfuV19xnbOWDxX7-P_IzNWaBRkt7APiw%3Dw526-h296", "alt": "Zikr prayer times screen" },
+          { "src": "https://play-lh.googleusercontent.com/RAtKBWQzBXr7tZeWvcbruAFPRNViKxc-1G66VI7xQ1WOQtNRelnku5vuqJy0luGcjltjOeRmb0pZSqoB_yP-UTo%3Dw526-h296", "alt": "Zikr Quran reader screen" },
+          { "src": "https://play-lh.googleusercontent.com/6bjk5oThHOgfle3ojrLLBm0HpbpV0nmFN6pBYwavN_5q0nX0ziiCXGUrHnanq2S3WSw0wTa9hHOJCJyyDxN3aQ%3Dw526-h296", "alt": "Zikr qibla screen" },
+          { "src": "https://play-lh.googleusercontent.com/aqjxqfF_Bz1J949naawMEus0-0iDATOjVyu9k-2Ny8h7JLL0hrBmvVPXuBrrFaSFvnzIDZBxMb2b503RSilZrg%3Dw526-h296", "alt": "Zikr Islamic library screen" },
+          { "src": "https://play-lh.googleusercontent.com/_R5sSKxllOpER8qp6DLintH1rHBrZ9vI9cJ-Yl3jk7KcRiijZ1TSAYIwgKXL2LmamIjsp7C6vW3riOFj3gGIwA%3Dw526-h296", "alt": "Zikr settings screen" },
+          { "src": "https://play-lh.googleusercontent.com/AXH2_ezEVBEfiudv9B0hT5W-gnfwcUdwGYB5T2fidmDNmQz3DEO_n7gKsSuGvIDr6ncW6ESMRHLI9gUnnZThvw%3Dw526-h296", "alt": "Zikr home screen" }
+        ],
+        "tech": ["React Native", "Expo", "React Navigation", "Redux Toolkit", "AsyncStorage", "Expo Audio", "Jest"]
+      },
       "work_type": "Individual",
       "data_source": "JSON",
       "based_on_prior_design": false,
@@ -98,6 +144,16 @@
         {
           "label": "Live",
           "url": "https://zikr.valabji.com"
+        },
+        {
+          "label": "View source on GitHub",
+          "label_ar": "عرض الكود المصدري على GitHub",
+          "url": "https://github.com/valabji/Zikr"
+        },
+        {
+          "label": "Get it on Google Play",
+          "label_ar": "حمّل التطبيق من Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.valabji.zikr"
         }
       ]
     },
