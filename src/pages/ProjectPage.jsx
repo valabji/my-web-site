@@ -19,6 +19,16 @@ export default function ProjectPage() {
     title: isArabic ? (sourceProject.title_ar || sourceProject.title) : sourceProject.title,
     description: isArabic ? (sourceProject.description_ar || sourceProject.description) : sourceProject.description,
     tagline: isArabic ? (sourceProject.tagline_ar || sourceProject.description_ar || sourceProject.tagline) : sourceProject.tagline,
+    stageLabel: isArabic ? (sourceProject.stage_label_ar || sourceProject.stage_label) : sourceProject.stage_label,
+    features: isArabic ? (sourceProject.features_ar || sourceProject.features) : sourceProject.features,
+  } : null;
+  const currentReleaseSource = sourceProject?.current_release;
+  const currentRelease = currentReleaseSource ? {
+    ...currentReleaseSource,
+    title: isArabic ? (currentReleaseSource.title_ar || currentReleaseSource.title) : currentReleaseSource.title,
+    description: isArabic ? (currentReleaseSource.description_ar || currentReleaseSource.description) : currentReleaseSource.description,
+    stageLabel: isArabic ? (currentReleaseSource.stage_label_ar || currentReleaseSource.stage_label) : currentReleaseSource.stage_label,
+    features: isArabic ? (currentReleaseSource.features_ar || currentReleaseSource.features) : currentReleaseSource.features,
   } : null;
 
   if (!project) {
@@ -41,6 +51,7 @@ export default function ProjectPage() {
   const images = (project.images || []).filter((im) => im.role !== 'cover');
   const year = yearOf(project.date_completed);
   const tech = project.tech || [];
+  const features = project.features || [];
   const links = project.links || [];
 
   return (
@@ -76,6 +87,7 @@ export default function ProjectPage() {
           <article className="pj-detail-article">
             <header className="pj-detail-head">
               <span className="pj-detail-eyebrow mono">// {t('project')}</span>
+              {project.stageLabel && <span className="pj-detail-stage mono">{project.stageLabel}</span>}
               <h1 className="pj-detail-title" dir="auto">
                 {project.title}
               </h1>
@@ -138,6 +150,17 @@ export default function ProjectPage() {
                 </p>
               )}
 
+              {features.length > 0 && (
+                <div className="pj-detail-features">
+                  <h2 className="mono pj-detail-section-head">
+                    <span className="gradient-text">{t('highlights')}</span>
+                  </h2>
+                  <ul>
+                    {features.map((feature) => <li key={feature}>{feature}</li>)}
+                  </ul>
+                </div>
+              )}
+
               {tech.length > 0 && (
                 <div className="pj-detail-tech">
                   <h2 className="mono pj-detail-section-head">
@@ -164,7 +187,7 @@ export default function ProjectPage() {
                       rel="noopener noreferrer"
                     >
                       <span className="lni lni-link" aria-hidden="true" />
-                      {tr(l.label || 'link')}
+                      {isArabic ? (l.label_ar || tr(l.label || 'link')) : (l.label || 'link')}
                     </a>
                   ))}
                   {project.url && (
@@ -181,6 +204,49 @@ export default function ProjectPage() {
                 </div>
               )}
             </div>
+
+            {currentRelease && (
+              <section className="pj-detail-current" aria-labelledby="zikr-today-title">
+                <header className="pj-detail-current-head">
+                  {currentRelease.stageLabel && <span className="pj-detail-stage mono">{currentRelease.stageLabel}</span>}
+                  <h2 id="zikr-today-title" className="pj-detail-title" dir="auto">{currentRelease.title}</h2>
+                  <p className="pj-detail-desc">{currentRelease.description}</p>
+                </header>
+
+                {(currentRelease.images || []).length > 0 && (
+                  <div className="pj-detail-gallery pj-detail-current-gallery">
+                    {currentRelease.images.map((img) => (
+                      <figure key={img.src} className="pj-detail-img-wrap">
+                        <img src={img.src} alt={img.alt || t('screenshot', { name: currentRelease.title })} loading="lazy" referrerPolicy="no-referrer" />
+                      </figure>
+                    ))}
+                  </div>
+                )}
+
+                <div className="pj-detail-body">
+                  {(currentRelease.features || []).length > 0 && (
+                    <div className="pj-detail-features">
+                      <h3 className="mono pj-detail-section-head">
+                        <span className="gradient-text">{t('highlights')}</span>
+                      </h3>
+                      <ul>
+                        {currentRelease.features.map((feature) => <li key={feature}>{feature}</li>)}
+                      </ul>
+                    </div>
+                  )}
+                  {(currentRelease.tech || []).length > 0 && (
+                    <div className="pj-detail-tech">
+                      <h3 className="mono pj-detail-section-head">
+                        <span className="gradient-text">{t('techStackTitle')}</span>
+                      </h3>
+                      <ul className="pj-detail-tags" aria-label={t('technologiesUsed')}>
+                        {currentRelease.tech.map((item) => <li key={item}><span className="tag">{item}</span></li>)}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
           </article>
         </div>
       </section>

@@ -24,6 +24,12 @@ html[dir="rtl"] .pj-detail-back .lni-arrow-left{
   color: var(--accent-2);
   margin-bottom: 0.5rem;
 }
+.pj-detail-stage {
+  display: block;
+  color: var(--accent);
+  font-size: 0.86rem;
+  margin-bottom: 0.7rem;
+}
 .pj-detail-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
@@ -91,6 +97,19 @@ html[dir="rtl"] .pj-detail-back .lni-arrow-left{
 .pj-detail-desc-ar {
   font-style: italic;
 }
+.pj-detail-features {
+  margin: 0 0 2rem;
+}
+.pj-detail-features ul {
+  display: grid;
+  gap: 0.6rem;
+  padding-inline-start: 1.25rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.pj-detail-features li::marker {
+  color: var(--accent);
+}
 .pj-detail-section-head {
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -105,6 +124,27 @@ html[dir="rtl"] .pj-detail-back .lni-arrow-left{
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+.pj-detail-current {
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  padding-top: 3rem;
+}
+.pj-detail-current-head {
+  max-width: 72ch;
+}
+.pj-detail-current-gallery {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.pj-detail-current-gallery .pj-detail-img-wrap {
+  display: grid;
+  align-items: start;
+  background: #111;
+}
+.pj-detail-current-gallery .pj-detail-img-wrap img {
+  width: 100%;
+  max-width: 526px;
+  justify-self: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
