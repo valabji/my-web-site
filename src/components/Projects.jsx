@@ -209,7 +209,7 @@ function Lightbox({ project, onClose }) {
                   <span className="pj-meta-item"><span className="pj-meta-key">{t('builtIn')}</span> {tr(project.duration)}</span>
                 )}
                 {project.data_source && (
-                  <span className="pj-meta-item"><span className="pj-meta-key">{t('data')}</span> {project.data_source}</span>
+                  <span className="pj-meta-item"><span className="pj-meta-key">{t('data')}</span> {tr(project.data_source)}</span>
                 )}
               </div>
             </div>
@@ -233,7 +233,7 @@ function Lightbox({ project, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span aria-hidden="true">$</span> {(l.label || 'link').toLowerCase()}
+                  <span aria-hidden="true">$</span> {tr(l.label || 'link').toLowerCase()}
                   <span className="lni lni-link" aria-hidden="true" />
                 </a>
               ))}
@@ -262,7 +262,7 @@ export default function Projects() {
     ...project,
     title: isArabic ? (project.title_ar || project.title) : project.title,
     description: isArabic ? (project.description_ar || project.description) : project.description,
-    tagline: isArabic ? (project.description_ar || project.tagline) : project.tagline,
+    tagline: isArabic ? (project.tagline_ar || project.description_ar || project.tagline) : project.tagline,
   }));
   const count = portfolio.project_count ?? projects.length;
   const [active, setActive] = useState(null);

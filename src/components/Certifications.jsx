@@ -124,7 +124,7 @@ export default function Certifications() {
                     ) : null}
                     {cert.credentialId ? (
                       <div className="cert-row">
-                        <dt className="cert-key">id:</dt>
+                        <dt className="cert-key">{t('credentialId')}</dt>
                         <dd className="cert-id">{cert.credentialId}</dd>
                       </div>
                     ) : null}

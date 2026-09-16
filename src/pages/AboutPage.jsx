@@ -4,12 +4,12 @@ import Skills from '../components/Skills';
 import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 export default function AboutPage() {
-  const { isArabic } = useLanguage();
+  const { isArabic, tr } = useLanguage();
   return (
     <>
       <SEO
         title={isArabic ? 'نبذة عني' : 'About'}
-        description={isArabic ? 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة، ومتخصص في React وReact Native وNode.js وغيرها.' : 'Indian-Sudanese Software Developer with 13+ years of professional experience in mobile, web, and system development. Skilled in React, React Native, Node.js, and more.'}
+        description={isArabic ? 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة، مع خبرة في React وReact Native وNode.js وغيرها.' : 'Indian-Sudanese Software Developer with 13+ years of professional experience in mobile, web, and system development. Skilled in React, React Native, Node.js, and more.'}
         canonical="/about"
         jsonLd={{
           '@context': 'https://schema.org',
@@ -19,7 +19,7 @@ export default function AboutPage() {
             name: isArabic ? 'عبدالرحمن فلبجي' : 'Abdalrahman Valabji',
             url: `https://valabji.com${isArabic ? '/ar' : ''}`,
             image: 'https://valabji.com/assets/imgs/me.jpeg',
-            jobTitle: isArabic ? 'مطور برمجيات قائد' : 'Lead Software Developer',
+            jobTitle: tr('Lead Software Engineer'),
             description:
               isArabic ? 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة.' : 'Indian-Sudanese Software Developer with 13+ years of professional experience in mobile, web, and system development.',
             knowsAbout: [
@@ -32,7 +32,7 @@ export default function AboutPage() {
               'Next.js',
               'TypeScript',
             ],
-            knowsLanguage: ['Arabic', 'English'],
+            knowsLanguage: ['Arabic', 'English'].map(tr),
             sameAs: [
               'https://www.linkedin.com/in/valabji/',
               'https://github.com/valabji',

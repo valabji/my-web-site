@@ -18,7 +18,7 @@ export default function ExperiencePage() {
     <>
       <SEO
         title={isArabic ? 'الخبرة المهنية' : 'Experience'}
-        description={isArabic ? 'الخبرة المهنية لعبدالرحمن فلبجي — أكثر من 13 عامًا في تطوير البرمجيات، شملت أدوار المطور القائد والمطور المتكامل والمدير التقني.' : 'Professional experience of Abdalrahman Valabji \u2014 13+ years of software development including Lead Developer, Full-Stack Developer, and CTO roles.'}
+        description={isArabic ? 'الخبرة المهنية لعبدالرحمن فلبجي — أكثر من 13 عامًا في تطوير البرمجيات، شملت قيادة فرق التطوير وتطوير الواجهات الأمامية والخلفية والإدارة التقنية.' : 'Professional experience of Abdalrahman Valabji \u2014 13+ years of software development including Lead Developer, Full-Stack Developer, and CTO roles.'}
         canonical="/experience"
         jsonLd={{
           '@context': 'https://schema.org',

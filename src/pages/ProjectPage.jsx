@@ -18,7 +18,7 @@ export default function ProjectPage() {
     ...sourceProject,
     title: isArabic ? (sourceProject.title_ar || sourceProject.title) : sourceProject.title,
     description: isArabic ? (sourceProject.description_ar || sourceProject.description) : sourceProject.description,
-    tagline: isArabic ? (sourceProject.description_ar || sourceProject.tagline) : sourceProject.tagline,
+    tagline: isArabic ? (sourceProject.tagline_ar || sourceProject.description_ar || sourceProject.tagline) : sourceProject.tagline,
   } : null;
 
   if (!project) {
@@ -109,7 +109,7 @@ export default function ProjectPage() {
                 {project.data_source && (
                   <div className="pj-detail-meta-item">
                     <dt>{t('data')}</dt>
-                    <dd>{project.data_source}</dd>
+                    <dd>{tr(project.data_source)}</dd>
                   </div>
                 )}
               </dl>
@@ -164,7 +164,7 @@ export default function ProjectPage() {
                       rel="noopener noreferrer"
                     >
                       <span className="lni lni-link" aria-hidden="true" />
-                      {l.label || 'link'}
+                      {tr(l.label || 'link')}
                     </a>
                   ))}
                   {project.url && (

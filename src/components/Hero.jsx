@@ -54,7 +54,10 @@ export default function Hero() {
             {rest && <span className="gradient-text">{rest}</span>}
           </h1>
 
-          <p className="hero__headline hero__anim hero__d2">{headline}</p>
+          <div className="hero__headline hero__anim hero__d2">
+            <p>{headline}</p>
+            {isArabic && <span className="hero__headline-english">Lead Software Engineer</span>}
+          </div>
           <p className="hero__tagline hero__anim hero__d2">{tagline}</p>
 
           <p className="hero__location hero__anim hero__d3">
@@ -72,12 +75,12 @@ export default function Hero() {
               {t('viewWork')}
             </Link>
             <a className="btn-ghost" href={links.github}
-              target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              target="_blank" rel="noopener noreferrer" aria-label={t('githubProfile')}>
               <span className="lni lni-github" aria-hidden="true" />
               GitHub
             </a>
             <a className="btn-ghost" href={links.linkedin}
-              target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              target="_blank" rel="noopener noreferrer" aria-label={t('linkedinProfile')}>
               <span className="lni lni-linkedin" aria-hidden="true" />
               LinkedIn
             </a>

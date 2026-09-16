@@ -45,7 +45,7 @@ export default function Skills() {
               reveal
               max={5}
               delay={`${gi * 60}ms`}
-              aria-label={`${tr(group.category)} ${t('skills')}`}
+              aria-label={t('skillGroup', { name: tr(group.category) })}
             >
               <header className="skills-group-head">
                 <span className="skills-group-kw mono" aria-hidden="true">const</span>
@@ -65,11 +65,11 @@ export default function Skills() {
                         className="skills-pill"
                         title={
                           hasEnd
-                            ? `${skill.name} — ${t(n > 1 ? 'endorsements' : 'endorsement', { count: n })}`
-                            : skill.name
+                            ? `${tr(skill.name)} — ${t(n > 1 ? 'endorsements' : 'endorsement', { count: n })}`
+                            : tr(skill.name)
                         }
                       >
-                        <span className="skills-pill-name">{skill.name}</span>
+                        <span className="skills-pill-name">{tr(skill.name)}</span>
                         {hasEnd && (
                           <span
                             className="skills-badge mono"

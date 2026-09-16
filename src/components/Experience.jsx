@@ -47,7 +47,7 @@ function ExperienceItem({ job, index }) {
 
           <p className="xp-company mono">
             <span className="xp-prompt" aria-hidden="true">@</span>
-            <span className="xp-company-name gradient-text">{job.company}</span>
+            <span className="xp-company-name gradient-text">{tr(job.company)}</span>
             {job.type && <span className="xp-type">· {tr(job.type)}</span>}
           </p>
 
@@ -102,9 +102,9 @@ function ExperienceItem({ job, index }) {
 
         {job.tech && job.tech.length > 0 && (
           <ul className="xp-tech" aria-label={t('technologiesUsed')}>
-            {job.tech.map((t) => (
-              <li key={t}>
-                <span className="tag">{t}</span>
+            {job.tech.map((technology) => (
+              <li key={technology}>
+                <span className="tag">{tr(technology)}</span>
               </li>
             ))}
           </ul>

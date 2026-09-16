@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url'
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import http from 'http'
 import { addPersonAliases } from '../src/utils/identity.js'
+import { dynamicArabic } from '../src/i18n/translations.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
@@ -282,17 +283,17 @@ const basePages = [
 
 const arabicMeta = {
   '/': {
-    title: 'عبدالرحمن فلبجي — مطور برمجيات قائد',
-    description: 'مطور برمجيات قائد بخبرة تتجاوز 13 عامًا في بناء تطبيقات الجوال والويب والأنظمة الخلفية باستخدام React وReact Native وNext.js وNode.js وDjango.',
+    title: `عبدالرحمن فلبجي — ${dynamicArabic['Lead Software Developer']}`,
+    description: `${dynamicArabic['Lead Software Developer']} بخبرة تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة الخلفية باستخدام React وReact Native وNext.js وNode.js وDjango.`,
   },
-  '/about': { title: 'نبذة عني — عبدالرحمن فلبجي', description: 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة.' },
-  '/experience': { title: 'الخبرة المهنية — عبدالرحمن فلبجي', description: 'أكثر من 13 عامًا من الخبرة في تطوير البرمجيات، شملت أدوار المطور القائد والمطور المتكامل والمدير التقني.' },
-  '/projects': { title: 'المشاريع — عبدالرحمن فلبجي', description: 'مشاريع مختارة من تطبيقات الجوال ومنصات الويب والأنظمة التي بناها عبدالرحمن فلبجي.' },
-  '/skills': { title: 'المهارات — عبدالرحمن فلبجي', description: 'مهارات تقنية تشمل React وReact Native وNode.js وTypeScript وPython وDjango وNext.js وغيرها.' },
-  '/opensource': { title: 'المصدر المفتوح — عبدالرحمن فلبجي', description: 'مشاريع ومساهمات عبدالرحمن فلبجي مفتوحة المصدر.' },
+  '/about': { title: 'نبذة عني — عبدالرحمن فلبجي', description: 'مطور برمجيات هندي سوداني بخبرة مهنية تتجاوز 13 عامًا في تطوير تطبيقات الجوال والويب والأنظمة، مع خبرة في React وReact Native وNode.js وغيرها.' },
+  '/experience': { title: 'الخبرة المهنية — عبدالرحمن فلبجي', description: 'الخبرة المهنية لعبدالرحمن فلبجي — أكثر من 13 عامًا في تطوير البرمجيات، شملت قيادة فرق التطوير وتطوير الواجهات الأمامية والخلفية والإدارة التقنية.' },
+  '/projects': { title: 'المشاريع — عبدالرحمن فلبجي', description: 'مشاريع مختارة من أعمال عبدالرحمن فلبجي، تشمل تطبيقات جوال ومنصات ويب وأنظمة طُوّرت باستخدام React Native وReact وIonic وغيرها.' },
+  '/skills': { title: 'المهارات — عبدالرحمن فلبجي', description: 'المهارات التقنية لعبدالرحمن فلبجي، وتشمل React وReact Native وNode.js وTypeScript وPython وDjango وNext.js وغيرها.' },
+  '/opensource': { title: 'المشاريع مفتوحة المصدر — عبدالرحمن فلبجي', description: 'مشاريع عبدالرحمن فلبجي ومساهماته في البرمجيات مفتوحة المصدر.' },
   '/certifications': { title: 'الشهادات — عبدالرحمن فلبجي', description: 'الشهادات المهنية وشهادات الخبرة لعبدالرحمن فلبجي.' },
-  '/recommendations': { title: 'التوصيات — عبدالرحمن فلبجي', description: 'توصيات وشهادات مهنية بحق عبدالرحمن فلبجي.' },
-  '/contact': { title: 'تواصل معي — عبدالرحمن فلبجي', description: 'تواصل مع عبدالرحمن فلبجي بشأن العمل الحر أو التعاون أو الاستفسارات.' },
+  '/recommendations': { title: 'التوصيات — عبدالرحمن فلبجي', description: 'توصيات وآراء مهنية عن العمل مع عبدالرحمن فلبجي.' },
+  '/contact': { title: 'تواصل معي — عبدالرحمن فلبجي', description: 'تواصل مع عبدالرحمن فلبجي لمناقشة مشاريع العمل الحر وفرص التعاون أو لطرح استفسار.' },
 }
 
 function toArabicPage(page) {
@@ -319,21 +320,18 @@ function toArabicPage(page) {
   if (!project && localizedJsonLd.mainEntity) {
     localizedJsonLd.mainEntity.name = 'عبدالرحمن فلبجي'
     localizedJsonLd.mainEntity.url = `${SITE}/ar`
-    if (localizedJsonLd.mainEntity.jobTitle) localizedJsonLd.mainEntity.jobTitle = 'مطور برمجيات قائد'
+    if (localizedJsonLd.mainEntity.jobTitle) localizedJsonLd.mainEntity.jobTitle = dynamicArabic[localizedJsonLd.mainEntity.jobTitle] || localizedJsonLd.mainEntity.jobTitle
     if (localizedJsonLd.mainEntity.description) localizedJsonLd.mainEntity.description = copy?.description
+    if (localizedJsonLd.mainEntity.address?.addressLocality === 'Alexandria') localizedJsonLd.mainEntity.address.addressLocality = 'الإسكندرية'
     if (localizedJsonLd.mainEntity.knowsLanguage) localizedJsonLd.mainEntity.knowsLanguage = ['العربية', 'الإنجليزية']
     if (localizedJsonLd.mainEntity.hasOccupation) {
-      const titles = {
-        'Lead Developer': 'مطور قائد',
-        'Sr. Full-Stack Developer': 'مطور برمجيات متكامل أول',
-        'Software Developer': 'مطور برمجيات',
-        'React Native Developer': 'مطور React Native',
-        'Software Programming Instructor': 'مدرب برمجة',
-        CTO: 'المدير التقني',
-      }
       localizedJsonLd.mainEntity.hasOccupation = localizedJsonLd.mainEntity.hasOccupation.map((occupation) => ({
         ...occupation,
-        name: titles[occupation.name] || occupation.name,
+        name: dynamicArabic[occupation.name] || occupation.name,
+        occupationLocation: occupation.occupationLocation ? {
+          ...occupation.occupationLocation,
+          name: dynamicArabic[occupation.occupationLocation.name] || occupation.occupationLocation.name,
+        } : undefined,
       }))
     }
   } else if (!project) {

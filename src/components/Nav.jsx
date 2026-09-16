@@ -43,7 +43,7 @@ export default function Nav() {
     <nav className="nav" aria-label={t('primaryNav')}>
       <div className="container">
         <div className="nav__inner">
-          <Link className="nav__brand mono" to={pathFor('/')} aria-label="valabji — home" onClick={() => { close(); if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <Link className="nav__brand mono" to={pathFor('/')} aria-label={t('homeLink')} onClick={() => { close(); if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <span className="nav__brand-prefix" aria-hidden="true">~/</span>
             <span className="nav__brand-name">valabji</span>
             <span className="cursor" aria-hidden="true" />

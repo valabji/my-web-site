@@ -17,7 +17,7 @@ export default function Contact() {
       value: email,
       href: `mailto:${email}`,
       icon: 'lni lni-envelope',
-      aria: `Email ${tr(identity.name)}`,
+      aria: t('emailPerson', { name: tr(identity.name) }),
     },
     waUrl && {
       label: 'whatsapp',
@@ -54,11 +54,11 @@ export default function Contact() {
   ].filter(Boolean)
 
   const socials = [
-    links?.linkedin && { href: links.linkedin, icon: 'lni lni-linkedin', aria: 'LinkedIn' },
-    links?.github && { href: links.github, icon: 'lni lni-github', aria: 'GitHub' },
-    waUrl && { href: waUrl, icon: 'lni lni-whatsapp', aria: 'WhatsApp' },
-    { href: `mailto:${email}`, icon: 'lni lni-envelope', aria: 'Email' },
-    links?.mostaql && { href: links.mostaql, icon: 'lni lni-link', aria: 'Mostaql' },
+    links?.linkedin && { href: links.linkedin, icon: 'lni lni-linkedin', aria: t('linkedinProfile') },
+    links?.github && { href: links.github, icon: 'lni lni-github', aria: t('githubProfile') },
+    waUrl && { href: waUrl, icon: 'lni lni-whatsapp', aria: t('messageWhatsapp') },
+    { href: `mailto:${email}`, icon: 'lni lni-envelope', aria: t('email') },
+    links?.mostaql && { href: links.mostaql, icon: 'lni lni-link', aria: t('mostaqlProfile') },
   ].filter(Boolean)
 
   return (
@@ -92,7 +92,7 @@ export default function Contact() {
                   <span className={c.icon} />
                 </span>
                 <span className="contact-link-body">
-                  <span className="contact-link-label mono">{c.label}</span>
+                  <span className="contact-link-label mono">{tr(c.label)}</span>
                   <span className="contact-link-value" dir="ltr">{c.value}</span>
                 </span>
                 <span className="contact-link-arrow mono" dir="ltr" aria-hidden="true">

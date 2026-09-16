@@ -4,5 +4,5 @@ import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 export default function RecommendationsPage() {
   const { isArabic } = useLanguage();
-  return <><SEO title={isArabic ? 'التوصيات' : 'Recommendations'} description={isArabic ? 'توصيات وشهادات مهنية بحق عبدالرحمن فلبجي.' : 'Professional recommendations and testimonials for Abdalrahman Valabji.'} canonical="/recommendations" /><Recommendations /></>;
+  return <><SEO title={isArabic ? 'التوصيات' : 'Recommendations'} description={isArabic ? 'توصيات وآراء مهنية عن العمل مع عبدالرحمن فلبجي.' : 'Professional recommendations and testimonials for Abdalrahman Valabji.'} canonical="/recommendations" /><Recommendations /></>;
 }

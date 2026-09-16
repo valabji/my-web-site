@@ -8,7 +8,7 @@ export default function ProjectsPage() {
     <>
       <SEO
         title={isArabic ? 'المشاريع' : 'Projects'}
-        description={isArabic ? 'مشاريع مختارة من أعمال عبدالرحمن فلبجي — تطبيقات جوال ومنصات ويب وأنظمة مبنية باستخدام React Native وReact وIonic وغيرها.' : 'Selected portfolio projects by Abdalrahman Valabji \u2014 mobile apps, web platforms, and systems built with React Native, React, Ionic, and more.'}
+        description={isArabic ? 'مشاريع مختارة من أعمال عبدالرحمن فلبجي، تشمل تطبيقات جوال ومنصات ويب وأنظمة طُوّرت باستخدام React Native وReact وIonic وغيرها.' : 'Selected portfolio projects by Abdalrahman Valabji \u2014 mobile apps, web platforms, and systems built with React Native, React, Ionic, and more.'}
         canonical="/projects"
         jsonLd={{
           '@context': 'https://schema.org',
