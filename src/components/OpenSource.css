@@ -119,7 +119,7 @@
   display:inline-flex;
   align-items:center;
   gap:.85rem;
-  margin-left:auto;
+  margin-inline-start:auto;
 }
 .os-foot-link{
   display:inline-flex;

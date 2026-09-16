@@ -34,6 +34,7 @@
 }
 .pj-sub .pj-prompt { color: var(--accent-3); }
 .pj-sub .pj-str { color: var(--warn); }
+.pj-code { display: inline-block; direction: ltr; unicode-bidi: isolate; }
 
 /* ---------- Grid ---------- */
 .pj-grid {
@@ -86,7 +87,7 @@
   width: 100%;
   padding: 0;
   cursor: pointer;
-  text-align: left;
+  text-align: start;
 }
 .pj-cover-btn:focus-visible {
   outline: 2px solid var(--accent);
@@ -118,7 +119,7 @@
 .pj-badge {
   position: absolute;
   top: .7rem;
-  right: .7rem;
+  inset-inline-end: .7rem;
   z-index: 2;
   display: inline-flex;
   align-items: center;
@@ -137,7 +138,7 @@
 /* hover open hint */
 .pj-open-hint {
   position: absolute;
-  left: .8rem;
+  inset-inline-start: .8rem;
   bottom: .7rem;
   z-index: 2;
   font-size: .76rem;
@@ -149,6 +150,7 @@
   transition: opacity .25s ease, transform .25s ease;
   pointer-events: none;
 }
+html[dir="rtl"] .pj-open-hint-icon{display:inline-block;transform:scaleX(-1)}
 .pj-card:hover .pj-open-hint,
 .pj-card:focus-within .pj-open-hint {
   opacity: 1;
@@ -255,7 +257,7 @@
 .pj-close {
   position: absolute;
   top: .55rem;
-  right: .6rem;
+  inset-inline-end: .6rem;
   z-index: 6;
   width: 2.75rem;
   height: 2.75rem;

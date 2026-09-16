@@ -52,6 +52,8 @@
 }
 .about-label .about-sym{color:var(--accent-2)}
 .about-label .about-key{color:var(--accent)}
+.about-code-label{display:inline-flex;align-items:center;gap:.55ch;direction:ltr;unicode-bidi:isolate}
+.about-command{display:inline-block;direction:ltr;unicode-bidi:isolate}
 
 /* Prose / whoami */
 .about-prose{
@@ -114,7 +116,7 @@
   flex:none;
 }
 .about-techcard .about-grouphead .about-count{
-  margin-left:auto;
+  margin-inline-start:auto;
   font-size:.7rem;
   color:var(--text-faint);
 }
@@ -140,18 +142,26 @@
   display:flex;
   flex-direction:column;
   gap:.2rem;
-  padding-left:1rem;
+  padding-inline-start:1rem;
   position:relative;
-  border-left:1px solid var(--border);
+  border-inline-start:1px solid var(--border);
 }
 .about-li::before{
   content:">";
   position:absolute;
   left:0;
+  right:auto;
   transform:translateX(-.1ch);
+  direction:ltr;
+  unicode-bidi:isolate;
   font-family:var(--mono);
   color:var(--accent-2);
   font-size:.85rem;
+}
+html[dir="rtl"] .about-li::before{
+  left:auto;
+  right:0;
+  transform:translateX(.1ch) scaleX(-1);
 }
 .about-li-title{
   font-weight:600;

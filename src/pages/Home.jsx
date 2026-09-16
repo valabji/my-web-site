@@ -9,8 +9,10 @@ import Recommendations from '../components/Recommendations.jsx'
 import Contact from '../components/Contact.jsx'
 import SEO from '../components/SEO.jsx'
 import profile from '../data/profile.json'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function Home() {
+  const { isArabic, tr } = useLanguage()
   return (
     <>
       <SEO
@@ -20,17 +22,17 @@ export default function Home() {
           '@type': 'ProfilePage',
           mainEntity: {
             '@type': 'Person',
-            name: profile.identity.name,
-            url: profile.identity.links.website,
+            name: tr(profile.identity.name),
+            url: `${profile.identity.links.website}${isArabic ? '/ar' : ''}`,
             image: `https://valabji.com${profile.identity.photo}`,
-            jobTitle: profile.identity.headline,
-            description: profile.identity.about,
+            jobTitle: tr(profile.identity.headline),
+            description: tr(profile.identity.about),
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'Alexandria',
+              addressLocality: isArabic ? 'الإسكندرية' : 'Alexandria',
               addressCountry: 'EG',
             },
-            knowsLanguage: profile.languages.map((language) => language.name),
+            knowsLanguage: profile.languages.map((language) => tr(language.name)),
             sameAs: [
               profile.identity.links.linkedin,
               profile.identity.links.github,

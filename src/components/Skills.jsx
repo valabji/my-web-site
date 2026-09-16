@@ -2,6 +2,7 @@ import profile from '../data/profile.json'
 import Reveal from './Reveal'
 import TiltCard from './TiltCard'
 import './Skills.css'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 /**
  * Skills — groups profile.skills by category and renders each group
@@ -9,6 +10,7 @@ import './Skills.css'
  * mono badge ("x3") plus a tiny endorsement meter.
  */
 export default function Skills() {
+  const { t, tr } = useLanguage()
   // Preserve first-seen category order, group skills underneath.
   const groups = []
   const index = new Map()
@@ -26,12 +28,12 @@ export default function Skills() {
         <Reveal as="div" className="skills-head">
           <h2 id="skills-title">
             <span className="skills-slash mono" aria-hidden="true">// </span>
-            <span className="gradient-text">skills</span>
+            <span className="gradient-text">{t('skills')}</span>
           </h2>
         </Reveal>
         <Reveal as="p" className="skills-sub mono">
           <span className="skills-prompt" aria-hidden="true">$ </span>
-          grep -r &ldquo;expertise&rdquo; ./career &mdash; {profile.skills.length} matches across {groups.length} domains
+          {t('skillsMatches', { skills: profile.skills.length, groups: groups.length })}
         </Reveal>
 
         <div className="skills-groups">
@@ -43,11 +45,11 @@ export default function Skills() {
               reveal
               max={5}
               delay={`${gi * 60}ms`}
-              aria-label={`${group.category} skills`}
+              aria-label={`${tr(group.category)} ${t('skills')}`}
             >
               <header className="skills-group-head">
                 <span className="skills-group-kw mono" aria-hidden="true">const</span>
-                <h3 className="skills-group-name">{group.category}</h3>
+                <h3 className="skills-group-name">{tr(group.category)}</h3>
                 <span className="skills-group-count" aria-hidden="true">
                   [{group.items.length}]
                 </span>
@@ -63,7 +65,7 @@ export default function Skills() {
                         className="skills-pill"
                         title={
                           hasEnd
-                            ? `${skill.name} — ${n} endorsement${n > 1 ? 's' : ''}`
+                            ? `${skill.name} — ${t(n > 1 ? 'endorsements' : 'endorsement', { count: n })}`
                             : skill.name
                         }
                       >
@@ -71,7 +73,7 @@ export default function Skills() {
                         {hasEnd && (
                           <span
                             className="skills-badge mono"
-                            aria-label={`${n} endorsement${n > 1 ? 's' : ''}`}
+                            aria-label={t(n > 1 ? 'endorsements' : 'endorsement', { count: n })}
                           >
                             <span className="skills-meter" aria-hidden="true">
                               {Array.from({ length: Math.min(n, 4) }).map((_, i) => (

@@ -23,7 +23,8 @@
   flex-wrap:wrap;
   gap:.1ch;
 }
-.contact-prompt .sigil{color:var(--accent);margin-right:.6ch}
+.contact-prompt .sigil{color:var(--accent);margin-inline-end:.6ch}
+.contact-prompt-code{display:inline-flex;align-items:center;gap:.1ch;direction:ltr;unicode-bidi:isolate}
 .contact-cta{
   margin-top:clamp(1.4rem,3.5vw,2rem);
   font-size:clamp(2rem,6vw,3.4rem);
@@ -97,6 +98,7 @@
   overflow:hidden;
   text-overflow:ellipsis;
 }
+html[dir="rtl"] .contact-link-value{text-align:right;unicode-bidi:isolate}
 .contact-link-arrow{
   margin-left:auto;
   flex:0 0 auto;
@@ -104,7 +106,9 @@
   color:var(--text-faint);
   transition:transform .25s ease,color .25s ease;
 }
+html[dir="rtl"] .contact-link-arrow{margin-left:0;margin-right:auto;transform:scaleX(-1)}
 .contact-link:hover .contact-link-arrow{transform:translateX(4px);color:var(--accent)}
+html[dir="rtl"] .contact-link:hover .contact-link-arrow{transform:translateX(-4px) scaleX(-1)}
 
 /* ---- location ---- */
 .contact-location{
@@ -117,6 +121,8 @@
   color:var(--text-dim);
 }
 .contact-location .sigil{color:var(--accent-2)}
+.contact-location-code{display:inline-flex;align-items:center;direction:ltr;unicode-bidi:isolate}
+.contact-location-code .sigil{margin-right:.5ch}
 .contact-location .dot{
   width:.55em;height:.55em;border-radius:50%;
   background:var(--accent);

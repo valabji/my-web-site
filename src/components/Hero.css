@@ -60,7 +60,18 @@
   margin-bottom:.65rem;
   letter-spacing:-0.01em;
 }
-.hero__headline::before{content:"> ";color:var(--accent)}
+.hero__headline::before{
+  content:">";
+  color:var(--accent);
+  margin-right:.45em;
+}
+html[dir="rtl"] .hero__headline::before{
+  display:inline-block;
+  direction:ltr;
+  margin-right:0;
+  margin-left:.45em;
+  transform:scaleX(-1);
+}
 
 .hero__tagline{
   font-size:clamp(.98rem,1.4vw,1.08rem);

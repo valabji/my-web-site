@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import portfolio from '../data/portfolio.json';
 import SEO from '../components/SEO';
 import './ProjectPage.css';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 function yearOf(dateStr) {
   if (!dateStr) return null;
@@ -11,7 +12,14 @@ function yearOf(dateStr) {
 
 export default function ProjectPage() {
   const { slug } = useParams();
-  const project = portfolio.projects.find((p) => p.slug === slug);
+  const { t, tr, isArabic, pathFor } = useLanguage();
+  const sourceProject = portfolio.projects.find((p) => p.slug === slug);
+  const project = sourceProject ? {
+    ...sourceProject,
+    title: isArabic ? (sourceProject.title_ar || sourceProject.title) : sourceProject.title,
+    description: isArabic ? (sourceProject.description_ar || sourceProject.description) : sourceProject.description,
+    tagline: isArabic ? (sourceProject.description_ar || sourceProject.tagline) : sourceProject.tagline,
+  } : null;
 
   if (!project) {
     return (
@@ -19,11 +27,11 @@ export default function ProjectPage() {
         <div className="container" style={{ textAlign: 'center', paddingTop: '8rem' }}>
           <span className="tag">~/404</span>
           <h1 className="mono gradient-text" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', margin: '1.5rem 0' }}>
-            project not found
+            {t('projectNotFound')}
           </h1>
-          <Link to="/projects" className="btn">
+          <Link to={pathFor('/projects')} className="btn">
             <span className="lni lni-arrow-left" aria-hidden="true" />
-            Back to projects
+            {t('backProjects')}
           </Link>
         </div>
       </section>
@@ -50,8 +58,8 @@ export default function ProjectPage() {
           description: project.description,
           author: {
             '@type': 'Person',
-            name: 'Abdalrahman Valabji',
-            url: 'https://valabji.com',
+            name: isArabic ? 'عبدالرحمن فلبجي' : 'Abdalrahman Valabji',
+            url: `https://valabji.com${isArabic ? '/ar' : ''}`,
           },
           datePublished: project.date_completed || undefined,
           applicationCategory: 'MobileApplication',
@@ -60,18 +68,18 @@ export default function ProjectPage() {
 
       <section className="section pj-detail">
         <div className="container">
-          <Link to="/projects" className="pj-detail-back mono">
+          <Link to={pathFor('/projects')} className="pj-detail-back mono">
             <span className="lni lni-arrow-left" aria-hidden="true" />
-            /projects
+            /{t('projects')}
           </Link>
 
           <article className="pj-detail-article">
             <header className="pj-detail-head">
-              <span className="pj-detail-eyebrow mono">// project</span>
+              <span className="pj-detail-eyebrow mono">// {t('project')}</span>
               <h1 className="pj-detail-title" dir="auto">
                 {project.title}
               </h1>
-              {project.title_ar && (
+              {!isArabic && project.title_ar && (
                 <p className="pj-detail-title-ar" dir="rtl">
                   {project.title_ar}
                 </p>
@@ -82,25 +90,25 @@ export default function ProjectPage() {
               <dl className="pj-detail-meta mono">
                 {year && (
                   <div className="pj-detail-meta-item">
-                    <dt>year</dt>
+                    <dt>{t('year')}</dt>
                     <dd>{year}</dd>
                   </div>
                 )}
                 {project.work_type && (
                   <div className="pj-detail-meta-item">
-                    <dt>type</dt>
-                    <dd>{project.work_type}</dd>
+                    <dt>{t('type')}</dt>
+                    <dd>{tr(project.work_type)}</dd>
                   </div>
                 )}
                 {project.duration && (
                   <div className="pj-detail-meta-item">
-                    <dt>built in</dt>
-                    <dd>{project.duration}</dd>
+                    <dt>{t('builtIn')}</dt>
+                    <dd>{tr(project.duration)}</dd>
                   </div>
                 )}
                 {project.data_source && (
                   <div className="pj-detail-meta-item">
-                    <dt>data</dt>
+                    <dt>{t('data')}</dt>
                     <dd>{project.data_source}</dd>
                   </div>
                 )}
@@ -113,7 +121,7 @@ export default function ProjectPage() {
                   <figure key={img.file} className="pj-detail-img-wrap">
                     <img
                       src={`/${img.file}`}
-                      alt={`${project.title} screenshot`}
+                      alt={t('screenshot', { name: project.title })}
                       loading="lazy"
                     />
                   </figure>
@@ -124,7 +132,7 @@ export default function ProjectPage() {
             <div className="pj-detail-body">
               <p className="pj-detail-desc">{project.description}</p>
 
-              {project.description_ar && (
+              {!isArabic && project.description_ar && (
                 <p className="pj-detail-desc pj-detail-desc-ar" dir="rtl">
                   {project.description_ar}
                 </p>
@@ -133,9 +141,9 @@ export default function ProjectPage() {
               {tech.length > 0 && (
                 <div className="pj-detail-tech">
                   <h2 className="mono pj-detail-section-head">
-                    <span className="gradient-text">Tech Stack</span>
+                    <span className="gradient-text">{t('techStackTitle')}</span>
                   </h2>
-                  <ul className="pj-detail-tags" aria-label="Technologies used">
+                  <ul className="pj-detail-tags" aria-label={t('technologiesUsed')}>
                     {tech.map((t) => (
                       <li key={t}>
                         <span className="tag">{t}</span>
@@ -167,7 +175,7 @@ export default function ProjectPage() {
                       rel="noopener noreferrer"
                     >
                       <span className="lni lni-link" aria-hidden="true" />
-                      view on mostaql
+                      {t('viewMostaql')}
                     </a>
                   )}
                 </div>

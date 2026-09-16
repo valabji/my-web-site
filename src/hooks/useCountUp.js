@@ -20,7 +20,9 @@ export function useCountUp(raw, { duration = 1100 } = {}) {
     }
     const [, pre, numStr, suf] = m;
     const target = parseInt(numStr.replace(/,/g, ''), 10);
-    if (mq && mq.matches) {
+    // Keep final values stable for prerenderers, browser automation, and
+    // reduced-motion visitors so crawlers never index temporary zeroes.
+    if ((typeof navigator !== 'undefined' && navigator.webdriver) || (mq && mq.matches)) {
       el.textContent = pre + target + suf;
       return;
     }

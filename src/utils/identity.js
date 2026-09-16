@@ -1,11 +1,13 @@
 export function buildAlternateNames(identity) {
-  return [identity.givenName, ...identity.alternateGivenNames]
+  const latinNames = [identity.givenName, ...identity.alternateGivenNames]
     .flatMap((givenName) =>
       [identity.familyName, ...identity.alternateFamilyNames].map(
         (familyName) => `${givenName} ${familyName}`,
       ),
     )
-    .filter((name) => name !== identity.name);
+  return [...latinNames, identity.nameArabic, ...(identity.alternateArabicNames || [])]
+    .filter(Boolean)
+    .filter((name, index, names) => name !== identity.name && names.indexOf(name) === index);
 }
 
 export function addPersonAliases(value, identity) {
@@ -19,12 +21,17 @@ export function addPersonAliases(value, identity) {
       Object.entries(child).map(([key, nested]) => [key, enrich(nested)]),
     );
 
-    if (enriched['@type'] === 'Person' && enriched.name === identity.name) {
+    if (
+      enriched['@type'] === 'Person'
+      && [identity.name, identity.nameArabic].includes(enriched.name)
+    ) {
+      const isArabic = enriched.name === identity.nameArabic;
+      const aliases = alternateNames.filter((name) => name !== enriched.name);
       return {
         ...enriched,
-        givenName: identity.givenName,
-        familyName: identity.familyName,
-        alternateName: enriched.alternateName || alternateNames,
+        givenName: isArabic ? identity.givenNameArabic : identity.givenName,
+        familyName: isArabic ? identity.familyNameArabic : identity.familyName,
+        alternateName: enriched.alternateName || aliases,
       };
     }
 

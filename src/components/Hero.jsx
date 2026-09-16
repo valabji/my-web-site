@@ -6,6 +6,7 @@ import Hero3D from './Hero3D';
 import WebGLErrorBoundary from './WebGLErrorBoundary';
 import { hasWebGL } from './hero3d/webgl';
 import './Hero.css';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 function HeroStat({ value, label }) {
   const ref = useCountUp(value);
@@ -18,8 +19,13 @@ function HeroStat({ value, label }) {
 }
 
 export default function Hero() {
+  const { t, tr, pathFor, isArabic } = useLanguage();
   const { identity, stats, techStack } = profile;
-  const { name, headline, tagline, location, photo, links } = identity;
+  const { photo, links } = identity;
+  const name = tr(identity.name);
+  const headline = tr(identity.headline);
+  const tagline = tr(identity.tagline);
+  const location = tr(identity.location);
 
   // Decide once, client-side, whether to mount the real 3D scene or fall
   // back to the static code-editor window.
@@ -34,13 +40,13 @@ export default function Hero() {
   const stack = techStack.frontend.slice(0, 4);
 
   return (
-    <section id="home" className="section hero" aria-label="Introduction">
+    <section id="home" className="section hero" aria-label={t('introduction')}>
       <div className="container hero__grid">
         {/* ---------- Left column ---------- */}
         <div className="hero__left">
           <span className="hero__kicker hero__anim hero__d1">
             <span className="lni lni-code" aria-hidden="true" />
-            // software engineer
+            // {t('softwareEngineer')}
           </span>
 
           <h1 className="hero__name hero__anim hero__d1">
@@ -61,9 +67,9 @@ export default function Hero() {
           </p>
 
           <div className="hero__cta hero__anim hero__d4">
-            <Link className="btn" to="/projects">
+            <Link className="btn" to={pathFor('/projects')}>
               <span className="lni lni-briefcase" aria-hidden="true" />
-              View Work
+              {t('viewWork')}
             </Link>
             <a className="btn-ghost" href={links.github}
               target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
@@ -75,15 +81,15 @@ export default function Hero() {
               <span className="lni lni-linkedin" aria-hidden="true" />
               LinkedIn
             </a>
-            <a className="btn-ghost" href="/#contact">
+            <a className="btn-ghost" href={`${pathFor('/')}#contact`}>
               <span className="lni lni-envelope" aria-hidden="true" />
-              Contact
+              {t('contact')}
             </a>
           </div>
 
-          <dl className="hero__stats hero__anim hero__d5" aria-label="Key stats">
+          <dl className="hero__stats hero__anim hero__d5" aria-label={t('keyStats')}>
             {stats.map((s) => (
-              <HeroStat key={s.label} value={s.value} label={s.label} />
+              <HeroStat key={s.label} value={s.value} label={tr(s.label)} />
             ))}
           </dl>
         </div>
@@ -107,7 +113,7 @@ export default function Hero() {
             </div>
           ) : (
           <div className="hero__terminal" role="img"
-            aria-label="Code editor window describing the developer">
+            aria-label={t('developerWindow')}>
             <div className="hero__titlebar">
               <span className="hero__dots" aria-hidden="true">
                 <span className="hero__dot hero__dot--r" />
@@ -117,7 +123,7 @@ export default function Hero() {
               <span className="hero__title-path mono">~/valabji</span>
             </div>
 
-            <pre className="hero__code" aria-hidden="true">
+            <pre className="hero__code" dir="ltr" aria-hidden="true">
               <code>
                 <span className="hero__line">
                   <span className="tk-com">// whoami</span>
@@ -158,7 +164,7 @@ export default function Hero() {
                 <span className="hero__line">
                   {'  '}<span className="tk-prop">location</span>
                   <span className="tk-punc">:</span>{' '}
-                  <span className="tk-str">&apos;{location}&apos;</span>
+                  <span className="tk-str" dir={isArabic ? 'rtl' : undefined}>&apos;{location}&apos;</span>
                   <span className="tk-punc">,</span>
                 </span>
                 <span className="hero__line">

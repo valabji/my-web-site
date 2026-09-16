@@ -55,7 +55,7 @@
   flex-shrink: 0;
 }
 .nav__brand:hover { color: var(--text); text-shadow: none; }
-.nav__brand-prefix { color: var(--accent); margin-right: 0.1em; }
+.nav__brand-prefix { color: var(--accent); margin-inline-end: 0.1em; }
 .nav__brand-name { color: var(--text); }
 .nav__brand:hover .nav__brand-name {
   background: linear-gradient(95deg, var(--accent), var(--accent-2));
@@ -64,14 +64,14 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-.nav__brand .cursor { margin-left: 0.06em; }
+.nav__brand .cursor { margin-inline-start: 0.06em; }
 
 /* ---- Desktop links ---- */
 .nav__links {
   display: none;
   align-items: center;
   gap: 0.15rem;
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 .nav__link {
   display: inline-flex;
@@ -91,15 +91,28 @@
   background: rgba(57, 211, 83, 0.07);
   text-shadow: none;
 }
+.nav__language {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--accent-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .48em .7em;
+  font-size: .82rem;
+  white-space: nowrap;
+}
+.nav__language:hover { color: var(--accent); border-color: var(--accent); background: rgba(57,211,83,.07); }
+.nav__language--mobile { width: 100%; justify-content: center; margin: .35rem 0 .65rem; padding: .75rem; }
 
 /* ---- Social icons ---- */
 .nav__social {
   display: flex;
   align-items: center;
   gap: 0.2rem;
-  padding-left: 0.55rem;
-  margin-left: 0.4rem;
-  border-left: 1px solid var(--border-soft);
+  padding-inline-start: 0.55rem;
+  margin-inline-start: 0.4rem;
+  border-inline-start: 1px solid var(--border-soft);
 }
 .nav__icon {
   display: inline-flex;
@@ -127,7 +140,7 @@
   justify-content: center;
   width: 42px;
   height: 42px;
-  margin-left: auto;
+  margin-inline-start: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.02);
@@ -194,9 +207,10 @@
 .nav__mobile-link:hover {
   color: var(--accent);
   background: rgba(57, 211, 83, 0.06);
-  padding-left: 0.8em;
+  padding-inline-start: 0.8em;
   text-shadow: none;
 }
+html[dir="rtl"] .nav__mobile-link::before { direction:ltr; unicode-bidi:isolate; transform:scaleX(-1); }
 .nav__mobile-social {
   display: flex;
   align-items: center;

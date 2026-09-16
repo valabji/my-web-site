@@ -4,6 +4,7 @@ import Reveal from './Reveal';
 import { useReveal } from '../hooks/useReveal';
 import { useTilt } from '../hooks/useTilt';
 import './Experience.css';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 const BULLET_PREVIEW = 4;
 
@@ -12,6 +13,7 @@ function isUrl(str) {
 }
 
 function ExperienceItem({ job, index }) {
+  const { t, tr, isArabic } = useLanguage();
   const [expanded, setExpanded] = useState(false);
   const itemRef = useReveal();
   const cardRef = useTilt({ max: 5 });
@@ -34,11 +36,11 @@ function ExperienceItem({ job, index }) {
       <article ref={cardRef} className="xp-card card tilt-3d">
         <header className="xp-head">
           <div className="xp-titleRow">
-            <h3 className="xp-title">{job.title}</h3>
+            <h3 className="xp-title">{tr(job.title)}</h3>
             {job.current && (
-              <span className="xp-badge mono" aria-label="Current role">
+              <span className="xp-badge mono" aria-label={t('currentRole')}>
                 <span className="xp-badge-dot" aria-hidden="true" />
-                current
+                {t('current')}
               </span>
             )}
           </div>
@@ -46,21 +48,21 @@ function ExperienceItem({ job, index }) {
           <p className="xp-company mono">
             <span className="xp-prompt" aria-hidden="true">@</span>
             <span className="xp-company-name gradient-text">{job.company}</span>
-            {job.type && <span className="xp-type">· {job.type}</span>}
+            {job.type && <span className="xp-type">· {tr(job.type)}</span>}
           </p>
 
           <dl className="xp-meta mono">
             <div className="xp-meta-item">
-              <dt className="xp-meta-key" aria-hidden="true">const&nbsp;range&nbsp;=</dt>
+              <dt className="xp-meta-key" dir="ltr" aria-hidden="true">const&nbsp;range&nbsp;=</dt>
               <dd className="xp-meta-val">
-                {job.start} — {job.end}
-                {job.duration && <span className="xp-dur"> ({job.duration})</span>}
+                {tr(job.start)} — {tr(job.end)}
+                {job.duration && <span className="xp-dur"> ({tr(job.duration)})</span>}
               </dd>
             </div>
             {job.location && (
               <div className="xp-meta-item">
                 <dt className="xp-meta-key" aria-hidden="true">//&nbsp;loc</dt>
-                <dd className="xp-meta-val xp-loc">{job.location}</dd>
+                <dd className="xp-meta-val xp-loc">{tr(job.location)}</dd>
               </div>
             )}
           </dl>
@@ -71,13 +73,13 @@ function ExperienceItem({ job, index }) {
             <ul className="xp-bullets" id={panelId}>
               {visible.map((b, i) => (
                 <li className="xp-bullet" key={i}>
-                  <span className="xp-bullet-mark mono" aria-hidden="true">&gt;</span>
+                  <span className="xp-bullet-mark mono" dir="ltr" aria-hidden="true">&gt;</span>
                   {isUrl(b) ? (
                     <a href={b.trim()} target="_blank" rel="noopener noreferrer" className="xp-bullet-link">
                       {b.trim()}
                     </a>
                   ) : (
-                    <span dir="auto">{b}</span>
+                    <span dir="auto">{tr(b)}</span>
                   )}
                 </li>
               ))}
@@ -92,14 +94,14 @@ function ExperienceItem({ job, index }) {
                 aria-controls={panelId}
               >
                 <span className="xp-toggle-sym" aria-hidden="true">{expanded ? '–' : '+'}</span>
-                {expanded ? 'show less' : `show ${hiddenCount} more`}
+                {expanded ? t('showLess') : t('showMore', { count: hiddenCount })}
               </button>
             )}
           </>
         )}
 
         {job.tech && job.tech.length > 0 && (
-          <ul className="xp-tech" aria-label="Technologies used">
+          <ul className="xp-tech" aria-label={t('technologiesUsed')}>
             {job.tech.map((t) => (
               <li key={t}>
                 <span className="tag">{t}</span>
@@ -113,6 +115,7 @@ function ExperienceItem({ job, index }) {
 }
 
 export default function Experience() {
+  const { t } = useLanguage();
   const experience = profile.experience || [];
   const timelineRef = useReveal();
 
@@ -121,11 +124,11 @@ export default function Experience() {
       <div className="container">
         <Reveal as="header" className="xp-section-head">
           <h2 className="xp-eyebrow mono" id="xp-heading">
-            <span className="gradient-text">// experience</span>
+            <span className="gradient-text">// {t('experience')}</span>
             <span className="cursor" aria-hidden="true" />
           </h2>
           <p className="xp-subtitle">
-            A timeline of where I&apos;ve shipped, led, and leveled up.
+            {t('experienceSubtitle')}
           </p>
         </Reveal>
 

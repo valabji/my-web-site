@@ -44,6 +44,19 @@ body{
   width:100%;
   touch-action:manipulation;
 }
+html[dir="rtl"] body{
+  --sans:Tahoma,Arial,"Noto Sans Arabic",sans-serif;
+}
+html[dir="rtl"] .mono{
+  font-family:Tahoma,Arial,"Noto Sans Arabic",sans-serif;
+  letter-spacing:0;
+}
+html[dir="rtl"] .nav__brand,
+html[dir="rtl"] .hero__code,
+html[dir="rtl"] .pj-slug{
+  direction:ltr;
+}
+html[dir="rtl"] .skip-link{left:auto;right:.75rem}
 #root{
   min-height:100dvh;
   width:100%;

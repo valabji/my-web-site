@@ -4,6 +4,7 @@ import portfolio from '../data/portfolio.json';
 import Reveal from './Reveal';
 import TiltCard from './TiltCard';
 import './Projects.css';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 function yearOf(dateStr) {
   if (!dateStr) return null;
@@ -25,6 +26,7 @@ const FOCUSABLE =
   'a[href],button:not([disabled]),textarea,input,select,[tabindex]:not([tabindex="-1"])';
 
 function Lightbox({ project, onClose }) {
+  const { t, tr, isArabic } = useLanguage();
   const images = galleryImagesOf(project);
   const [index, setIndex] = useState(0);
   const total = images.length;
@@ -125,7 +127,7 @@ function Lightbox({ project, onClose }) {
         ref={dialogRef}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="pj-close" onClick={onClose} aria-label="Close (Esc)">
+        <button className="pj-close" onClick={onClose} aria-label={`${t('close')} (Esc)`}>
           <span aria-hidden="true">×</span>
         </button>
 
@@ -137,7 +139,7 @@ function Lightbox({ project, onClose }) {
                 <img
                   key={current.file}
                   src={'/' + current.file}
-                  alt={`${project.title} — image ${index + 1} of ${total}`}
+                  alt={t('imageAlt', { name: project.title, current: index + 1, total })}
                   loading="eager"
                   className="pj-stage-img"
                 />
@@ -147,14 +149,14 @@ function Lightbox({ project, onClose }) {
                   <button
                     className="pj-nav pj-nav-prev"
                     onClick={() => go(-1)}
-                    aria-label="Previous image"
+                    aria-label={t('previousImage')}
                   >
                     <span aria-hidden="true">‹</span>
                   </button>
                   <button
                     className="pj-nav pj-nav-next"
                     onClick={() => go(1)}
-                    aria-label="Next image"
+                    aria-label={t('nextImage')}
                   >
                     <span aria-hidden="true">›</span>
                   </button>
@@ -166,7 +168,7 @@ function Lightbox({ project, onClose }) {
             </div>
 
             {total > 1 && (
-              <div className="pj-thumbs" role="tablist" aria-label="Gallery thumbnails">
+              <div className="pj-thumbs" role="tablist" aria-label={t('galleryThumbnails')}>
                 {images.map((img, i) => (
                   <button
                     key={img.file}
@@ -175,7 +177,7 @@ function Lightbox({ project, onClose }) {
                     onClick={() => setIndex(i)}
                     role="tab"
                     aria-selected={i === index}
-                    aria-label={`Show image ${i + 1}`}
+                    aria-label={t('showImage', { count: i + 1 })}
                   >
                     <img src={'/' + img.file} alt="" loading="lazy" />
                   </button>
@@ -187,27 +189,27 @@ function Lightbox({ project, onClose }) {
           {/* Info panel */}
           <div className="pj-info">
             <div className="pj-info-head">
-              <span className="pj-info-tag mono">// project</span>
+              <span className="pj-info-tag mono">// {t('project')}</span>
               <h3 className="pj-info-title" dir="auto">{project.title}</h3>
-              {project.title_ar && (
+              {!isArabic && project.title_ar && (
                 <p className="pj-info-sub" dir="rtl">{project.title_ar}</p>
               )}
               {project.tagline && (
                 <p className="pj-info-tagline">{project.tagline}</p>
               )}
               <div className="pj-info-meta mono">
-                {year && <span className="pj-meta-item"><span className="pj-meta-key">year</span> {year}</span>}
+                {year && <span className="pj-meta-item"><span className="pj-meta-key">{t('year')}</span> {year}</span>}
                 <span className="pj-meta-item">
-                  <span className="pj-meta-key">images</span> {total}
+                  <span className="pj-meta-key">{t('images')}</span> {total}
                 </span>
                 {project.work_type && (
-                  <span className="pj-meta-item"><span className="pj-meta-key">type</span> {project.work_type}</span>
+                  <span className="pj-meta-item"><span className="pj-meta-key">{t('type')}</span> {tr(project.work_type)}</span>
                 )}
                 {project.duration && (
-                  <span className="pj-meta-item"><span className="pj-meta-key">built in</span> {project.duration}</span>
+                  <span className="pj-meta-item"><span className="pj-meta-key">{t('builtIn')}</span> {tr(project.duration)}</span>
                 )}
                 {project.data_source && (
-                  <span className="pj-meta-item"><span className="pj-meta-key">data</span> {project.data_source}</span>
+                  <span className="pj-meta-item"><span className="pj-meta-key">{t('data')}</span> {project.data_source}</span>
                 )}
               </div>
             </div>
@@ -215,7 +217,7 @@ function Lightbox({ project, onClose }) {
             <p className="pj-info-desc" dir="auto">{project.description}</p>
 
             {tech.length > 0 && (
-              <ul className="pj-tech" aria-label="Technologies used">
+              <ul className="pj-tech" aria-label={t('technologiesUsed')}>
                 {tech.map((t) => (
                   <li key={t}><span className="tag">{t}</span></li>
                 ))}
@@ -242,7 +244,7 @@ function Lightbox({ project, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span aria-hidden="true">$</span> view on mostaql
+                  <span aria-hidden="true">$</span> {t('viewMostaql')}
                   <span className="lni lni-link" aria-hidden="true" />
                 </a>
               )}
@@ -255,7 +257,13 @@ function Lightbox({ project, onClose }) {
 }
 
 export default function Projects() {
-  const projects = portfolio.projects || [];
+  const { t, isArabic, pathFor } = useLanguage();
+  const projects = (portfolio.projects || []).map((project) => ({
+    ...project,
+    title: isArabic ? (project.title_ar || project.title) : project.title,
+    description: isArabic ? (project.description_ar || project.description) : project.description,
+    tagline: isArabic ? (project.description_ar || project.tagline) : project.tagline,
+  }));
   const count = portfolio.project_count ?? projects.length;
   const [active, setActive] = useState(null);
 
@@ -266,17 +274,19 @@ export default function Projects() {
     <section id="projects" className="section pj-section" aria-labelledby="pj-heading">
       <div className="container">
         <Reveal as="header" className="pj-header">
-          <span className="pj-eyebrow mono">// selected work</span>
+          <span className="pj-eyebrow mono">// {t('selectedWork')}</span>
           <h2 id="pj-heading" className="pj-title">
-            <span className="gradient-text">Projects</span>
-            <span className="pj-count mono" aria-label={`${count} projects`}>
+            <span className="gradient-text">{t('projects')}</span>
+            <span className="pj-count mono" aria-label={t('projectsCount', { count })}>
               [{String(count).padStart(2, '0')}]
             </span>
           </h2>
           <p className="pj-sub mono">
-            <span className="pj-prompt">const</span> portfolio = await load(
-            <span className="pj-str">'./work'</span>)
-            <span className="cursor" aria-hidden="true" />
+            <span className="pj-code" dir="ltr">
+              <span className="pj-prompt">const</span> portfolio = await load(
+              <span className="pj-str">'./work'</span>)
+              <span className="cursor" aria-hidden="true" />
+            </span>
           </p>
         </Reveal>
 
@@ -288,9 +298,9 @@ export default function Projects() {
               <Reveal as="li" key={p.id} delay={`${Math.min(i * 60, 360)}ms`}>
                 <TiltCard as="article" className="pj-card" glare max={6}>
                   <Link
-                    to={`/projects/${p.slug}`}
+                    to={pathFor(`/projects/${p.slug}`)}
                     className="pj-cover pj-cover-btn"
-                    aria-label={`View ${p.title}`}
+                    aria-label={t('viewProject', { name: p.title })}
                   >
                     <img
                       src={'/' + p.cover}
@@ -302,7 +312,11 @@ export default function Projects() {
                       <span className="lni lni-image" aria-hidden="true" /> {shots}
                     </span>
                     <span className="pj-open-hint mono" aria-hidden="true">
-                      {'>'} view
+                      {isArabic ? (
+                        <>{t('view')} <span className="pj-open-hint-icon">&gt;</span></>
+                      ) : (
+                        <><span className="pj-open-hint-icon">&gt;</span> {t('view')}</>
+                      )}
                     </span>
                   </Link>
 

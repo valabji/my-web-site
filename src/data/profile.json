@@ -1,8 +1,11 @@
 {
   "identity": {
     "name": "Abdalrahman Valabji",
+    "nameArabic": "عبدالرحمن فلبجي",
     "givenName": "Abdalrahman",
+    "givenNameArabic": "عبدالرحمن",
     "familyName": "Valabji",
+    "familyNameArabic": "فلبجي",
     "alternateGivenNames": [
       "Abdulrahman",
       "Abdelrahman",
@@ -17,6 +20,16 @@
       "Valabhji",
       "Valabhjee",
       "Valabjee"
+    ],
+    "alternateArabicNames": [
+      "عبد الرحمن فلبجي",
+      "عبدالرحمان فلبجي",
+      "عبد الرحمان فلبجي",
+      "عبدالرحمن فالابجي",
+      "عبد الرحمن فالابجي",
+      "عبدالرحمن فلابجي",
+      "عبد الرحمن فلابجي",
+      "عبدالرحمن ولابجي"
     ],
     "headline": "Lead Software Developer",
     "tagline": "Lead Software Developer - building mobile, web & systems for 13+ years",
@@ -66,15 +79,15 @@
       "Expo",
       "Redux",
       "Next.js",
-      "HTML",
-      "CSS",
+      "HTML5",
+      "CSS3",
       "SCSS",
       "TailwindCSS"
     ],
     "backend": [
       "Django",
       "Node.js",
-      "Mongo",
+      "MongoDB",
       "MySQL",
       "Ruby on Rails"
     ],
@@ -149,7 +162,7 @@
       "endorsements": 0
     },
     {
-      "name": "Visual Basic",
+      "name": "VB.NET",
       "category": "Languages",
       "endorsements": 0
     },
@@ -174,6 +187,26 @@
       "endorsements": 0
     },
     {
+      "name": "XHTML",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "Kotlin",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "Swift",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
+      "name": "Objective-C",
+      "category": "Languages",
+      "endorsements": 0
+    },
+    {
       "name": "AngularJS",
       "category": "Frameworks & Libraries",
       "endorsements": 0
@@ -194,6 +227,26 @@
       "endorsements": 0
     },
     {
+      "name": "React",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Spring Framework",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "Polymer",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
+      "name": "GraphQL",
+      "category": "Frameworks & Libraries",
+      "endorsements": 0
+    },
+    {
       "name": "Apache Cordova",
       "category": "Mobile",
       "endorsements": 0
@@ -210,6 +263,21 @@
     },
     {
       "name": "Cross-platform Development",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "React Native",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "Flutter",
+      "category": "Mobile",
+      "endorsements": 0
+    },
+    {
+      "name": "Storyboard",
       "category": "Mobile",
       "endorsements": 0
     },
@@ -239,6 +307,11 @@
       "endorsements": 0
     },
     {
+      "name": "Node.js",
+      "category": "Backend & DevOps",
+      "endorsements": 0
+    },
+    {
       "name": "MySQL",
       "category": "Data",
       "endorsements": 0
@@ -255,6 +328,16 @@
     },
     {
       "name": "Database Administration",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Data",
+      "endorsements": 0
+    },
+    {
+      "name": "MongoDB",
       "category": "Data",
       "endorsements": 0
     },
@@ -376,6 +459,96 @@
     {
       "name": "Software Architecture",
       "category": "Professional",
+      "endorsements": 0
+    },
+    {
+      "name": "Gradle",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "Gulp",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "Webpack",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "Babel",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "Composer",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "Bitbucket",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "ClickUp",
+      "category": "Tools",
+      "endorsements": 0
+    },
+    {
+      "name": "Electron",
+      "category": "Desktop",
+      "endorsements": 0
+    },
+    {
+      "name": "WordPress",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "Joomla",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "vBulletin",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "Nuke",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "phpBB",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "WooCommerce",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "Shopify",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "Magento",
+      "category": "CMS & Platforms",
+      "endorsements": 0
+    },
+    {
+      "name": "Unity",
+      "category": "Game Development",
+      "endorsements": 0
+    },
+    {
+      "name": "GameMaker (legacy versions)",
+      "category": "Game Development",
       "endorsements": 0
     }
   ],

@@ -3,11 +3,13 @@ import profile from '../data/profile.json';
 import Reveal from './Reveal';
 import TiltCard from './TiltCard';
 import './Certifications.css';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 const FOCUSABLE =
   'a[href],button:not([disabled]),textarea,input,select,[tabindex]:not([tabindex="-1"])';
 
 export default function Certifications() {
+  const { t, tr } = useLanguage();
   const certs = profile.certifications || [];
   const [active, setActive] = useState(null); // { image, title } | null
   const modalRef = useRef(null);
@@ -63,14 +65,16 @@ export default function Certifications() {
       <div className="container">
         <Reveal as="header" className="certs-head">
           <p className="certs-eyebrow mono">
-            <span className="certs-prompt">$</span> ls ~/credentials
+            <span className="certs-command" dir="ltr">
+              <span className="certs-prompt">$</span> ls ~/credentials
+            </span>
           </p>
           <h2 id="certs-title" className="certs-title">
             <span className="certs-slashes" aria-hidden="true">//</span>
-            <span className="gradient-text">certifications</span>
+            <span className="gradient-text">{t('certifications')}</span>
           </h2>
           <p className="certs-sub">
-            <span className="certs-count">{certs.length}</span> verified credentials &amp; experience certificates
+            {t('verifiedCredentials', { count: certs.length })}
           </p>
         </Reveal>
 
@@ -93,27 +97,29 @@ export default function Certifications() {
                     type="button"
                     className="cert-thumb"
                     onClick={() => setActive({ image: cert.image, title: cert.title })}
-                    aria-label={`View full-size credential: ${cert.title}`}
+                    aria-label={t('viewCredential', { name: tr(cert.title) })}
                   >
-                    <img src={cert.image} alt={`${cert.title} credential`} loading="lazy" />
+                    <img src={cert.image} alt={t('credentialAlt', { name: tr(cert.title) })} loading="lazy" />
                   </button>
                 ) : (
                   <div className="cert-noimg" aria-hidden="true">
-                    <span className="cert-dollar">const</span> credential = &#123; ... &#125;
+                    <span className="cert-code" dir="ltr">
+                      <span className="cert-dollar">const</span> credential = &#123; ... &#125;
+                    </span>
                   </div>
                 )}
 
                 <div className="cert-body">
                   <span className="cert-issuer mono">
-                    <span className="cert-const">@</span>{cert.issuer}
+                    <span className="cert-const">@</span>{tr(cert.issuer)}
                   </span>
-                  <h3 className="cert-name" dir="auto">{cert.title}</h3>
+                  <h3 className="cert-name" dir="auto">{tr(cert.title)}</h3>
 
                   <dl className="cert-meta">
                     {cert.issued ? (
                       <div className="cert-row">
-                        <dt className="cert-key">issued:</dt>
-                        <dd>{cert.issued}</dd>
+                        <dt className="cert-key">{t('issued')}</dt>
+                        <dd>{tr(cert.issued)}</dd>
                       </div>
                     ) : null}
                     {cert.credentialId ? (
@@ -133,7 +139,7 @@ export default function Certifications() {
                         rel="noopener noreferrer"
                       >
                         <span className="lni lni-link" aria-hidden="true" />
-                        Show credential
+                        {t('showCredential')}
                       </a>
                     </div>
                   ) : null}
@@ -149,7 +155,7 @@ export default function Certifications() {
           className="cert-modal"
           role="dialog"
           aria-modal="true"
-          aria-label={`${active.title} credential, full size`}
+          aria-label={t('credentialFull', { name: tr(active.title) })}
           onClick={close}
           ref={modalRef}
         >
@@ -158,14 +164,14 @@ export default function Certifications() {
               type="button"
               className="cert-modal-close"
               onClick={close}
-              aria-label="Close preview"
+              aria-label={t('closePreview')}
               ref={closeRef}
             >
               ✕
             </button>
-            <img src={active.image} alt={`${active.title} credential, full size`} />
+            <img src={active.image} alt={t('credentialFull', { name: tr(active.title) })} />
             <p className="cert-modal-cap mono">
-              <span className="cert-prompt">//</span> {active.title}
+              <span className="cert-prompt">//</span> {tr(active.title)}
             </p>
           </div>
         </div>
