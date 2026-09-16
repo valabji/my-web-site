@@ -1,9 +1,13 @@
 import { Helmet } from 'react-helmet-async';
+import profile from '../data/profile.json';
+import { addPersonAliases } from '../utils/identity.js';
 
 const SITE = 'https://valabji.com';
 const DEFAULT_IMG = `${SITE}/assets/imgs/me.jpeg`;
 const DEFAULT_DESC =
   'Lead Software Developer with 13+ years building mobile, web, and backend systems. React, React Native, Next.js, Node.js, and Django.';
+
+const { identity } = profile;
 
 export default function SEO({
   title,
@@ -19,6 +23,7 @@ export default function SEO({
     : 'Abdalrahman Valabji \u2014 Lead Software Developer';
   const desc = description || DEFAULT_DESC;
   const img = image || DEFAULT_IMG;
+  const enrichedJsonLd = jsonLd ? addPersonAliases(jsonLd, identity) : null;
 
   return (
     <Helmet>
@@ -40,8 +45,8 @@ export default function SEO({
       <meta name="twitter:description" content={desc} />
       <meta name="twitter:image" content={img} />
 
-      {jsonLd && (
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      {enrichedJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(enrichedJsonLd)}</script>
       )}
     </Helmet>
   );

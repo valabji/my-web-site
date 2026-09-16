@@ -2,6 +2,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import http from 'http'
+import { addPersonAliases } from '../src/utils/identity.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
@@ -17,6 +18,7 @@ const profile = JSON.parse(
 
 const SITE = 'https://valabji.com'
 const OG_IMAGE = `${SITE}/assets/imgs/me.jpeg`
+const { identity } = profile
 
 const routes = [
   '/',
@@ -55,7 +57,7 @@ function buildMeta({ title, description, canonical, image, type = 'website', jso
   tags += `    <meta name="twitter:description" content="${desc}" />\n`
   tags += `    <meta name="twitter:image" content="${img}" />\n`
   if (jsonLd) {
-    tags += `    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>\n`
+    tags += `    <script type="application/ld+json">${JSON.stringify(addPersonAliases(jsonLd, identity))}</script>\n`
   }
   return tags
 }

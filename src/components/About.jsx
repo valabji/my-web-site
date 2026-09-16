@@ -11,7 +11,7 @@ const TECH_GROUPS = [
 ];
 
 export default function About() {
-  const { about } = profile.identity;
+  const { about, alternateGivenNames, alternateFamilyNames } = profile.identity;
   const { softSkills, techStack, languages, education } = profile;
 
   return (
@@ -34,6 +34,10 @@ export default function About() {
               <span className="about-prompt">&gt; </span>cat about.md
             </p>
             <p className="about-bio">{about}</p>
+            <p className="about-name-variants">
+              Name variants: {alternateGivenNames.join(', ')}; family name also
+              spelled {alternateFamilyNames.join(', ')}.
+            </p>
           </Reveal>
 
           <Reveal as="div" className="about-block" delay=".12s">

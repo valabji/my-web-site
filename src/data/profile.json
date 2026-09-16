@@ -1,6 +1,23 @@
 {
   "identity": {
     "name": "Abdalrahman Valabji",
+    "givenName": "Abdalrahman",
+    "familyName": "Valabji",
+    "alternateGivenNames": [
+      "Abdulrahman",
+      "Abdelrahman",
+      "Abdurrahman",
+      "Abdul Rahman",
+      "Abdel Rahman",
+      "Abd al-Rahman",
+      "Abd Alrahman",
+      "Abd El Rahman"
+    ],
+    "alternateFamilyNames": [
+      "Valabhji",
+      "Valabhjee",
+      "Valabjee"
+    ],
     "headline": "Lead Software Developer",
     "tagline": "Lead Software Developer - building mobile, web & systems for 13+ years",
     "location": "Alexandria, Egypt",

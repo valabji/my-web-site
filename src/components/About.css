@@ -68,6 +68,13 @@
   max-width:62ch;
 }
 .about-bio strong{color:var(--text)}
+.about-name-variants{
+  margin-top:.8rem;
+  color:var(--text-faint);
+  font-family:var(--mono);
+  font-size:.72rem;
+  line-height:1.65;
+}
 
 /* Pills */
 .about-pills{
