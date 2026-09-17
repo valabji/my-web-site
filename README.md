@@ -20,6 +20,10 @@ Pushing to `master` triggers [`.github/workflows/deploy.yml`](.github/workflows/
 which builds the site and publishes `dist/` to GitHub Pages (custom domain
 `valabji.com` via `public/CNAME`).
 
+The deployment compares the new sitemap and rendered pages with the previous
+`gh-pages` deployment, keeps `lastmod` dates for unchanged pages, and submits
+added, changed, and deleted URLs to IndexNow after the new site is live.
+
 ## History
 
 The previous Create React App (`react-scripts`) version of this site is archived
