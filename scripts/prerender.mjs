@@ -18,6 +18,7 @@ const profile = JSON.parse(
 )
 
 const SITE = 'https://valabji.com'
+const BUILD_DATE = new Date().toISOString().slice(0, 10)
 const OG_IMAGE = `${SITE}/assets/imgs/me.jpeg`
 const { identity } = profile
 
@@ -398,7 +399,7 @@ function writeSitemap() {
     <xhtml:link rel="alternate" hreflang="en" href="${en}" />
     <xhtml:link rel="alternate" hreflang="ar" href="${ar}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${en}" />
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>${BUILD_DATE}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${priority}</priority>
   </url>
@@ -407,7 +408,7 @@ function writeSitemap() {
     <xhtml:link rel="alternate" hreflang="en" href="${en}" />
     <xhtml:link rel="alternate" hreflang="ar" href="${ar}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${en}" />
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>${BUILD_DATE}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${priority}</priority>
   </url>`
