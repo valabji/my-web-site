@@ -84,7 +84,14 @@ function extractAssets(html) {
 function injectAssets(html, assets) {
   return html.replace(
     /(<head[^>]*>)([\s\S]*?)(<\/head>)/,
-    (_, open, content, close) => `${open}\n${assets}\n${content}${close}`
+    (_, open, content, close) => `${open}\n<meta charset="utf-8" />\n${assets}\n${content}${close}`
+  )
+}
+
+function inlineHomeStyles(assets) {
+  return assets.replace(
+    /<link[^>]*rel="stylesheet"[^>]*href="(\/assets\/[^\"]+\.css)"[^>]*>/,
+    (_, href) => `<style>${readFileSync(path.join(DIST, href.slice(1)), 'utf-8')}</style>`
   )
 }
 
@@ -466,7 +473,9 @@ async function main() {
 
       let html = await tab.content()
       html = injectMeta(html, buildMeta(page.meta))
-      html = injectAssets(html, criticalAssets)
+      html = injectAssets(html, page.route === '/' || page.route === '/ar'
+        ? inlineHomeStyles(criticalAssets)
+        : criticalAssets)
       html = html.replace(/<html[^>]*>/, `<html lang="${page.meta.lang}" dir="${page.meta.lang === 'ar' ? 'rtl' : 'ltr'}">`)
 
       const outputPath = page.route === '/'
