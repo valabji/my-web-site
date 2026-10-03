@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import Home from './pages/Home.jsx'
@@ -10,6 +11,8 @@ import OpenSourcePage from './pages/OpenSourcePage.jsx'
 import CertificationsPage from './pages/CertificationsPage.jsx'
 import RecommendationsPage from './pages/RecommendationsPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
+const BlogPage = lazy(() => import('./pages/BlogPage.jsx'))
+const BlogPost = lazy(() => import('./pages/BlogPost.jsx'))
 import ErrorPage from './pages/Error.jsx'
 import { LanguageProvider } from './i18n/LanguageContext.jsx'
 
@@ -24,6 +27,34 @@ const children = [
   { path: 'certifications', element: <CertificationsPage /> },
   { path: 'recommendations', element: <RecommendationsPage /> },
   { path: 'contact', element: <ContactPage /> },
+  {
+    path: 'blog',
+    element: (
+      <Suspense
+        fallback={
+          <div className="container section" role="status">
+            …
+          </div>
+        }
+      >
+        <BlogPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: 'blog/:slug',
+    element: (
+      <Suspense
+        fallback={
+          <div className="container section" role="status">
+            …
+          </div>
+        }
+      >
+        <BlogPost />
+      </Suspense>
+    ),
+  },
   { path: '*', element: <ErrorPage /> },
 ]
 

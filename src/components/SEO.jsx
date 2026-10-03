@@ -19,6 +19,8 @@ export default function SEO({
   canonical,
   image,
   type = 'website',
+  imageAlt = 'Abdalrahman Valabji',
+  contentLanguage,
   jsonLd,
 }) {
   const { language } = useLanguage();
@@ -34,7 +36,7 @@ export default function SEO({
   const desc = description || (language === 'ar' ? DEFAULT_DESC_AR : DEFAULT_DESC);
   const img = image || DEFAULT_IMG;
   const enrichedJsonLd = jsonLd
-    ? { ...addPersonAliases(jsonLd, identity), inLanguage: language }
+    ? { ...addPersonAliases(jsonLd, identity), inLanguage: contentLanguage || language }
     : null;
 
   return (
@@ -52,17 +54,17 @@ export default function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={desc} />
       <meta property="og:image" content={img} />
-      <meta property="og:image:alt" content="Abdalrahman Valabji" />
+      <meta property="og:image:alt" content={imageAlt} />
       <meta property="og:locale" content={language === 'ar' ? 'ar_AR' : 'en_US'} />
       <meta property="og:locale:alternate" content={language === 'ar' ? 'en_US' : 'ar_AR'} />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content={type === 'article' ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={desc} />
       <meta name="twitter:image" content={img} />
 
       {enrichedJsonLd && (
-        <script type="application/ld+json">{JSON.stringify(enrichedJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(enrichedJsonLd).replace(/</g, '\\u003c')}</script>
       )}
     </Helmet>
   );
