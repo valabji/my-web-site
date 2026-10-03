@@ -536,6 +536,27 @@
   color: var(--text);
   font-size: 12px;
 }
+.blog-translation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.blog-translation p {
+  margin: 0;
+}
+.blog-translation p span {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
 .blog-byline img,
 .blog-author > img {
   border-radius: 50%;
@@ -602,11 +623,13 @@
 }
 .blog-prose {
   font-size: 17px;
-  line-height: 1.95;
+  line-height: 1.6;
   color: #bbc6d0;
   overflow-wrap: anywhere;
 }
-.blog-prose p,
+.blog-prose p {
+  margin-bottom: 18px;
+}
 .blog-prose ul,
 .blog-prose ol,
 .blog-prose blockquote,
@@ -648,7 +671,18 @@
 }
 .blog-prose li {
   padding-inline-start: 5px;
-  margin: 8px 0;
+  margin: 4px 0;
+  line-height: 1.6;
+}
+.blog-prose li > p {
+  margin-bottom: 8px;
+}
+.blog-prose li > :last-child {
+  margin-bottom: 0;
+}
+.blog-prose li > ul,
+.blog-prose li > ol {
+  margin-top: 8px;
 }
 .blog-prose li::marker {
   color: var(--accent-2);

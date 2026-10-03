@@ -17,6 +17,7 @@ import {
   headingId,
   imageUrl,
   safeHref,
+  translationUrl,
 } from '../lib/blog.js'
 import './Blog.css'
 
@@ -72,7 +73,7 @@ const components = {
 }
 export default function BlogPost() {
   const { slug } = useParams()
-  const { pathFor, copy } = useBlogCopy()
+  const { language, pathFor, copy } = useBlogCopy()
   const { data, status, retry } = useSanityQuery(POST_QUERY, { slug })
   const [shareStatus, setShareStatus] = useState('')
   useEffect(() => {
@@ -130,6 +131,7 @@ export default function BlogPost() {
   )
   const cover = imageUrl(post.coverImage, 1600)
   const postLanguage = post.language || 'en'
+  const translateHref = translationUrl(url, postLanguage, language)
   return (
     <div className="blog-shell">
       <SEO
@@ -185,6 +187,26 @@ export default function BlogPost() {
         <span aria-hidden="true">/</span>
         <span>{post.tags?.[0] || copy('Journal', 'المدونة')}</span>
       </nav>
+      {translateHref && (
+        <aside className="blog-translation" lang={language} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+          <p>
+            {copy(
+              'This story is written in another language.',
+              'هذا المقال مكتوب بلغة أخرى.',
+            )}
+            <span>
+              {copy(
+                'Opens in Google Translate. Automatic translations may contain mistakes.',
+                'تُفتح الترجمة في ترجمة Google. قد تحتوي الترجمة الآلية على أخطاء.',
+              )}
+            </span>
+          </p>
+          <a className="blog-button" href={translateHref} target="_blank" rel="noopener noreferrer">
+            {copy('Auto-translate to English', 'ترجمة آلية إلى العربية')}
+            <span aria-hidden="true"> ↗</span>
+          </a>
+        </aside>
+      )}
       <article
         data-blog-status="ready"
         lang={postLanguage}

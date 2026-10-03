@@ -177,6 +177,16 @@ try {
   assert.equal(await page.$$eval('h1', (els) => els.length), 1)
   assert.ok(await page.$('#section-principles'))
   assert.ok(await page.$('.blog-code pre'))
+  assert.equal(await page.$('.blog-translation'), null)
+  await goto('/ar/blog/story-0')
+  const translation = await page.$eval('.blog-translation a', (el) => ({
+    href: el.href, text: el.textContent, target: el.target,
+  }))
+  assert.equal(new URL(translation.href).searchParams.get('tl'), 'ar')
+  assert.match(translation.text, /ترجمة آلية إلى العربية/)
+  assert.equal(translation.target, '_blank')
+  assert.equal(await page.$eval('article[data-blog-status]', (el) => el.lang), 'en')
+  await goto('/blog/story-0')
   await page.screenshot({
     path: `${output}/article-desktop.png`,
     fullPage: true,

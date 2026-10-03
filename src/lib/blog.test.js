@@ -7,8 +7,23 @@ import {
   searchPattern,
   formatDate,
   imageUrl,
+  translationUrl,
 } from './blog.js'
 import { xml } from '../../scripts/blog-build.mjs'
+
+test('translation offers follow the site language and preserve the full story URL', () => {
+  assert.equal(translationUrl('https://valabji.com/blog/story', 'en', 'en'), undefined)
+  assert.equal(translationUrl('https://valabji.com/blog/story', 'en-US', 'en'), undefined)
+  assert.equal(translationUrl('https://valabji.com/blog/story'), undefined)
+  for (const [source, target] of [['en', 'ar'], ['ar', 'en']]) {
+    const story = `https://valabji.com/${target === 'ar' ? 'ar/' : ''}blog/قصة?ref=one&tag=two`
+    const translated = new URL(translationUrl(story, source, target))
+    assert.equal(translated.origin, 'https://translate.google.com')
+    assert.equal(translated.searchParams.get('sl'), source)
+    assert.equal(translated.searchParams.get('tl'), target)
+    assert.equal(translated.searchParams.get('u'), story)
+  }
+})
 
 test('pagination handles invalid input and preserves valid filters', () => {
   for (const page of ['-1', '0', 'NaN', '2.5', 'Infinity', '9007199254740993'])

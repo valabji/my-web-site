@@ -56,6 +56,14 @@ export function safeHref(href) {
 export function headingId(block) {
   return `section-${block._key}`
 }
+export function translationUrl(url, sourceLanguage = 'en', targetLanguage = 'en') {
+  const source = sourceLanguage.toLowerCase().split(/[-_]/)[0]
+  const target = targetLanguage.toLowerCase().split(/[-_]/)[0]
+  if (source === target) return undefined
+  const translate = new URL('https://translate.google.com/translate')
+  translate.search = new URLSearchParams({ sl: source, tl: target, u: url }).toString()
+  return translate.href
+}
 export function blockText(block) {
   return (block.children || []).map((child) => child.text || '').join('')
 }
