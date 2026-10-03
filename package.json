@@ -8,12 +8,17 @@
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs",
     "prerender": "node scripts/prerender.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test src/lib/blog.test.js src/i18n/languageDetection.test.js scripts/indexnow.test.mjs",
+    "test:blog": "node scripts/blog-browser-test.mjs",
+    "test:blog:production": "node scripts/blog-production-test.mjs"
   },
   "dependencies": {
+    "@portabletext/react": "^8.0.1",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "@react-three/postprocessing": "^3.0.4",
+    "@sanity/client": "^8.9.0",
     "bootstrap": "^5.3.8",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

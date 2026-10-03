@@ -229,7 +229,7 @@ html[dir="rtl"] .nav__mobile-link::before { direction:ltr; unicode-bidi:isolate;
 }
 
 /* ---- Responsive ---- */
-@media (min-width: 920px) {
+@media (min-width: 1200px) {
   .nav__links { display: flex; }
   .nav__toggle { display: none; }
   .nav__mobile { display: none; }
@@ -238,3 +238,7 @@ html[dir="rtl"] .nav__mobile-link::before { direction:ltr; unicode-bidi:isolate;
 @media (prefers-reduced-motion: reduce) {
   .nav__mobile { animation: none; }
 }
+
+.nav__link[aria-current="page"],.nav__mobile-link[aria-current="page"]{color:var(--accent-2);background:rgba(45,212,191,.07)}
+.nav__mobile{max-height:calc(100dvh - 64px);overflow-y:auto}
+@media(min-width:1200px){.nav__link{font-size:.76rem;padding:.5em .55em}}

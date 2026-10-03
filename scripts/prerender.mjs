@@ -1,3 +1,4 @@
+import { discoverBlog, blogPages, writeFeed, writeBlogData } from './blog-build.mjs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
@@ -239,7 +240,7 @@ const basePages = [
   },
   {
     route: '/certifications',
-    waitFor: '#certifications .cert-grid',
+    waitFor: '#certifications .certs-grid',
     meta: {
       title: 'Certifications — Abdalrahman Valabji',
       description: 'Professional certifications and credentials of Abdalrahman Valabji.',
@@ -390,10 +391,10 @@ function startServer(spaShell) {
 }
 
 function writeSitemap() {
-  const entries = basePages.map((page) => {
-    const en = `${SITE}${page.route}`
-    const ar = `${SITE}/ar${page.route === '/' ? '' : page.route}`
-    const priority = page.route === '/' ? '1.0' : page.route.includes('/projects/') ? '0.8' : '0.9'
+  const entries = routes.map((route) => {
+    const en = `${SITE}${route}`
+    const ar = `${SITE}/ar${route === '/' ? '' : route}`
+    const priority = route === '/' ? '1.0' : route.includes('/projects/') ? '0.8' : '0.9'
     return `  <url>
     <loc>${en}</loc>
     <xhtml:link rel="alternate" hreflang="en" href="${en}" />
@@ -422,6 +423,10 @@ function writeSitemap() {
 }
 
 async function main() {
+  const posts = await discoverBlog(ROOT)
+  await writeBlogData(posts, ROOT, DIST)
+  pages.push(...blogPages(posts))
+  routes.push('/blog', ...posts.map(post => `/blog/${post.slug}`))
   const puppeteer = await import('puppeteer')
   
   // Copy the original SPA shell before we overwrite it
@@ -461,6 +466,7 @@ async function main() {
 
   tab.on('pageerror', (err) => console.log(`  [error] ${err.message.substring(0, 80)}`))
 
+  const failures = []
   for (const page of pages) {
     try {
       await tab.goto(`http://localhost:${port}${page.route}`, {
@@ -469,14 +475,16 @@ async function main() {
       })
 
       if (page.waitFor) {
-        await tab.waitForSelector(page.waitFor, { timeout: 15000 }).catch(() => {})
+        await tab.waitForSelector(page.waitFor, { timeout: 20000 })
       }
 
       let html = await tab.content()
-      html = injectMeta(html, buildMeta(page.meta))
-      html = injectAssets(html, page.route === '/' || page.route === '/ar'
-        ? inlineHomeStyles(criticalAssets)
-        : criticalAssets)
+      if (!page.preserveMeta) {
+        html = injectMeta(html, buildMeta(page.meta))
+        html = injectAssets(html, page.route === '/' || page.route === '/ar'
+          ? inlineHomeStyles(criticalAssets)
+          : criticalAssets)
+      }
       html = html.replace(/<html[^>]*>/, `<html lang="${page.meta.lang}" dir="${page.meta.lang === 'ar' ? 'rtl' : 'ltr'}">`)
 
       const outputPath = page.route === '/'
@@ -488,6 +496,7 @@ async function main() {
       const size = (Buffer.byteLength(html) / 1024).toFixed(0)
       console.log(`  ✓ ${page.route} (${size}KB)`)
     } catch (err) {
+      failures.push(page.route)
       console.error(`  ✗ ${page.route}: ${err.message.substring(0, 100)}`)
     }
   }
@@ -495,6 +504,8 @@ async function main() {
   await tab.close()
   await browser.close()
   server.close()
+  if (failures.length) throw new Error(`Prerender failed for: ${failures.join(', ')}`)
+  writeFeed(posts, DIST)
   writeSitemap()
   console.log('\nPrerendering complete!')
 }

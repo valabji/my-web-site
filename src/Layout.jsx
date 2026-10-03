@@ -13,7 +13,7 @@ export default function Layout() {
   useEffect(() => {
     if (location.hash) {
       const timer = setTimeout(() => {
-        const el = document.querySelector(location.hash)
+        const el = document.getElementById(decodeURIComponent(location.hash.slice(1)))
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' })
         }

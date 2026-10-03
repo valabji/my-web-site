@@ -1,5 +1,6 @@
 export const messages = {
   en: {
+    blog: 'Blog',
     skip: 'Skip to content', main: 'Main content', primaryNav: 'Primary navigation', homeLink: 'valabji — home',
     about: 'About', experience: 'Experience', work: 'Work', skills: 'Skills',
     openSource: 'Open Source', certifications: 'Certifications', recommendations: 'Recommendations', contact: 'Contact',
@@ -28,6 +29,7 @@ export const messages = {
     notFound: '404: route not found', missingPath: 'bash: no such file or directory', missingExplain: 'The page you requested has moved, was removed, or never existed.', goHome: 'cd ~/home',
   },
   ar: {
+    blog: 'المدونة',
     skip: 'الانتقال إلى المحتوى', main: 'المحتوى الرئيسي', primaryNav: 'التنقل الرئيسي', homeLink: 'فلبجي — الصفحة الرئيسية',
     about: 'نبذة عني', experience: 'الخبرة المهنية', work: 'الأعمال', skills: 'المهارات',
     openSource: 'المشاريع مفتوحة المصدر', certifications: 'الشهادات', recommendations: 'التوصيات', contact: 'تواصل معي',

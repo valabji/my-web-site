@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import profile from '../data/profile.json';
 import { useIsBrowser } from '../hooks/useIsBrowser';
@@ -13,6 +13,7 @@ const LINKS = [
   { to: '/opensource', anchor: '#opensource', label: 'openSource' },
   { to: '/certifications', anchor: '#certifications', label: 'certifications' },
   { to: '/recommendations', anchor: '#recommendations', label: 'recommendations' },
+  { to: '/blog', label: 'blog' },
   { to: '/contact', anchor: '#contact', label: 'contact' },
 ];
 
@@ -24,19 +25,24 @@ export default function Nav() {
   const { language, t, pathFor, switchLanguage } = useLanguage();
   const isHome = location.pathname === '/' || location.pathname === '/ar';
 
+  const toggleRef = useRef(null);
+  useEffect(() => { setOpen(false); }, [location.pathname, location.search]);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event) => { if (event.key === 'Escape') { setOpen(false); toggleRef.current?.focus(); } };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
   const close = () => setOpen(false);
 
   const getHref = (link) => {
-    if (isBrowser && isHome) return link.anchor;
+    if (isBrowser && isHome && link.anchor) return link.anchor;
     return pathFor(link.to);
   };
 
   const getLinkProps = (link) => {
-    const href = getHref(link);
-    const isAnchor = href.startsWith('#');
-    return isAnchor
-      ? { to: href, onClick: close }
-      : { to: href, onClick: close };
+    const active = location.pathname === pathFor(link.to) || location.pathname.startsWith(`${pathFor(link.to)}/`);
+    return { to: getHref(link), onClick: close, 'aria-current': active ? 'page' : undefined };
   };
 
   return (
@@ -76,6 +82,7 @@ export default function Nav() {
           </ul>
 
           <button
+            ref={toggleRef}
             type="button"
             className={`nav__toggle${open ? ' nav__toggle--open' : ''}`}
             aria-label={open ? t('closeMenu') : t('openMenu')}
